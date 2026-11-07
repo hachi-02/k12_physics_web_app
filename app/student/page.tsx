@@ -44,7 +44,8 @@ export default async function StudentPage({ searchParams }: StudentPageProps) {
   }
 
   const profile = getStudentProfile(studentId);
-  const grade = searchParams?.grade ? parseInt(searchParams.grade, 10) : profile.grade;
+  const rawGrade = searchParams?.grade ? parseInt(searchParams.grade, 10) : profile.grade;
+  const grade = rawGrade >= 6 && rawGrade <= 12 ? rawGrade : 6;
   const tier = getTierForGrade(grade);
   const topics = getTopicsForGrade(grade, studentId);
   const toc = getTextbookToc(grade, studentId);

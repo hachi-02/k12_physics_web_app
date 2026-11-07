@@ -31,1157 +31,66 @@ export interface CurriculumTopicSeed {
 }
 
 export const CURRICULUM_DATA: CurriculumTopicSeed[] = [
-  // --------------------------------------------------------------------------
-  // GRADE 1
-  // --------------------------------------------------------------------------
   {
-    grade: 1,
-    tier: 'primary',
-    topicTitle: 'Ánh sáng quanh em & Sự tạo bóng',
-    slug: 'lop-1-anh-sang-quanh-em',
-    topicDescription: 'Khám phá nguồn sáng tự nhiên, nguồn sáng nhân tạo và cách bóng của đồ vật xuất hiện.',
-    icon: 'Sun',
-    lessonTitle: 'Bóng của đồ vật thay đổi như thế nào?',
-    lessonSlug: 'bong-cua-do-vat',
-    contentMarkdown: `# Khám phá bóng của đồ vật
-
-Ánh sáng truyền thẳng từ nguồn sáng như Mặt Trời, bóng đèn hay đèn pin.
-
-Khi ánh sáng chiếu tới một đồ vật không trong suốt (như bàn tay, quyển sách hay cái ghế), đồ vật sẽ chắn đường đi của ánh sáng. Vùng không gian tối ở phía sau đồ vật được gọi là **bóng của đồ vật**.
-
-Khi nguồn sáng thay đổi vị trí:
-- Đưa đèn pin lại gần bàn tay, bóng trên tường sẽ **to hơn**.
-- Đưa đèn pin ra xa bàn tay, bóng trên tường sẽ **nhỏ lại**.
-- Đi ngoài nắng giữa trưa, bóng của em in ngay dưới chân; còn buổi chiều tà, bóng của em kéo rất dài trên mặt đất!`,
-    summary: 'Ánh sáng truyền thẳng. Khi bị vật cản che khuất, phía sau vật xuất hiện bóng tối.',
-    durationMinutes: 15,
-    parentGuide: {
-      summary: 'Ánh sáng truyền thẳng từ nguồn sáng. Khi gặp một vật cản không cho ánh sáng đi qua, phía sau vật sẽ xuất hiện vùng tối gọi là bóng của vật.',
-      misconceptions: [
-        'Trẻ thường nghĩ bóng là một vật thể sống riêng biệt đi theo người.',
-        'Trẻ nghĩ trong căn phòng tối đen như mực vẫn có thể nhìn thấy bóng của mình.'
-      ],
-      guiding_questions: [
-        'Đố con vì sao lúc giữa trưa đi ngoài nắng bóng của con lại ngắn, còn lúc chiều tà bóng lại dài ra?',
-        'Nếu mẹ tắt hết đèn trong phòng tối om, con có nhìn thấy bóng của tay mình không? Vì sao?'
-      ],
-      home_experiments: [
-        {
-          title: 'Rạp xiếc bóng trên tường',
-          materials: ['1 chiếc đèn pin hoặc đèn flash điện thoại', 'Bức tường trắng', 'Bàn tay hoặc đồ chơi nhỏ'],
-          steps: [
-            'Tắt đèn phòng, bật đèn pin chiếu vào tường.',
-            'Đặt bàn tay vào giữa đèn pin và tường, uốn ngón tay tạo hình chú thỏ.',
-            'Di chuyển đèn pin lại gần rồi ra xa tay để quan sát kích thước chú thỏ thay đổi.'
-          ],
-          expected_outcome: 'Khi đưa đèn pin lại gần bàn tay, bóng trên tường to lên. Khi đưa đèn pin ra xa, bóng nhỏ lại.',
-          safety_notes: 'Không chiếu trực tiếp đèn pin công suất lớn vào mắt trẻ.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'mcq',
-        prompt: 'Hiện tượng nào sau đây tạo ra bóng của một đồ vật?',
-        options: [
-          { id: 'A', text: 'Ánh sáng đi xuyên qua tấm kính trong suốt' },
-          { id: 'B', text: 'Vật cản ánh sáng từ đèn chiếu tới tạo vùng tối phía sau' },
-          { id: 'C', text: 'Đặt đồ vật trong căn phòng tối om không có đèn' },
-          { id: 'D', text: 'Đồ vật tự phát ra ánh sáng màu đen' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Con hãy nhớ lại lúc chơi rạp xiếc bóng trên tường, bàn tay con đã làm gì với tia sáng từ đèn pin?' }
-        ],
-        explanation: 'Khi một vật chắn đường truyền của ánh sáng, vùng không nhận được ánh sáng phía sau vật sẽ tạo thành bóng của vật.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 2
-  // --------------------------------------------------------------------------
-  {
-    grade: 2,
-    tier: 'primary',
-    topicTitle: 'Âm thanh trong đời sống & Rung động',
-    slug: 'lop-2-am-thanh-va-rung-dong',
-    topicDescription: 'Tìm hiểu nguồn gốc của âm thanh từ sự rung động của các vật thể xung quanh.',
-    icon: 'Volume2',
-    lessonTitle: 'Âm thanh bắt nguồn từ đâu?',
-    lessonSlug: 'am-thanh-bat-nguon-tu-dau',
-    contentMarkdown: `# Thế giới âm thanh kỳ diệu
-
-Hàng ngày chúng ta nghe thấy tiếng chim hót, tiếng còi xe, tiếng chuông đồng hồ hay giọng nói của cha mẹ.
-
-Mọi âm thanh phát ra trong tự nhiên đều bắt nguồn từ **sự rung động** (dao động) qua lại rất nhanh của các vật thể:
-- Khi gảy đàn ghita, sợi dây đàn rung rinh phát ra tiếng nhạc.
-- Khi gõ trống, mặt trống rung lên làm rung các hạt bụi nhỏ phía trên.
-- Khi em nói chuyện, hai dây thanh âm trong cổ họng của em đang rung động.
-
-Nếu ta dùng tay chặn đứng sự rung động đó lại, âm thanh sẽ lập tức tắt ngấm!`,
-    summary: 'Mọi âm thanh đều do các vật rung động phát ra. Khi vật ngừng rung, âm thanh cũng tắt.',
-    durationMinutes: 15,
-    parentGuide: {
-      summary: 'Mọi âm thanh phát ra trong tự nhiên đều bắt nguồn từ sự rung động (dao động) của các vật thể. Khi vật ngừng rung, âm thanh cũng tắt.',
-      misconceptions: [
-        'Trẻ nghĩ âm thanh tự nhiên xuất hiện trong không khí mà không cần vật nào rung.',
-        'Trẻ nghĩ âm thanh có thể truyền qua chân không mà không cần môi trường.'
-      ],
-      guiding_questions: [
-        'Khi con nói to hoặc hát, con đặt nhẹ tay lên cổ họng xem có cảm giác gì rung rung không?',
-        'Tại sao khi lấy tay giữ chặt mặt trống đang kêu thì tiếng trống ngừng hẳn?'
-      ],
-      home_experiments: [
-        {
-          title: 'Hạt gạo nhảy múa theo tiếng nhạc',
-          materials: ['1 chiếc bát sứ lớn', 'Màng bọc thực phẩm', '15 hạt gạo sống', '1 chiếc xoong nhôm và 1 chiếc thìa'],
-          steps: [
-            'Bọc thật căng màng bọc thực phẩm lên miệng bát sứ.',
-            'Rắc 10-15 hạt gạo sống lên trên màng bọc.',
-            'Cầm thìa gõ mạnh vào đáy xoong đặt cạnh bát (không chạm vào bát) và quan sát.'
-          ],
-          expected_outcome: 'Hạt gạo nảy lên múa lượn vì sóng âm từ xoong truyền qua không khí làm màng bọc rung lên.',
-          safety_notes: 'Gõ xoong vừa phải để tránh làm chói tai trẻ nhỏ.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'mcq',
-        prompt: 'Khi gảy một sợi dây đàn ghi-ta, ta nghe thấy tiếng đàn vang lên vì lý do gì?',
-        options: [
-          { id: 'A', text: 'Sợi dây đàn bị nóng lên' },
-          { id: 'B', text: 'Sợi dây đàn rung động qua lại rất nhanh' },
-          { id: 'C', text: 'Sợi dây đàn bị kéo dãn dài ra vĩnh viễn' },
-          { id: 'D', text: 'Sợi dây đàn đổi màu sắc' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Hãy quan sát thật kỹ sợi dây đàn ngay lúc vừa gảy xong, sợi dây đang đứng yên hay chuyển động thế nào?' }
-        ],
-        explanation: 'Sợi dây đàn rung động làm dao động các phân tử không khí xung quanh, truyền đến tai ta tạo thành âm thanh.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 3
-  // --------------------------------------------------------------------------
-  {
-    grade: 3,
-    tier: 'primary',
-    topicTitle: 'Nam châm kỳ diệu & Lực từ',
-    slug: 'lop-3-nam-cham-va-luc-tu',
-    topicDescription: 'Khám phá các cực của nam châm, tương tác hút - đẩy và các vật liệu có từ tính.',
-    icon: 'Magnet',
-    lessonTitle: 'Hai cực của nam châm: Hút hay đẩy?',
-    lessonSlug: 'hai-cuc-cua-nam-cham',
-    contentMarkdown: `# Bí mật của thanh nam châm
-
-Mỗi thanh nam châm luôn có hai cực từ:
-- **Cực Bắc** (North - ký hiệu chữ **N**, thường sơn màu đỏ).
-- **Cực Nam** (South - ký hiệu chữ **S**, thường sơn màu xanh hoặc trắng).
-
-Quy tắc tương tác giữa hai nam châm:
-- Hai cực **cùng tên** đưa lại gần nhau thì **đẩy nhau** ($N - N$ hoặc $S - S$).
-- Hai cực **khác tên** đưa lại gần nhau thì **hút chặt lấy nhau** ($N - S$).
-
-Nam châm hút được các kim loại có từ tính như sắt, thép, niken; nhưng **không hút** được nhôm (lon nước ngọt), đồng, vàng hay cao su.`,
-    summary: 'Nam châm có hai cực N và S. Cực cùng tên đẩy nhau, khác tên hút nhau. Nam châm hút sắt, thép.',
-    durationMinutes: 15,
-    parentGuide: {
-      summary: 'Nam châm có hai cực từ: Bắc (N) và Nam (S). Cùng dấu thì đẩy nhau, khác dấu thì hút nhau. Nam châm hút được sắt, thép nhưng không hút được nhôm hay đồng.',
-      misconceptions: [
-        'Nhiều học sinh tin rằng nam châm hút được tất cả các kim loại (kể cả lon nhôm và thìa inox).',
-        'Nghĩ rằng nếu bẻ đôi thanh nam châm thì một nửa chỉ có cực Bắc và một nửa chỉ có cực Nam.'
-      ],
-      guiding_questions: [
-        'Con thử đoán xem thanh nam châm trên cánh tủ lạnh có hút được vỏ lon nước ngọt bằng nhôm không?',
-        'Nếu mẹ đưa hai đầu màu đỏ của hai thanh nam châm lại gần nhau, chúng sẽ dính chặt hay đẩy nhau ra xa?'
-      ],
-      home_experiments: [
-        {
-          title: 'Thám tử nam châm phân loại vật liệu',
-          materials: ['1 thanh nam châm nhỏ (từ cánh tủ lạnh hoặc đồ chơi)', 'Kẹp giấy sắt', 'Vỏ lon nước ngọt nhôm', 'Thìa inox', 'Đồng xu', 'Tẩy cao su'],
-          steps: [
-            'Đặt tất cả các đồ vật lên bàn.',
-            'Dùng nam châm rà sát vào từng đồ vật xem vật nào bị dính chặt.',
-            'Lập hai nhóm: Đồ vật có từ tính (sắt, thép) và đồ vật không từ tính.'
-          ],
-          expected_outcome: 'Nam châm chỉ hút kẹp giấy bằng sắt; không hút vỏ lon nhôm hay tẩy cao su.',
-          safety_notes: 'Để nam châm xa các thiết bị điện tử nhạy cảm, thẻ từ ngân hàng.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'mcq',
-        prompt: 'Khi đưa cực Bắc ($N$) của một thanh nam châm lại gần cực Bắc ($N$) của một thanh nam châm khác, hiện tượng gì sẽ xảy ra?',
-        options: [
-          { id: 'A', text: 'Hai cực hút chặt lấy nhau' },
-          { id: 'B', text: 'Hai cực đẩy nhau ra xa' },
-          { id: 'C', text: 'Không có hiện tượng gì xảy ra' },
-          { id: 'D', text: 'Nam châm lập tức mất hết từ tính' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Quy tắc hai cực từ: Cùng dấu thì đẩy nhau, khác dấu thì hút nhau!' }
-        ],
-        explanation: 'Hai cực cùng tên ($N-N$ hoặc $S-S$) đẩy nhau, hai cực khác tên ($N-S$) hút nhau.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 4
-  // --------------------------------------------------------------------------
-  {
-    grade: 4,
-    tier: 'primary',
-    topicTitle: 'Đường truyền ánh sáng & Gương phẳng',
-    slug: 'lop-4-duong-truyen-anh-sang',
-    topicDescription: 'Định luật truyền thẳng của ánh sáng, phản xạ ánh sáng và ứng dụng gương phẳng.',
-    icon: 'Zap',
-    lessonTitle: 'Ánh sáng truyền đi như thế nào?',
-    lessonSlug: 'anh-sang-truyen-di-nhu-the-nao',
-    contentMarkdown: `# Đường truyền của tia sáng
-
-Trong môi trường trong suốt và đồng tính (như không khí sạch, nước trong hay khối thủy tinh), **ánh sáng truyền đi theo đường thẳng**.
-
-Tia sáng được biểu diễn bằng một đoạn thẳng có mũi tên chỉ chiều truyền của ánh sáng: $\\longrightarrow$.
-
-Điều kiện để mắt ta nhìn thấy một vật:
-- Phải có ánh sáng từ vật đó phát ra hoặc phản xạ truyền thẳng vào mắt ta.
-- Nếu có một vật cản chắn giữa vật và mắt, ta sẽ không nhìn thấy vật đó nữa.
-
-Khi ánh sáng gặp bề mặt nhẵn bóng như gương phẳng, tia sáng bị hắt trở lại môi trường cũ gọi là **hiện tượng phản xạ ánh sáng**. Ảnh tạo bởi gương phẳng là ảnh ảo có kích thước bằng đúng vật.`,
-    summary: 'Ánh sáng truyền thẳng trong môi trường trong suốt, đồng tính. Ta thấy vật khi có ánh sáng từ vật truyền vào mắt.',
-    durationMinutes: 15,
-    parentGuide: {
-      summary: 'Ánh sáng luôn truyền theo đường thẳng trong môi trường trong suốt và đồng tính. Gương phẳng phản xạ ánh sáng và tạo ra ảnh ảo cùng kích thước với vật.',
-      misconceptions: [
-        'Mắt người có khả năng tự phát ra tia nhìn chiếu tới đồ vật để nhìn thấy vật.',
-        'Ánh sáng có thể tự uốn cong qua góc tường mà không cần gương phản xạ.'
-      ],
-      guiding_questions: [
-        'Tại sao người thợ xây hay dùng dây rọi hoặc tia laser để căn thẳng hàng?',
-        'Khi con đứng trước gương phẳng và giơ tay phải lên, ảnh trong gương sẽ giơ tay nào?'
-      ],
-      home_experiments: [
-        {
-          title: 'Kiểm chứng đường truyền thẳng qua 3 lỗ bìa',
-          materials: ['3 tấm bìa cứng đục lỗ kim ở cùng độ cao', 'Đất nặn làm đế giữ bìa', '1 đèn pin nhỏ'],
-          steps: [
-            'Cắm 3 tấm bìa đứng thẳng hàng trên bàn.',
-            'Đặt đèn pin sau tấm bìa thứ nhất.',
-            'Ngắm qua lỗ của tấm bìa thứ ba xem có thấy ánh đèn không. Xê dịch tấm bìa ở giữa 2cm.'
-          ],
-          expected_outcome: 'Chỉ khi 3 lỗ thẳng hàng ta mới thấy ánh đèn. Dịch tấm giữa làm mất tia sáng ngay lập tức.',
-          safety_notes: 'Sử dụng kéo đục lỗ cẩn thận.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'mcq',
-        prompt: 'Mắt ta nhìn thấy một bông hoa hồng màu đỏ nở trong vườn vì lý do gì?',
-        options: [
-          { id: 'A', text: 'Mắt tự phát ra tia sáng chiếu đến bông hoa' },
-          { id: 'B', text: 'Có ánh sáng từ bông hoa truyền thẳng vào mắt ta' },
-          { id: 'C', text: 'Bông hoa hút hết ánh sáng trong vườn' },
-          { id: 'D', text: 'Không khí xung quanh tự phát ra ánh sáng đỏ' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'medium',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Điều kiện để mắt ta nhìn thấy một vật là gì?' },
-          { level: 2, hint: 'Vật đó phải phát ra ánh sáng hoặc hắt lại ánh sáng vào mắt ta.' }
-        ],
-        explanation: 'Ta chỉ nhìn thấy một vật khi có ánh sáng từ vật đó phát ra hoặc phản xạ truyền vào mắt ta.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 5
-  // --------------------------------------------------------------------------
-  {
-    grade: 5,
-    tier: 'primary',
-    topicTitle: 'Sự chìm - nổi & Lực đẩy của nước',
-    slug: 'lop-5-su-chim-noi-luc-day',
-    topicDescription: 'Nguyên nhân vật chìm hoặc nổi trong chất lỏng, lực nâng của nước và ứng dụng làm thuyền.',
-    icon: 'Droplet',
-    lessonTitle: 'Tại sao hòn đá chìm mà con tàu bằng sắt khổng lồ lại nổi?',
-    lessonSlug: 'tai-sao-hon-da-chim-tau-sat-noi',
-    contentMarkdown: `# Khám phá lực nâng của chất lỏng
-
-Khi thả một vật vào trong nước, nước tác dụng lên vật một lực đẩy hướng thẳng đứng từ dưới lên trên.
-
-Một vật sẽ chìm hay nổi phụ thuộc vào sự so sánh giữa:
-- **Trọng lượng của vật** (hướng xuống).
-- **Lực đẩy của nước** tác dụng lên vật (hướng lên).
-
-Tại sao con tàu sắt khổng lồ lại nổi?
-- Một cục đất nặn đặc vo tròn thả vào nước sẽ chìm vì thể tích nước nó chiếm chỗ nhỏ $\\implies$ lực nâng nhỏ hơn trọng lượng.
-- Khi ta nắn mỏng cục đất nặn thành chiếc thuyền lòng sâu có thành cao, nó chiếm chỗ một thể tích nước rất lớn $\\implies$ sinh ra lực đẩy hướng lên lớn hơn trọng lượng của thuyền, giúp thuyền nổi bồng bềnh!`,
-    summary: 'Nước tác dụng lực đẩy hướng lên trên các vật chìm trong nó. Khi lực nâng lớn hơn hoặc bằng trọng lượng, vật sẽ nổi.',
-    durationMinutes: 15,
-    parentGuide: {
-      summary: 'Nước tác dụng một lực đẩy hướng lên trên các vật thả vào trong nó. Một vật sẽ nổi nếu lực đẩy của nước lớn hơn hoặc bằng trọng lượng của nó.',
-      misconceptions: [
-        'Cứ vật to hoặc nặng là sẽ chìm, vật nhỏ hoặc nhẹ là sẽ nổi.',
-        'Sắt đặc thì chìm nên bất kỳ đồ vật nào làm bằng sắt cũng đều phải chìm.'
-      ],
-      guiding_questions: [
-        'Nếu một cục đất nặn đặc vo tròn bị chìm, con có cách nào biến nó thành vật nổi mà không thêm bớt đất nặn không?',
-        'Tại sao quả trứng tươi chìm trong nước lã nhưng lại nổi bồng bềnh trong cốc nước muối đặc?'
-      ],
-      home_experiments: [
-        {
-          title: 'Biến đất nặn chìm thành thuyền nổi',
-          materials: ['1 thỏi đất nặn học sinh', '1 chậu nước hoặc bát tô lớn'],
-          steps: [
-            'Vo tròn thỏi đất nặn thành viên bi đặc, thả vào chậu nước (quan sát nó chìm nghỉm).',
-            'Vớt ra, dùng tay dàn mỏng đất nặn và nắn thành hình chiếc thuyền có lòng sâu, thành cao.',
-            'Đặt nhẹ nhàng chiếc thuyền đất nặn lên mặt nước.'
-          ],
-          expected_outcome: 'Chiếc thuyền đất nặn nổi bồng bềnh và thậm chí có thể chở được vài chiếc cúc áo nhỏ.',
-          safety_notes: 'Lau khô sàn nhà sau khi làm thí nghiệm để tránh trơn trượt.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'mcq',
-        prompt: 'Tại sao quả trứng gà chìm dưới đáy cốc nước ngọt nhưng lại nổi lên khi ta hòa thêm nhiều muối vào nước?',
-        options: [
-          { id: 'A', text: 'Nước muối nhẹ hơn nước ngọt' },
-          { id: 'B', text: 'Nước muối đặc hơn và tác dụng lực đẩy lớn hơn lên quả trứng' },
-          { id: 'C', text: 'Quả trứng bị teo nhẹ đi khi ngâm vào nước muối' },
-          { id: 'D', text: 'Muối làm vỏ trứng cứng cáp hơn' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'medium',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Nước muối có khối lượng riêng lớn hơn hay nhỏ hơn nước tinh khiết?' }
-        ],
-        explanation: 'Nước muối có khối lượng riêng lớn hơn nước ngọt, tạo ra lực đẩy hướng lên lớn hơn trọng lượng quả trứng, làm quả trứng nổi lên.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 6
-  // --------------------------------------------------------------------------
-  {
-    grade: 6,
-    tier: 'middle',
-    topicTitle: 'Lực, Khối lượng riêng & Trọng lượng',
-    slug: 'lop-6-khoi-luong-rieng-trong-luong',
-    topicDescription: 'Công thức tính khối lượng riêng D = m/V, trọng lượng P = 10m và phương pháp đo thể tích bình chia độ.',
-    icon: 'Scale',
-    lessonTitle: 'Khối lượng riêng và Trọng lượng riêng của vật thể',
-    lessonSlug: 'khoi-luong-rieng-va-trong-luong-rieng',
-    contentMarkdown: `# Khối lượng riêng và Trọng lượng
-
-## 1. Khối lượng riêng
-Khối lượng riêng của một chất được xác định bằng khối lượng của một đơn vị thể tích ($1\\,\\text{m}^3$) chất đó:
-$$D = \\frac{m}{V}$$
-
-Trong đó:
-- $D$: Khối lượng riêng (đơn vị: $\\text{kg/m}^3$)
-- $m$: Khối lượng của vật (đơn vị: $\\text{kg}$)
-- $V$: Thể tích của vật (đơn vị: $\\text{m}^3$)
-
-## 2. Trọng lượng và Trọng lượng riêng
-Trọng lượng $P$ là độ lớn lực hút của Trái Đất tác dụng lên vật:
-$$P = 10 \\cdot m$$
-
-Trọng lượng riêng $d$ là trọng lượng của một mét khối chất đó:
-$$d = \\frac{P}{V} = 10 \\cdot D$$ (đơn vị: $\\text{N/m}^3$)`,
-    summary: 'Khối lượng riêng D = m/V (kg/m3). Trọng lượng P = 10m (N). Trọng lượng riêng d = 10D (N/m3).',
-    durationMinutes: 20,
-    parentGuide: {
-      summary: 'Khối lượng riêng ($D$) là khối lượng của $1\\,\\text{m}^3$ chất đó ($D = m/V$). Trọng lượng ($P$) là độ lớn lực hút Trái Đất tác dụng lên vật ($P = 10m$).',
-      misconceptions: [
-        'Nhầm lẫn giữa khối lượng (tính bằng kg) và trọng lượng (lực, tính bằng Newton - N).',
-        'Tin rằng 1 kg sắt nặng hơn 1 kg bông.'
-      ],
-      guiding_questions: [
-        'Nếu mẹ có 1 kg sắt và 1 kg bông gòn, vật nào có thể tích lớn hơn và vì sao?',
-        'Làm thế nào để đo thể tích của một hòn đá có hình dạng góc cạnh gồ ghề bằng bình chia độ?'
-      ],
-      home_experiments: [
-        {
-          title: 'Đo thể tích hòn sỏi bằng bình chia độ',
-          materials: ['1 bình chia độ hoặc cốc đong có vạch ml', 'Nước sạch', '1 hòn sỏi nhỏ'],
-          steps: [
-            'Đổ nước vào bình đến mức $V_1 = 150\\,\\text{ml}$.',
-            'Thả nhẹ hòn sỏi chìm hoàn toàn vào nước, nước dâng lên mức $V_2 = 195\\,\\text{ml}$.',
-            'Tính thể tích hòn sỏi: $V = V_2 - V_1 = 45\\,\\text{ml} = 45\\,\\text{cm}^3$.'
-          ],
-          expected_outcome: 'Học sinh hiểu phương pháp thể tích chiếm chỗ để đo thể tích vật thể hình dạng bất kỳ.',
-          safety_notes: 'Thả sỏi nhẹ tay tránh làm vỡ cốc thủy tinh.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'mcq',
-        prompt: 'Một vật có khối lượng $m = 350\\,\\text{g}$ thì trọng lượng $P$ của nó trên mặt đất xấp xỉ bằng bao nhiêu?',
-        options: [
-          { id: 'A', text: '35 N' },
-          { id: 'B', text: '3.5 N' },
-          { id: 'C', text: '3500 N' },
-          { id: 'D', text: '0.35 N' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Đổi khối lượng ra kg trước: $350\\,\\text{g} = 0.35\\,\\text{kg}$.' },
-          { level: 2, hint: 'Áp dụng công thức liên hệ trọng lượng và khối lượng: $P = 10 \\cdot m$.' }
-        ],
-        explanation: '$m = 350\\,\\text{g} = 0.35\\,\\text{kg} \\implies P = 10 \\cdot m = 10 \\cdot 0.35 = 3.5\\,\\text{N}$.'
-      },
-      {
-        question_type: 'numeric',
-        prompt: 'Một khối nhôm có thể tích $V = 0.04\\,\\text{m}^3$ và khối lượng riêng của nhôm là $D = 2700\\,\\text{kg/m}^3$. Tính khối lượng $m$ của khối nhôm theo đơn vị $\\text{kg}$.',
-        latex_formula: 'm = D \\cdot V',
-        correct_answer: '108',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'kg',
-        hints: [
-          { level: 1, hint: 'Từ công thức $D = \\frac{m}{V}$, suy ra công thức tính khối lượng $m = D \\cdot V$.' },
-          { level: 2, hint: 'Thay số: $m = 2700 \\cdot 0.04$.' }
-        ],
-        explanation: '$m = D \\cdot V = 2700 \\cdot 0.04 = 108\\,\\text{kg}$.',
-        difficulty: 'medium',
-        points: 10
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Một khối gỗ hình hộp chữ nhật có kích thước dài $20\\,\\text{cm}$, rộng $10\\,\\text{cm}$, cao $5\\,\\text{cm}$. Thể tích $V$ của khối gỗ đó bằng bao nhiêu lít?',
-        options: [
-          { id: 'A', text: '1 lít' },
-          { id: 'B', text: '10 lít' },
-          { id: 'C', text: '0.1 lít' },
-          { id: 'D', text: '1000 lít' }
-        ],
-        correct_answer: 'A',
-        difficulty: 'medium',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Tính thể tích theo cm khối: $V = 20 \\times 10 \\times 5 = 1000\\,\\text{cm}^3$.' },
-          { level: 2, hint: 'Quy đổi: $1\\,\\text{lít} = 1\\,\\text{dm}^3 = 1000\\,\\text{cm}^3$.' }
-        ],
-        explanation: '$V = 20 \\times 10 \\times 5 = 1000\\,\\text{cm}^3 = 1\\,\\text{dm}^3 = 1\\,\\text{lít}$.'
-      },
-      {
-        question_type: 'numeric',
-        prompt: 'Khối lượng riêng của nước là $D = 1000\\,\\text{kg/m}^3$. Tính khối lượng $m$ của $1.5\\,\\text{m}^3$ nước theo đơn vị $\\text{kg}$.',
-        latex_formula: 'm = D \\cdot V',
-        correct_answer: '1500',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'kg',
-        hints: [
-          { level: 1, hint: 'Khối lượng được tính theo công thức $m = D \\cdot V$.' },
-          { level: 2, hint: 'Tính: $m = 1000 \\cdot 1.5$.' }
-        ],
-        explanation: '$m = 1000 \\cdot 1.5 = 1500\\,\\text{kg}$.',
-        difficulty: 'easy',
-        points: 10
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Thả một quả cầu kim loại chìm hoàn toàn vào bình chia độ chứa sẵn $120\\,\\text{cm}^3$ nước thì mực nước dâng lên mức $175\\,\\text{cm}^3$. Thể tích của quả cầu là bao nhiêu?',
-        options: [
-          { id: 'A', text: '55 cm3' },
-          { id: 'B', text: '295 cm3' },
-          { id: 'C', text: '120 cm3' },
-          { id: 'D', text: '175 cm3' }
-        ],
-        correct_answer: 'A',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Thể tích vật rắn bằng độ tăng thể tích của nước trong bình: $V = V_2 - V_1$.' }
-        ],
-        explanation: '$V = 175 - 120 = 55\\,\\text{cm}^3$.'
-      },
-      {
-        question_type: 'numeric',
-        prompt: 'Một phi hành gia có trọng lượng trên mặt đất là $P = 600\\,\\text{N}$. Trọng lực trên Mặt Trăng xấp xỉ bằng $1/6$ trên Trái Đất. Tính trọng lượng của phi hành gia đó khi đứng trên Mặt Trăng theo đơn vị $\\text{N}$.',
-        correct_answer: '100',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'N',
-        hints: [
-          { level: 1, hint: 'Trọng lượng trên Mặt Trăng bằng trọng lượng trên Trái Đất chia cho 6.' }
-        ],
-        explanation: '$P_{\\text{MT}} = 600 / 6 = 100\\,\\text{N}$. Khối lượng không đổi nhưng trọng lượng giảm 6 lần.',
-        difficulty: 'medium',
-        points: 10
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Đơn vị đo chuẩn của trọng lượng riêng trong hệ thống đo lường quốc tế (SI) là gì?',
-        options: [
-          { id: 'A', text: 'N/m3' },
-          { id: 'B', text: 'kg/m3' },
-          { id: 'C', text: 'N/m2' },
-          { id: 'D', text: 'J/m3' }
-        ],
-        correct_answer: 'A',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Trọng lượng riêng $d = P / V$, trong đó $P$ đo bằng Newton (N), $V$ đo bằng mét khối (m3).' }
-        ],
-        explanation: 'Trọng lượng riêng $d = \\frac{P}{V}$ có đơn vị là $\\text{N/m}^3$.'
-      },
-      {
-        question_type: 'numeric',
-        prompt: 'Một khối sắt có thể tích $V = 0.02\\,\\text{m}^3$ và khối lượng riêng $D = 7800\\,\\text{kg/m}^3$. Lấy $P = 10 \\cdot m$, tính trọng lượng $P$ của khối sắt theo đơn vị $\\text{N}$.',
-        latex_formula: 'P = 10 \\cdot D \\cdot V',
-        correct_answer: '1560',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'N',
-        hints: [
-          { level: 1, hint: 'Tìm khối lượng: $m = D \\cdot V = 7800 \\cdot 0.02 = 156\\,\\text{kg}$.' },
-          { level: 2, hint: 'Tính trọng lượng: $P = 10 \\cdot m = 10 \\cdot 156$.' }
-        ],
-        explanation: '$m = 7800 \\cdot 0.02 = 156\\,\\text{kg} \\implies P = 10 \\cdot 156 = 1560\\,\\text{N}$.',
-        difficulty: 'hard',
-        points: 15
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 7
-  // --------------------------------------------------------------------------
-  {
-    grade: 7,
-    tier: 'middle',
-    topicTitle: 'Tốc độ, Chuyển động & Sóng âm',
-    slug: 'lop-7-toc-do-chuyen-dong',
-    topicDescription: 'Định nghĩa tốc độ v = s/t, chuyển đổi đơn vị km/h sang m/s và đọc đồ thị quãng đường - thời gian.',
-    icon: 'Gauge',
-    lessonTitle: 'Tốc độ chuyển động và Đồ thị Quãng đường - Thời gian',
-    lessonSlug: 'toc-do-chuyen-dong-do-thi',
-    contentMarkdown: `# Tốc độ chuyển động
-
-## 1. Công thức tính tốc độ
-Tốc độ là đại lượng đặc trưng cho sự nhanh, chậm của chuyển động:
-$$v = \\frac{s}{t}$$
-
-Trong đó:
-- $v$: Tốc độ chuyển động ($\\text{m/s}$ hoặc $\\text{km/h}$)
-- $s$: Quãng đường đi được ($\\text{m}$ hoặc $\\text{km}$)
-- $t$: Thời gian đi hết quãng đường đó ($\\text{s}$ hoặc $\\text{h}$)
-
-## 2. Quy tắc đổi đơn vị
-$$1\\,\\text{m/s} = 3.6\\,\\text{km/h} \\iff 1\\,\\text{km/h} = \\frac{1}{3.6}\\,\\text{m/s}$$
-
-## 3. Đồ thị Quãng đường - Thời gian ($s-t$)
-- Đường biểu diễn dốc lên: vật chuyển động thẳng đều với tốc độ không đổi.
-- Đường nằm ngang: vật đứng yên ($s$ không đổi theo thời gian).`,
-    summary: 'Tốc độ v = s/t. Đổi đơn vị: 1 m/s = 3.6 km/h. Đồ thị s-t dốc lên là chuyển động, nằm ngang là đứng yên.',
-    durationMinutes: 20,
-    parentGuide: {
-      summary: 'Tốc độ $v = s/t$ cho biết sự nhanh chậm của chuyển động. Đồ thị quãng đường - thời gian dốc lên là chuyển động đều, nằm ngang là vật đứng yên.',
-      misconceptions: [
-        'Nhầm lẫn giữa tốc độ tức thời tại 1 thời điểm với tốc độ trung bình trên toàn bộ chuyến đi.',
-        'Nghĩ rằng đồ thị s-t nằm ngang nghĩa là vật đang chuyển động thẳng đều.'
-      ],
-      guiding_questions: [
-        'Nếu con đi xe bus từ nhà tới trường dài 6 km hết 20 phút, tốc độ trung bình của xe bus là bao nhiêu km/h?',
-        'Khi nhìn vào đồ thị $s-t$, đoạn nào nằm ngang thì người đi xe đang làm gì?'
-      ],
-      home_experiments: [
-        {
-          title: 'Bấm giờ tính tốc độ đi bộ',
-          materials: ['1 chiếc thước dây đo cự ly', 'Điện thoại thông minh có ứng dụng bấm giờ (Stopwatch)'],
-          steps: [
-            'Dùng thước đo một đoạn đường thẳng trong hành lang hoặc sân dài $s = 15\\,\\text{m}$.',
-            'Con đi bộ bình thường từ vạch xuất phát đến đích, phụ huynh bấm giờ thời gian $t$ (giây).',
-            'Tính tốc độ: $v = 15 / t$ (m/s), sau đó nhân 3.6 để ra km/h.'
-          ],
-          expected_outcome: 'Học sinh tự trải nghiệm quá trình thu thập số liệu thực nghiệm và tính tốc độ.',
-          safety_notes: 'Đi bộ trong khu vực an toàn, không có chướng ngại vật.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'numeric',
-        prompt: 'Một người đi xe đạp chuyển động thẳng đều trên quãng đường dài $s = 9\\,\\text{km}$ hết thời gian $t = 30\\,\\text{phút}$. Tính tốc độ $v$ của người đó theo đơn vị $\\text{km/h}$.',
-        latex_formula: 'v = \\frac{s}{t}',
-        correct_answer: '18',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'km/h',
-        hints: [
-          { level: 1, hint: 'Đổi 30 phút sang đơn vị giờ: $30\\,\\text{phút} = 0.5\\,\\text{h}$.' },
-          { level: 2, hint: 'Áp dụng công thức $v = \\frac{s}{t} = \\frac{9}{0.5}$.' }
-        ],
-        explanation: '$t = 30\\,\\text{phút} = 0.5\\,\\text{h} \\implies v = \\frac{s}{t} = \\frac{9}{0.5} = 18\\,\\text{km/h}$.',
-        difficulty: 'medium',
-        points: 10
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Đổi tốc độ $v = 15\\,\\text{m/s}$ sang đơn vị $\\text{km/h}$, giá trị tương ứng là:',
-        options: [
-          { id: 'A', text: '45 km/h' },
-          { id: 'B', text: '54 km/h' },
-          { id: 'C', text: '36 km/h' },
-          { id: 'D', text: '60 km/h' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Quy tắc đổi từ m/s sang km/h: nhân với 3.6.' }
-        ],
-        explanation: '$v = 15 \\cdot 3.6 = 54\\,\\text{km/h}$.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 8
-  // --------------------------------------------------------------------------
-  {
-    grade: 8,
-    tier: 'middle',
-    topicTitle: 'Áp suất chất lỏng & Lực đẩy Archimedes',
-    slug: 'lop-8-ap-suat-chat-long-archimedes',
-    topicDescription: 'Định luật Archimedes FA = d.V, áp suất chất lỏng p = d.h và điều kiện chìm nổi của vật thể.',
-    icon: 'Anchor',
-    lessonTitle: 'Định luật Archimedes và Điều kiện chìm - nổi',
-    lessonSlug: 'dinh-luat-archimedes-chim-noi',
-    contentMarkdown: `# Lực đẩy Archimedes
-
-## 1. Định luật Archimedes
-Một vật nhúng vào chất lỏng bị chất lỏng tác dụng một lực đẩy hướng thẳng đứng từ dưới lên trên, độ lớn của lực này bằng trọng lượng của phần chất lỏng bị vật chiếm chỗ:
-$$F_A = d \\cdot V$$
-
-Trong đó:
-- $F_A$: Lực đẩy Archimedes (đơn vị: $\\text{N}$)
-- $d$: Trọng lượng riêng của chất lỏng (đơn vị: $\\text{N/m}^3$)
-- $V$: Thể tích phần chất lỏng bị vật chiếm chỗ (đơn vị: $\\text{m}^3$)
-
-## 2. Điều kiện chìm - nổi
-So sánh trọng lực $P$ và lực đẩy Archimedes $F_A$:
-- $F_A < P \\implies$ Vật chìm xuống đáy.
-- $F_A = P \\implies$ Vật lơ lửng trong lòng chất lỏng hoặc nổi thăng bằng trên mặt thoáng.
-- $F_A > P \\implies$ Vật chuyển động nổi lên trên.`,
-    summary: 'Lực đẩy Archimedes FA = d.V. Vật chìm khi FA < P, lơ lửng/nổi khi FA = P, nổi lên khi FA > P.',
-    durationMinutes: 20,
-    parentGuide: {
-      summary: 'Lực đẩy Archimedes $F_A = d \\cdot V$ phụ thuộc vào trọng lượng riêng của chất lỏng và thể tích phần chất lỏng bị chiếm chỗ, không phụ thuộc vào độ sâu khi đã chìm hoàn toàn.',
-      misconceptions: [
-        'Nghĩ rằng vật càng lặn sâu xuống đáy hồ thì lực đẩy Archimedes tác dụng lên nó càng tăng lên.',
-        'Nhầm thể tích chiếm chỗ $V$ với toàn bộ thể tích của bình chứa nước.'
-      ],
-      guiding_questions: [
-        'Khi con bước xuống bể bơi ngập tới ngực, tại sao con cảm thấy bước đi nhẹ bẫng hơn trên cạn?',
-        'Tại sao thợ lặn biển phải đeo đai chì nặng quanh thắt lưng mới lặn sâu xuống được?'
-      ],
-      home_experiments: [
-        {
-          title: 'Kiểm chứng lực nâng của nước bằng dây thun',
-          materials: ['1 chai nước suối nhỏ đầy nước (330ml)', '1 sợi dây chun cao su dài', '1 xô nước sâu'],
-          steps: [
-            'Buộc sợi dây chun vào cổ chai nước.',
-            'Cầm đầu dây chun nhấc chai nước lên trong không khí, dùng thước đo độ dài dây chun dãn ra ($L_1$).',
-            'Hạ từ từ chai nước chìm vào trong xô nước, quan sát độ dài dây chun dãn ($L_2$).'
-          ],
-          expected_outcome: 'Dây chun co ngắn lại ($L_2 < L_1$) do nước tác dụng lực đẩy $F_A$ từ dưới lên.',
-          safety_notes: 'Tránh làm đổ nước ra sàn nhà.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'numeric',
-        prompt: 'Một khối kim loại có thể tích $V = 0.002\\,\\text{m}^3$ được nhúng chìm hoàn toàn trong nước có trọng lượng riêng $d = 10000\\,\\text{N/m}^3$. Tính độ lớn lực đẩy Archimedes $F_A$ tác dụng lên khối kim loại theo đơn vị Newton ($\\text{N}$).',
-        latex_formula: 'F_A = d \\cdot V',
-        correct_answer: '20',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'N',
-        hints: [
-          { level: 1, hint: 'Áp dụng định luật Archimedes: $F_A = d \\cdot V$.' },
-          { level: 2, hint: 'Thay số: $F_A = 10000 \\cdot 0.002$.' }
-        ],
-        explanation: '$F_A = d \\cdot V = 10000\\,\\text{N/m}^3 \\cdot 0.002\\,\\text{m}^3 = 20\\,\\text{N}$.',
-        difficulty: 'medium',
-        points: 10
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Khi một vật nổi thăng bằng trên mặt chất lỏng, mối quan hệ giữa trọng lượng $P$ của vật và lực đẩy Archimedes $F_A$ là:',
-        options: [
-          { id: 'A', text: '$F_A > P$', latex: 'F_A > P' },
-          { id: 'B', text: '$F_A < P$', latex: 'F_A < P' },
-          { id: 'C', text: '$F_A = P$', latex: 'F_A = P' },
-          { id: 'D', text: '$F_A = 0$', latex: 'F_A = 0' }
-        ],
-        correct_answer: 'C',
-        difficulty: 'medium',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Khi vật đã nổi thăng bằng (đứng yên), hai lực cùng phương ngược chiều tác dụng lên vật phải triệt tiêu nhau.' }
-        ],
-        explanation: 'Khi vật nổi thăng bằng, trọng lực và lực đẩy Archimedes cân bằng nhau, do đó $F_A = P$.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 9
-  // --------------------------------------------------------------------------
-  {
-    grade: 9,
-    tier: 'middle',
-    topicTitle: 'Định luật Ohm & Mạch điện một chiều',
-    slug: 'lop-9-dinh-luat-ohm-dien-hoc',
-    topicDescription: 'Định luật Ohm I = U/R, công thức điện trở tương đương mạch nối tiếp và song song.',
-    icon: 'Activity',
-    lessonTitle: 'Định luật Ohm cho đoạn mạch và Đoạn mạch nối tiếp, song song',
-    lessonSlug: 'dinh-luat-ohm-noi-tiep-song-song',
-    contentMarkdown: `# Điện học và Định luật Ohm
-
-## 1. Định luật Ohm
-Cường độ dòng điện chạy qua dây dẫn tỉ lệ thuận với hiệu điện thế đặt vào hai đầu dây và tỉ lệ nghịch với điện trở của dây:
-$$I = \\frac{U}{R} \\iff U = I \\cdot R$$
-
-Trong đó:
-- $I$: Cường độ dòng điện (Ampe - $\\text{A}$)
-- $U$: Hiệu điện thế (Vôn - $\\text{V}$)
-- $R$: Điện trở (Ôm - $\\Omega$)
-
-## 2. Đoạn mạch mắc nối tiếp
-- $I = I_1 = I_2$
-- $U = U_1 + U_2$
-- $R_{td} = R_1 + R_2$
-
-## 3. Đoạn mạch mắc song song
-- $U = U_1 = U_2$
-- $I = I_1 + I_2$
-- $\\frac{1}{R_{td}} = \\frac{1}{R_1} + \\frac{1}{R_2} \\iff R_{td} = \\frac{R_1 R_2}{R_1 + R_2}$`,
-    summary: 'Định luật Ohm: I = U/R. Nối tiếp: Rtd = R1 + R2. Song song: Rtd = (R1*R2)/(R1+R2).',
-    durationMinutes: 20,
-    parentGuide: {
-      summary: 'Định luật Ohm $I = U/R$ mô tả dòng điện tỉ lệ thuận với hiệu điện thế và tỉ lệ nghịch với điện trở. Đèn trong nhà mắc song song để nếu một bóng cháy thì các bóng khác vẫn sáng.',
-      misconceptions: [
-        'Học sinh nghĩ rằng dòng điện đi qua điện trở sẽ bị tiêu hao bớt electron và I giảm dần theo chiều dòng điện.',
-        'Nhầm lẫn công thức điện trở tương đương giữa mạch nối tiếp và song song.'
-      ],
-      guiding_questions: [
-        'Tại sao các thiết bị điện và bóng đèn trong nhà lại được mắc song song mà không phải nối tiếp?',
-        'Tại sao cầm bút thử điện cắm vào ổ điện thì đèn trong bút sáng nhưng người không bị giật?'
-      ],
-      home_experiments: [
-        {
-          title: 'Mô phỏng mạch đèn pin an toàn',
-          materials: ['1 viên pin tiểu 1.5V (AA hoặc AAA)', '1 bóng đèn LED nhỏ', '2 mẩu dây đồng bọc nhựa gọt 2 đầu'],
-          steps: [
-            'Nối cực dương pin vào chân dài của LED.',
-            'Nối cực âm pin vào chân ngắn của LED qua dây đồng.',
-            'Mạch kín: LED phát sáng. Tháo rời 1 đầu dây (mạch hở): LED tắt.'
-          ],
-          expected_outcome: 'Trẻ hiểu trực quan khái niệm mạch kín (dòng điện chạy qua) và mạch hở.',
-          safety_notes: 'Chỉ dùng pin 1.5V tiểu học sinh, TUYỆT ĐỐI KHÔNG làm thí nghiệm với điện lưới gia đình 220V.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'numeric',
-        prompt: 'Cho hai điện trở $R_1 = 20\\,\\Omega$ và $R_2 = 30\\,\\Omega$ mắc song song với nhau vào hiệu điện thế $U = 12\\,\\text{V}$. Tính điện trở tương đương $R_{td}$ của đoạn mạch theo đơn vị $\\Omega$.',
-        latex_formula: 'R_{td} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}',
-        correct_answer: '12',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'Ω',
-        hints: [
-          { level: 1, hint: 'Với mạch mắc song song hai điện trở: $R_{td} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}$.' },
-          { level: 2, hint: 'Thay số: $R_{td} = \\frac{20 \\cdot 30}{20 + 30} = \\frac{600}{50}$.' }
-        ],
-        explanation: '$R_{td} = \\frac{R_1 R_2}{R_1 + R_2} = \\frac{20 \\cdot 30}{50} = 12\\,\\Omega$.',
-        difficulty: 'medium',
-        points: 10
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Đặt một hiệu điện thế $U = 24\\,\\text{V}$ vào hai đầu điện trở $R = 8\\,\\Omega$. Cường độ dòng điện $I$ chạy qua điện trở là:',
-        options: [
-          { id: 'A', text: '3 A' },
-          { id: 'B', text: '192 A' },
-          { id: 'C', text: '0.33 A' },
-          { id: 'D', text: '16 A' }
-        ],
-        correct_answer: 'A',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Áp dụng định luật Ohm: $I = \\frac{U}{R}$.' }
-        ],
-        explanation: 'Theo định luật Ohm: $I = \\frac{U}{R} = \\frac{24}{8} = 3\\,\\text{A}$.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 10
-  // --------------------------------------------------------------------------
-  {
-    grade: 10,
-    tier: 'high',
-    topicTitle: 'Động lực học chất điểm & Các định luật Newton',
-    slug: 'lop-10-dong-luc-hoc-dinh-luat-newton',
-    topicDescription: 'Ba định luật Newton, chuyển động biến đổi đều, lực ma sát trượt và định luật bảo toàn cơ năng.',
-    icon: 'Compass',
-    lessonTitle: 'Ba định luật Newton và Định luật bảo toàn năng lượng',
-    lessonSlug: 'ba-dinh-luat-newton-bao-toan-nang-luong',
-    contentMarkdown: `# Cơ học cổ điển và Ba định luật Newton
-
-## 1. Định luật I Newton (Quán tính)
-Nếu một vật không chịu tác dụng của lực nào hoặc chịu tác dụng của các lực có hợp lực bằng không, thì vật đang đứng yên sẽ tiếp tục đứng yên, đang chuyển động sẽ tiếp tục chuyển động thẳng đều.
-
-## 2. Định luật II Newton
-Gia tốc của một vật cùng hướng với lực tác dụng lên vật. Độ lớn của gia tốc tỉ lệ thuận với độ lớn của lực và tỉ lệ nghịch với khối lượng của vật:
-$$\\vec{a} = \\frac{\\vec{F}_{net}}{m} \\iff \\vec{F}_{net} = m \\vec{a}$$
-
-Lực ma sát trượt:
-$$F_{mst} = \\mu_t \\cdot N$$
-
-## 3. Định luật III Newton (Tác dụng - Phản tác dụng)
-Trong mọi trường hợp, khi vật $A$ tác dụng lên vật $B$ một lực thì vật $B$ cũng tác dụng lại vật $A$ một lực. Hai lực này là hai lực trực đối:
-$$\\vec{F}_{A \\to B} = -\\vec{F}_{B \\to A}$$`,
-    summary: 'Ba định luật Newton: Fnet = ma, Fmst = mu*N, F_AB = -F_BA. Cơ năng W = Wd + Wt được bảo toàn.',
-    durationMinutes: 25,
-    parentGuide: {
-      summary: 'Ba định luật Newton là nền móng của cơ học cổ điển. Lực không phải là nguyên nhân duy trì chuyển động mà là nguyên nhân làm thay đổi vận tốc (tạo ra gia tốc a = F/m).',
-      misconceptions: [
-        'Vật đang chuyển động theo hướng nào thì bắt buộc phải có lực đẩy tác dụng theo hướng đó.',
-        'Nghĩ rằng lực ma sát luôn có hại và cản trở mọi chuyển động.'
-      ],
-      guiding_questions: [
-        'Tại sao khi ô tô phanh gấp, người ngồi trong xe lại bị xô dúi về phía trước?',
-        'Nếu mặt đất hoàn toàn trơn nhẵn không có ma sát, con người có thể bước đi được không?'
-      ],
-      home_experiments: [
-        {
-          title: 'Kiểm chứng quán tính với đồng xu và tấm bìa',
-          materials: ['1 cốc thủy tinh', '1 tấm bìa cứng vuông $8\\times 8\\text{cm}$', '1 đồng xu kim loại nặng'],
-          steps: [
-            'Đặt tấm bìa lên miệng cốc.',
-            'Đặt đồng xu lên trên tấm bìa, ngay trên miệng cốc.',
-            'Dùng ngón tay búng thật nhanh và dứt khoát vào mép tấm bìa.'
-          ],
-          expected_outcome: 'Tấm bìa bay đi theo phương ngang, đồng xu rơi thẳng đứng vào trong cốc do quán tính bảo toàn trạng thái đứng yên.',
-          safety_notes: 'Búng nhẹ tay vừa đủ lực để tấm bìa bay đi.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'numeric',
-        prompt: 'Một vật có khối lượng $m = 5\\,\\text{kg}$ đang đứng yên trên mặt sàn nằm ngang thì chịu tác dụng của một lực kéo nằm ngang $F = 25\\,\\text{N}$. Hệ số ma sát trượt giữa vật và sàn là $\\mu = 0.2$. Lấy $g = 10\\,\\text{m/s}^2$. Tính gia tốc $a$ của vật theo đơn vị $\\text{m/s}^2$.',
-        latex_formula: 'a = \\frac{F - \\mu m g}{m}',
-        correct_answer: '3',
-        numeric_tolerance: 0.02,
-        numeric_unit: 'm/s^2',
-        hints: [
-          { level: 1, hint: 'Tính áp lực $N = P = m \\cdot g$ và lực ma sát trượt: $F_{ms} = \\mu \\cdot N$.' },
-          { level: 2, hint: 'Áp dụng định luật II Newton theo phương ngang: $F - F_{ms} = m \\cdot a$.' },
-          { level: 3, hint: '$F_{ms} = 0.2 \\cdot 5 \\cdot 10 = 10\\,\\text{N} \\implies a = \\frac{25 - 10}{5} = 3.0\\,\\text{m/s}^2$.' }
-        ],
-        explanation: '$N = mg = 5 \\cdot 10 = 50\\,\\text{N} \\implies F_{ms} = 0.2 \\cdot 50 = 10\\,\\text{N} \\implies F_{net} = 25 - 10 = 15\\,\\text{N} \\implies a = \\frac{15}{5} = 3\\,\\text{m/s}^2$.',
-        difficulty: 'hard',
-        points: 15
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Theo định luật III Newton, cặp lực và phản lực:',
-        options: [
-          { id: 'A', text: 'Cùng tác dụng vào một vật nên triệt tiêu lẫn nhau' },
-          { id: 'B', text: 'Tác dụng vào hai vật khác nhau, cùng phương, ngược chiều và cùng độ lớn' },
-          { id: 'C', text: 'Xuất hiện không đồng thời' },
-          { id: 'D', text: 'Luôn luôn có độ lớn khác nhau' }
-        ],
-        correct_answer: 'B',
-        difficulty: 'medium',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Lực và phản lực đặt vào hai vật khác nhau hay cùng một vật?' }
-        ],
-        explanation: 'Lực và phản lực là cặp lực tương tác giữa hai vật: đặt vào hai vật khác nhau, cùng phương, ngược chiều, cùng độ lớn và xuất hiện đồng thời.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 11
-  // --------------------------------------------------------------------------
-  {
-    grade: 11,
-    tier: 'high',
-    topicTitle: 'Dao động điều hòa & Sóng cơ học',
-    slug: 'lop-11-dao-dong-dieu-hoa-song-co',
-    topicDescription: 'Phương trình dao động điều hòa x = A cos(wt+phi), con lắc lò xo, con lắc đơn và truyền sóng cơ.',
-    icon: 'Radio',
-    lessonTitle: 'Phương trình dao động điều hòa và Con lắc lò xo',
-    lessonSlug: 'dao-dong-dieu-hoa-con-lac-lo-xo',
-    contentMarkdown: `# Dao động điều hòa
-
-## 1. Phương trình dao động điều hòa
-$$x = A \\cos(\\omega t + \\varphi)$$
-
-Trong đó:
-- $x$: Li độ của dao động ($\\text{cm}$ hoặc $\\text{m}$)
-- $A$: Biên độ dao động ($A > 0$)
-- $\\omega$: Tần số góc ($\\text{rad/s}$)
-- $(\\omega t + \\varphi)$: Pha dao động tại thời điểm $t$ ($\\text{rad}$)
-- $\\varphi$: Pha ban đầu tại $t = 0$ ($\\text{rad}$)
-
-## 2. Vận tốc và Gia tốc
-$$v = x' = -\\omega A \\sin(\\omega t + \\varphi)$$
-$$a = v' = -\\omega^2 A \\cos(\\omega t + \\varphi) = -\\omega^2 x$$
-
-## 3. Con lắc lò xo
-Tần số góc và chu kì của con lắc lò xo treo hoặc nằm ngang:
-$$\\omega = \\sqrt{\\frac{k}{m}} \\implies T = \\frac{2\\pi}{\\omega} = 2\\pi \\sqrt{\\frac{m}{k}}$$`,
-    summary: 'Dao động điều hòa: x = A cos(wt+phi). Vận tốc v = -wA sin(wt+phi). Con lắc lò xo: T = 2*pi*sqrt(m/k).',
-    durationMinutes: 25,
-    parentGuide: {
-      summary: 'Dao động điều hòa là dao động mà li độ là hàm sin hoặc cosin của thời gian. Chu kì con lắc lò xo $T = 2\\pi\\sqrt{m/k}$ chỉ phụ thuộc khối lượng và độ cứng lò xo, không phụ thuộc biên độ.',
-      misconceptions: [
-        'Biên độ dao động càng lớn thì chu kì dao động càng dài.',
-        'Tại vị trí cân bằng thì gia tốc của vật đạt giá trị cực đại (thực tế tại VTCB x=0 nên a=0).'
-      ],
-      guiding_questions: [
-        'Khi con ngồi trên xích đu đung đưa, vị trí nào con thấy mình đạt vận tốc lớn nhất, vị trí nào con tạm dừng?',
-        'Tại sao khi một đoàn quân hành quân bước đều qua cầu treo thì lại bị cấm bước đều (hiện tượng cộng hưởng)?'
-      ],
-      home_experiments: [
-        {
-          title: 'Khảo sát chu kì con lắc đơn tại gia',
-          materials: ['1 sợi chỉ dài 1 mét', '1 chùm chìa khóa nhỏ làm vật nặng', 'Đồng hồ bấm giờ điện thoại'],
-          steps: [
-            'Buộc chùm chìa khóa vào sợi chỉ, cố định đầu kia lên móc treo.',
-            'Kéo lệch góc nhỏ ($\\approx 10^\\circ$), thả nhẹ không vận tốc đầu.',
-            'Bấm giờ 10 dao động toàn phần, chia 10 để tính chu kì $T_1$. Cắt ngắn dây còn 0.25m và đo lại $T_2$.'
-          ],
-          expected_outcome: 'Khi chiều dài giảm 4 lần, chu kì giảm 2 lần ($T \\sim \\sqrt{l}$).',
-          safety_notes: 'Treo móc chắc chắn tránh rơi chìa khóa.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'numeric',
-        prompt: 'Một con lắc lò xo có độ cứng $k = 100\\,\\text{N/m}$ gắn với vật nặng có khối lượng $m = 0.25\\,\\text{kg}$. Lấy $\\pi^2 \\approx 10$. Tính chu kì dao động riêng $T$ của con lắc theo đơn vị giây ($\\text{s}$).',
-        latex_formula: 'T = 2\\pi \\sqrt{\\frac{m}{k}}',
-        correct_answer: '0.314',
-        numeric_tolerance: 0.05,
-        numeric_unit: 's',
-        hints: [
-          { level: 1, hint: 'Tần số góc của con lắc lò xo: $\\omega = \\sqrt{\\frac{k}{m}}$.' },
-          { level: 2, hint: 'Chu kì dao động: $T = \\frac{2\\pi}{\\omega} = 2\\pi \\sqrt{\\frac{m}{k}}$.' },
-          { level: 3, hint: '$\\omega = \\sqrt{\\frac{100}{0.25}} = \\sqrt{400} = 20\\,\\text{rad/s} \\implies T = \\frac{2\\pi}{20} = \\frac{\\pi}{10} \\approx 0.314\\,\\text{s}$.' }
-        ],
-        explanation: '$\\omega = \\sqrt{100 / 0.25} = 20\\,\\text{rad/s} \\implies T = \\frac{2\\pi}{20} \\approx 0.314\\,\\text{s}$.',
-        difficulty: 'hard',
-        points: 15
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Một chất điểm dao động điều hòa theo phương trình $x = 8 \\cos(5\\pi t - \\frac{\\pi}{6})\\,\\text{cm}$. Biên độ dao động $A$ và pha ban đầu $\\varphi$ của dao động lần lượt là:',
-        options: [
-          { id: 'A', text: '$A = 8\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$', latex: 'A = 8\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}' },
-          { id: 'B', text: '$A = 8\\,\\text{cm},\\; \\varphi = 5\\pi\\,\\text{rad}$', latex: 'A = 8\\,\\text{cm},\\; \\varphi = 5\\pi\\,\\text{rad}' },
-          { id: 'C', text: '$A = 16\\,\\text{cm},\\; \\varphi = \\frac{\\pi}{6}\\,\\text{rad}$', latex: 'A = 16\\,\\text{cm},\\; \\varphi = \\frac{\\pi}{6}\\,\\text{rad}' },
-          { id: 'D', text: '$A = 5\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$', latex: 'A = 5\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}' }
-        ],
-        correct_answer: 'A',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Đối chiếu phương trình dao động với dạng tổng quát: $x = A \\cos(\\omega t + \\varphi)$.' }
-        ],
-        explanation: 'Đối chiếu dạng chuẩn $x = A \\cos(\\omega t + \\varphi)$, ta có $A = 8\\,\\text{cm}$ và $\\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$.'
-      }
-    ]
-  },
-
-  // --------------------------------------------------------------------------
-  // GRADE 12
-  // --------------------------------------------------------------------------
-  {
-    grade: 12,
-    tier: 'high',
-    topicTitle: 'Thuyết động học phân tử chất khí & Vật lý Hạt nhân',
-    slug: 'lop-12-khi-ly-tuong-vat-ly-hat-nhan',
-    topicDescription: 'Phương trình trạng thái khí lý tưởng pV = nRT, các định luật chất khí và năng lượng liên kết hạt nhân.',
-    icon: 'Atom',
-    lessonTitle: 'Phương trình trạng thái khí lý tưởng và Năng lượng liên kết hạt nhân',
-    lessonSlug: 'khi-ly-tuong-nang-luong-hat-nhan',
-    contentMarkdown: `# Khí lý tưởng & Vật lý Hạt nhân
-
-## 1. Phương trình Clapeyron - Mendeleev
-$$p V = n R T = \\frac{m}{M} R T$$
-
-Trong đó:
-- $p$: Áp suất chất khí ($\\text{Pa}$ hoặc $\\text{atm}$)
-- $V$: Thể tích khối khí ($\\text{m}^3$)
-- $T$: Nhiệt độ tuyệt đối theo thang Kelvin ($T = t^\\circ\\text{C} + 273$)
-- $R \\approx 8.31\\,\\text{J/(mol}\\cdot\\text{K)}$: Hằng số khí lý tưởng
-
-Quá trình đẳng tích (Định luật Charles):
-$$\\frac{p_1}{T_1} = \\frac{p_2}{T_2}$$
-
-## 2. Năng lượng liên kết hạt nhân
-Độ hụt khối lượng:
-$$\\Delta m = [Z m_p + (A - Z) m_n] - m_X$$
-
-Hệ thức Einstein về năng lượng:
-$$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
-    summary: 'Phương trình pV = nRT. Đẳng tích: p1/T1 = p2/T2. Năng lượng liên kết hạt nhân: Elk = Delta_m * c^2.',
-    durationMinutes: 25,
-    parentGuide: {
-      summary: 'Áp suất, thể tích và nhiệt độ tuyệt đối của khối khí tuân theo pV/T = const. Năng lượng hạt nhân khổng lồ giải phóng nhờ độ hụt khối lượng chuyển hóa thành năng lượng theo hệ thức E = mc^2 của Einstein.',
-      misconceptions: [
-        'Nhiệt độ 0 độ C nghĩa là các phân tử khí đã dừng chuyển động nhiệt hoàn toàn (điểm dừng là 0 K = -273.15 độ C).',
-        'Nghĩ rằng khối lượng của hạt nhân bằng đúng tổng khối lượng của các proton và neutron riêng lẻ cấu thành nên nó.'
-      ],
-      guiding_questions: [
-        'Tại sao săm lốp xe đạp bơm căng để ngoài trời nắng gắt mùa hè lại dễ bị nổ?',
-        'Mặt Trời đã tỏa sáng hàng tỉ năm qua bằng loại phản ứng hạt nhân nào?'
-      ],
-      home_experiments: [
-        {
-          title: 'Quả bóng bàn phồng lại nhờ nhiệt độ',
-          materials: ['1 quả bóng bàn bị móp lõm (không bị thủng rách)', '1 cốc nước nóng khoảng $80^\\circ\\text{C}$'],
-          steps: [
-            'Thả quả bóng bàn móp vào cốc nước nóng.',
-            'Quan sát trong 30-60 giây.'
-          ],
-          expected_outcome: 'Không khí bên trong quả bóng nhận nhiệt, nhiệt độ T tăng làm áp suất p tăng, đẩy vỏ bóng phồng căng trở lại hình dạng cầu ban đầu.',
-          safety_notes: 'Thao tác với nước nóng cẩn thận tránh bỏng.'
-        }
-      ]
-    },
-    questions: [
-      {
-        question_type: 'numeric',
-        prompt: 'Một bình kín có dung tích không đổi $V$ chứa lượng khí ở nhiệt độ $t_1 = 27^\\circ\\text{C}$ và áp suất $p_1 = 1.5\\,\\text{atm}$. Đun nóng bình khí đến nhiệt độ $t_2 = 127^\\circ\\text{C}$. Tính áp suất $p_2$ của lượng khí trong bình theo đơn vị $\\text{atm}$.',
-        latex_formula: 'p_2 = p_1 \\cdot \\frac{T_2}{T_1}',
-        correct_answer: '2.0',
-        numeric_tolerance: 0.05,
-        numeric_unit: 'atm',
-        hints: [
-          { level: 1, hint: 'Đổi nhiệt độ Celsius sang thang Kelvin: $T = t + 273$.' },
-          { level: 2, hint: '$T_1 = 27 + 273 = 300\\,\\text{K}$; $T_2 = 127 + 273 = 400\\,\\text{K}$.' },
-          { level: 3, hint: 'Áp dụng định luật Charles (đẳng tích): $\\frac{p_1}{T_1} = \\frac{p_2}{T_2} \\implies p_2 = 1.5 \\cdot \\frac{400}{300} = 2.0\\,\\text{atm}$.' }
-        ],
-        explanation: '$T_1 = 300\\,\\text{K}, T_2 = 400\\,\\text{K} \\implies p_2 = p_1 \\frac{T_2}{T_1} = 1.5 \\cdot \\frac{400}{300} = 2.0\\,\\text{atm}$.',
-        difficulty: 'hard',
-        points: 15
-      },
-      {
-        question_type: 'mcq',
-        prompt: 'Hệ thức nổi tiếng của Einstein về mối liên hệ giữa năng lượng $E$ và khối lượng $m$ là:',
-        options: [
-          { id: 'A', text: '$E = m c^2$', latex: 'E = m c^2' },
-          { id: 'B', text: '$E = \\frac{1}{2} m c^2$', latex: 'E = \\frac{1}{2} m c^2' },
-          { id: 'C', text: '$E = m c$', latex: 'E = m c' },
-          { id: 'D', text: '$E = \\frac{m}{c^2}$', latex: 'E = \\frac{m}{c^2}' }
-        ],
-        correct_answer: 'A',
-        difficulty: 'easy',
-        points: 10,
-        hints: [
-          { level: 1, hint: 'Công thức tương đối tính hẹp của Albert Einstein!' }
-        ],
-        explanation: 'Hệ thức Einstein: $E = m c^2$, trong đó $c \\approx 3 \\cdot 10^8\\,\\text{m/s}$ là tốc độ ánh sáng trong chân không.'
-      }
-    ]
-  }
-,
-
-  // ==========================================================================
-  // COMPREHENSIVE EXPANDED CURRICULUM FOR ALL 12 GRADES (GDPT 2018)
-  // ==========================================================================
-  {
-    "grade": 1,
-    "tier": "primary",
-    "topicTitle": "Nóng, lạnh và các mùa trong năm",
-    "slug": "lop-1-nong-lanh-thoi-tiet",
-    "topicDescription": "Cảm nhận nhiệt độ cơ thể, thời tiết bốn mùa và cách giữ ấm, làm mát cơ thể.",
-    "icon": "Thermometer",
-    "lessonTitle": "Cảm nhận sự nóng và lạnh",
-    "lessonSlug": "cam-nhan-nong-lanh",
-    "contentMarkdown": "# Nóng và lạnh xung quanh em\n\nMỗi ngày, chúng ta đều cảm nhận được sự nóng và lạnh:\n- Mùa hè ánh nắng chói chang, không khí **nóng bức**, ta thích ăn kem mát lạnh và bật quạt.\n- Mùa đông có gió bấc thổi, thời tiết **lạnh giá**, ta cần mặc áo len và đội mũ ấm để bảo vệ cơ thể.\n- Một bát canh vừa nấu xong tỏa khói nghi ngút là vật **nóng**, còn viên đá lấy từ tủ lạnh ra là vật **lạnh**.\n\nĐể biết chính xác vật nóng hay lạnh bao nhiêu, người ta sử dụng chiếc **nhiệt kế**!",
-    "summary": "Thời tiết và đồ vật có trạng thái nóng hoặc lạnh. Ta cần giữ ấm khi trời lạnh và làm mát khi trời nóng.",
-    "durationMinutes": 15,
+    "grade": 6,
+    "tier": "middle",
+    "topicTitle": "Lực, Khối lượng riêng & Trọng lượng",
+    "slug": "lop-6-khoi-luong-rieng-trong-luong",
+    "topicDescription": "Công thức tính khối lượng riêng D = m/V, trọng lượng P = 10m và phương pháp đo thể tích bình chia độ.",
+    "icon": "Scale",
+    "lessonTitle": "Khối lượng riêng và Trọng lượng riêng của vật thể",
+    "lessonSlug": "khoi-luong-rieng-va-trong-luong-rieng",
+    "contentMarkdown": "# Khối lượng riêng và Trọng lượng\n\n## 1. Khối lượng riêng\nKhối lượng riêng của một chất được xác định bằng khối lượng của một đơn vị thể tích ($1\\,\\text{m}^3$) chất đó:\n$$D = \\frac{m}{V}$$\n\nTrong đó:\n- $D$: Khối lượng riêng (đơn vị: $\\text{kg/m}^3$)\n- $m$: Khối lượng của vật (đơn vị: $\\text{kg}$)\n- $V$: Thể tích của vật (đơn vị: $\\text{m}^3$)\n\n## 2. Trọng lượng và Trọng lượng riêng\nTrọng lượng $P$ là độ lớn lực hút của Trái Đất tác dụng lên vật:\n$$P = 10 \\cdot m$$\n\nTrọng lượng riêng $d$ là trọng lượng của một mét khối chất đó:\n$$d = \\frac{P}{V} = 10 \\cdot D$$ (đơn vị: $\\text{N/m}^3$)",
+    "summary": "Khối lượng riêng D = m/V (kg/m3). Trọng lượng P = 10m (N). Trọng lượng riêng d = 10D (N/m3).",
+    "durationMinutes": 20,
     "parentGuide": {
-      "summary": "Dạy trẻ phân biệt cảm giác nóng - lạnh từ môi trường và các vật dụng, hình thành ý thức an toàn tránh bị bỏng hoặc nhiễm lạnh.",
+      "summary": "Khối lượng riêng ($D$) là khối lượng của $1\\,\\text{m}^3$ chất đó ($D = m/V$). Trọng lượng ($P$) là độ lớn lực hút Trái Đất tác dụng lên vật ($P = 10m$).",
       "misconceptions": [
-        "Trẻ nghĩ nước đá tỏa ra khói là do nước đá đang sôi nóng giống như nồi canh.",
-        "Trẻ nghĩ mặc nhiều áo ấm sẽ tự tạo ra nhiệt chứ không phải giữ nhiệt cơ thể."
+        "Nhầm lẫn giữa khối lượng (tính bằng kg) và trọng lượng (lực, tính bằng Newton - N).",
+        "Tin rằng 1 kg sắt nặng hơn 1 kg bông."
       ],
       "guiding_questions": [
-        "Khi con chạm tay vào cốc nước đá, con thấy tay mình ấm lên hay mát lạnh?",
-        "Vì sao mùa đông ra đường con phải mặc áo khoác dày và quàng khăn ấm?"
+        "Nếu mẹ có 1 kg sắt và 1 kg bông gòn, vật nào có thể tích lớn hơn và vì sao?",
+        "Làm thế nào để đo thể tích của một hòn đá có hình dạng góc cạnh gồ ghề bằng bình chia độ?"
       ],
       "home_experiments": [
         {
-          "title": "Khám phá sự truyền nhiệt qua chiếc thìa",
+          "title": "Đo thể tích hòn sỏi bằng bình chia độ",
           "materials": [
-            "1 chiếc thìa kim loại nhỏ",
-            "1 cốc nước ấm an toàn khoảng 40 độ C"
+            "1 bình chia độ hoặc cốc đong có vạch ml",
+            "Nước sạch",
+            "1 hòn sỏi nhỏ"
           ],
           "steps": [
-            "Cho thìa kim loại vào cốc nước ấm trong 1 phút.",
-            "Bảo trẻ chạm nhẹ vào cán thìa phía trên mặt nước và cảm nhận."
+            "Đổ nước vào bình đến mức $V_1 = 150\\,\\text{ml}$.",
+            "Thả nhẹ hòn sỏi chìm hoàn toàn vào nước, nước dâng lên mức $V_2 = 195\\,\\text{ml}$.",
+            "Tính thể tích hòn sỏi: $V = V_2 - V_1 = 45\\,\\text{ml} = 45\\,\\text{cm}^3$."
           ],
-          "expected_outcome": "Cán thìa ấm lên do nhiệt truyền từ nước nóng qua kim loại đến tay trẻ.",
-          "safety_notes": "Dùng nước ấm vừa phải, tuyệt đối không dùng nước sôi tránh gây bỏng cho trẻ."
+          "expected_outcome": "Học sinh hiểu phương pháp thể tích chiếm chỗ để đo thể tích vật thể hình dạng bất kỳ.",
+          "safety_notes": "Thả sỏi nhẹ tay tránh làm vỡ cốc thủy tinh."
         }
       ]
     },
     "questions": [
       {
         "question_type": "mcq",
-        "prompt": "Đồ vật nào dưới đây cho ta cảm giác lạnh buốt khi chạm tay vào?",
+        "prompt": "Một vật có khối lượng $m = 350\\,\\text{g}$ thì trọng lượng $P$ của nó trên mặt đất xấp xỉ bằng bao nhiêu?",
         "options": [
           {
             "id": "A",
-            "text": "Bát cháo vừa nấu sôi"
+            "text": "35 N"
           },
           {
             "id": "B",
-            "text": "Viên đá lạnh lấy từ tủ đông"
+            "text": "3.5 N"
           },
           {
             "id": "C",
-            "text": "Chiếc áo len phơi ngoài nắng"
+            "text": "3500 N"
           },
           {
             "id": "D",
-            "text": "Bình nước ấm của mẹ"
+            "text": "0.35 N"
           }
         ],
         "correct_answer": "B",
@@ -1190,74 +99,276 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
         "hints": [
           {
             "level": 1,
-            "hint": "Vật nào thường được cho vào cốc nước mía để giải khát trong ngày hè nóng nực?"
+            "hint": "Đổi khối lượng ra kg trước: $350\\,\\text{g} = 0.35\\,\\text{kg}$."
+          },
+          {
+            "level": 2,
+            "hint": "Áp dụng công thức liên hệ trọng lượng và khối lượng: $P = 10 \\cdot m$."
           }
         ],
-        "explanation": "Viên đá lạnh ở nhiệt độ dưới 0 độ C lấy nhiệt từ tay ta làm ta cảm thấy lạnh buốt."
+        "explanation": "$m = 350\\,\\text{g} = 0.35\\,\\text{kg} \\implies P = 10 \\cdot m = 10 \\cdot 0.35 = 3.5\\,\\text{N}$."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một khối nhôm có thể tích $V = 0.04\\,\\text{m}^3$ và khối lượng riêng của nhôm là $D = 2700\\,\\text{kg/m}^3$. Tính khối lượng $m$ của khối nhôm theo đơn vị $\\text{kg}$.",
+        "latex_formula": "m = D \\cdot V",
+        "correct_answer": "108",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "kg",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Từ công thức $D = \\frac{m}{V}$, suy ra công thức tính khối lượng $m = D \\cdot V$."
+          },
+          {
+            "level": 2,
+            "hint": "Thay số: $m = 2700 \\cdot 0.04$."
+          }
+        ],
+        "explanation": "$m = D \\cdot V = 2700 \\cdot 0.04 = 108\\,\\text{kg}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Một khối gỗ hình hộp chữ nhật có kích thước dài $20\\,\\text{cm}$, rộng $10\\,\\text{cm}$, cao $5\\,\\text{cm}$. Thể tích $V$ của khối gỗ đó bằng bao nhiêu lít?",
+        "options": [
+          {
+            "id": "A",
+            "text": "1 lít"
+          },
+          {
+            "id": "B",
+            "text": "10 lít"
+          },
+          {
+            "id": "C",
+            "text": "0.1 lít"
+          },
+          {
+            "id": "D",
+            "text": "1000 lít"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Tính thể tích theo cm khối: $V = 20 \\times 10 \\times 5 = 1000\\,\\text{cm}^3$."
+          },
+          {
+            "level": 2,
+            "hint": "Quy đổi: $1\\,\\text{lít} = 1\\,\\text{dm}^3 = 1000\\,\\text{cm}^3$."
+          }
+        ],
+        "explanation": "$V = 20 \\times 10 \\times 5 = 1000\\,\\text{cm}^3 = 1\\,\\text{dm}^3 = 1\\,\\text{lít}$."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Khối lượng riêng của nước là $D = 1000\\,\\text{kg/m}^3$. Tính khối lượng $m$ của $1.5\\,\\text{m}^3$ nước theo đơn vị $\\text{kg}$.",
+        "latex_formula": "m = D \\cdot V",
+        "correct_answer": "1500",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "kg",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Khối lượng được tính theo công thức $m = D \\cdot V$."
+          },
+          {
+            "level": 2,
+            "hint": "Tính: $m = 1000 \\cdot 1.5$."
+          }
+        ],
+        "explanation": "$m = 1000 \\cdot 1.5 = 1500\\,\\text{kg}$.",
+        "difficulty": "easy",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Thả một quả cầu kim loại chìm hoàn toàn vào bình chia độ chứa sẵn $120\\,\\text{cm}^3$ nước thì mực nước dâng lên mức $175\\,\\text{cm}^3$. Thể tích của quả cầu là bao nhiêu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "55 cm3"
+          },
+          {
+            "id": "B",
+            "text": "295 cm3"
+          },
+          {
+            "id": "C",
+            "text": "120 cm3"
+          },
+          {
+            "id": "D",
+            "text": "175 cm3"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Thể tích vật rắn bằng độ tăng thể tích của nước trong bình: $V = V_2 - V_1$."
+          }
+        ],
+        "explanation": "$V = 175 - 120 = 55\\,\\text{cm}^3$."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một phi hành gia có trọng lượng trên mặt đất là $P = 600\\,\\text{N}$. Trọng lực trên Mặt Trăng xấp xỉ bằng $1/6$ trên Trái Đất. Tính trọng lượng của phi hành gia đó khi đứng trên Mặt Trăng theo đơn vị $\\text{N}$.",
+        "correct_answer": "100",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "N",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Trọng lượng trên Mặt Trăng bằng trọng lượng trên Trái Đất chia cho 6."
+          }
+        ],
+        "explanation": "$P_{\\text{MT}} = 600 / 6 = 100\\,\\text{N}$. Khối lượng không đổi nhưng trọng lượng giảm 6 lần.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Đơn vị đo chuẩn của trọng lượng riêng trong hệ thống đo lường quốc tế (SI) là gì?",
+        "options": [
+          {
+            "id": "A",
+            "text": "N/m3"
+          },
+          {
+            "id": "B",
+            "text": "kg/m3"
+          },
+          {
+            "id": "C",
+            "text": "N/m2"
+          },
+          {
+            "id": "D",
+            "text": "J/m3"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Trọng lượng riêng $d = P / V$, trong đó $P$ đo bằng Newton (N), $V$ đo bằng mét khối (m3)."
+          }
+        ],
+        "explanation": "Trọng lượng riêng $d = \\frac{P}{V}$ có đơn vị là $\\text{N/m}^3$."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một khối sắt có thể tích $V = 0.02\\,\\text{m}^3$ và khối lượng riêng $D = 7800\\,\\text{kg/m}^3$. Lấy $P = 10 \\cdot m$, tính trọng lượng $P$ của khối sắt theo đơn vị $\\text{N}$.",
+        "latex_formula": "P = 10 \\cdot D \\cdot V",
+        "correct_answer": "1560",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "N",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Tìm khối lượng: $m = D \\cdot V = 7800 \\cdot 0.02 = 156\\,\\text{kg}$."
+          },
+          {
+            "level": 2,
+            "hint": "Tính trọng lượng: $P = 10 \\cdot m = 10 \\cdot 156$."
+          }
+        ],
+        "explanation": "$m = 7800 \\cdot 0.02 = 156\\,\\text{kg} \\implies P = 10 \\cdot 156 = 1560\\,\\text{N}$.",
+        "difficulty": "hard",
+        "points": 15
       }
     ]
   },
-
   {
-    "grade": 1,
-    "tier": "primary",
-    "topicTitle": "Âm thanh trong tự nhiên & Cuộc sống",
-    "slug": "lop-1-am-thanh-tu-nhien",
-    "topicDescription": "Nhận biết các âm thanh to, nhỏ, trầm, bổng từ thiên nhiên và các phương tiện quanh em.",
-    "icon": "Volume2",
-    "lessonTitle": "Lắng nghe thế giới âm thanh",
-    "lessonSlug": "lang-nghe-am-thanh",
-    "contentMarkdown": "# Thế giới âm thanh muôn màu\n\nMỗi sớm mai thức dậy, em nghe thấy tiếng chim hót líu lo, tiếng gà trống gáy vang, tiếng xe cộ chạy rộn ràng trên đường.\n\nÂm thanh có thể rất đa dạng:\n- Có âm thanh **dịu êm** như tiếng mẹ ru, tiếng lá cây xào xạc.\n- Có âm thanh **to vang** như tiếng còi cứu hỏa, tiếng sấm sét.\n- Âm thanh giúp con người giao tiếp, cảnh báo nguy hiểm và thưởng thức âm nhạc tươi vui.",
-    "summary": "Âm thanh có ở khắp nơi quanh ta với mức độ to nhỏ khác nhau, giúp con người nhận biết thế giới.",
-    "durationMinutes": 15,
+    "grade": 7,
+    "tier": "middle",
+    "topicTitle": "Tốc độ, Chuyển động & Sóng âm",
+    "slug": "lop-7-toc-do-chuyen-dong",
+    "topicDescription": "Định nghĩa tốc độ v = s/t, chuyển đổi đơn vị km/h sang m/s và đọc đồ thị quãng đường - thời gian.",
+    "icon": "Gauge",
+    "lessonTitle": "Tốc độ chuyển động và Đồ thị Quãng đường - Thời gian",
+    "lessonSlug": "toc-do-chuyen-dong-do-thi",
+    "contentMarkdown": "# Tốc độ chuyển động\n\n## 1. Công thức tính tốc độ\nTốc độ là đại lượng đặc trưng cho sự nhanh, chậm của chuyển động:\n$$v = \\frac{s}{t}$$\n\nTrong đó:\n- $v$: Tốc độ chuyển động ($\\text{m/s}$ hoặc $\\text{km/h}$)\n- $s$: Quãng đường đi được ($\\text{m}$ hoặc $\\text{km}$)\n- $t$: Thời gian đi hết quãng đường đó ($\\text{s}$ hoặc $\\text{h}$)\n\n## 2. Quy tắc đổi đơn vị\n$$1\\,\\text{m/s} = 3.6\\,\\text{km/h} \\iff 1\\,\\text{km/h} = \\frac{1}{3.6}\\,\\text{m/s}$$\n\n## 3. Đồ thị Quãng đường - Thời gian ($s-t$)\n- Đường biểu diễn dốc lên: vật chuyển động thẳng đều với tốc độ không đổi.\n- Đường nằm ngang: vật đứng yên ($s$ không đổi theo thời gian).",
+    "summary": "Tốc độ v = s/t. Đổi đơn vị: 1 m/s = 3.6 km/h. Đồ thị s-t dốc lên là chuyển động, nằm ngang là đứng yên.",
+    "durationMinutes": 20,
     "parentGuide": {
-      "summary": "Giúp trẻ phát triển thính giác, học cách phân biệt tiếng ồn có hại và âm thanh tự nhiên dễ chịu.",
+      "summary": "Tốc độ $v = s/t$ cho biết sự nhanh chậm của chuyển động. Đồ thị quãng đường - thời gian dốc lên là chuyển động đều, nằm ngang là vật đứng yên.",
       "misconceptions": [
-        "Trẻ nghĩ những âm thanh quá to kéo dài chỉ gây khó chịu chứ không làm hỏng thính giác.",
-        "Trẻ nghĩ tiếng động vật phát ra không phải là âm thanh."
+        "Nhầm lẫn giữa tốc độ tức thời tại 1 thời điểm với tốc độ trung bình trên toàn bộ chuyến đi.",
+        "Nghĩ rằng đồ thị s-t nằm ngang nghĩa là vật đang chuyển động thẳng đều."
       ],
       "guiding_questions": [
-        "Con thích nghe tiếng chim hót buổi sáng hay tiếng còi xe inh ỏi ngoài đường hơn?",
-        "Khi em bé đang ngủ say, chúng ta nên nói chuyện thì thầm hay hét thật to?"
+        "Nếu con đi xe bus từ nhà tới trường dài 6 km hết 20 phút, tốc độ trung bình của xe bus là bao nhiêu km/h?",
+        "Khi nhìn vào đồ thị $s-t$, đoạn nào nằm ngang thì người đi xe đang làm gì?"
       ],
       "home_experiments": [
         {
-          "title": "Điện thoại dây cốc giấy kỳ diệu",
+          "title": "Bấm giờ tính tốc độ đi bộ",
           "materials": [
-            "2 chiếc cốc giấy",
-            "1 sợi chỉ dài khoảng 3 mét",
-            "2 que tăm nhỏ"
+            "1 chiếc thước dây đo cự ly",
+            "Điện thoại thông minh có ứng dụng bấm giờ (Stopwatch)"
           ],
           "steps": [
-            "Chọc một lỗ nhỏ dưới đáy mỗi cốc, xỏ sợi chỉ qua và buộc vào que tăm để giữ chặt.",
-            "Hai mẹ con cầm hai đầu cốc, kéo sợi chỉ thật căng thẳng.",
-            "Một người nói nhỏ vào cốc, người kia áp miệng cốc vào tai để lắng nghe."
+            "Dùng thước đo một đoạn đường thẳng trong hành lang hoặc sân dài $s = 15\\,\\text{m}$.",
+            "Con đi bộ bình thường từ vạch xuất phát đến đích, phụ huynh bấm giờ thời gian $t$ (giây).",
+            "Tính tốc độ: $v = 15 / t$ (m/s), sau đó nhân 3.6 để ra km/h."
           ],
-          "expected_outcome": "Tiếng thì thầm truyền qua đáy cốc làm rung sợi chỉ và truyền rõ mồn một đến tai người kia.",
-          "safety_notes": "Cẩn thận khi dùng que nhọn chọc thủng đáy cốc giấy."
+          "expected_outcome": "Học sinh tự trải nghiệm quá trình thu thập số liệu thực nghiệm và tính tốc độ.",
+          "safety_notes": "Đi bộ trong khu vực an toàn, không có chướng ngại vật."
         }
       ]
     },
     "questions": [
       {
+        "question_type": "numeric",
+        "prompt": "Một người đi xe đạp chuyển động thẳng đều trên quãng đường dài $s = 9\\,\\text{km}$ hết thời gian $t = 30\\,\\text{phút}$. Tính tốc độ $v$ của người đó theo đơn vị $\\text{km/h}$.",
+        "latex_formula": "v = \\frac{s}{t}",
+        "correct_answer": "18",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "km/h",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Đổi 30 phút sang đơn vị giờ: $30\\,\\text{phút} = 0.5\\,\\text{h}$."
+          },
+          {
+            "level": 2,
+            "hint": "Áp dụng công thức $v = \\frac{s}{t} = \\frac{9}{0.5}$."
+          }
+        ],
+        "explanation": "$t = 30\\,\\text{phút} = 0.5\\,\\text{h} \\implies v = \\frac{s}{t} = \\frac{9}{0.5} = 18\\,\\text{km/h}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
         "question_type": "mcq",
-        "prompt": "Âm thanh nào sau đây phát ra từ thiên nhiên tự nhiên?",
+        "prompt": "Đổi tốc độ $v = 15\\,\\text{m/s}$ sang đơn vị $\\text{km/h}$, giá trị tương ứng là:",
         "options": [
           {
             "id": "A",
-            "text": "Tiếng còi ô tô bóp inh ỏi"
+            "text": "45 km/h"
           },
           {
             "id": "B",
-            "text": "Tiếng suối chảy róc rách"
+            "text": "54 km/h"
           },
           {
             "id": "C",
-            "text": "Tiếng máy khoan bê tông"
+            "text": "36 km/h"
           },
           {
             "id": "D",
-            "text": "Tiếng chuông điện thoại reo"
+            "text": "60 km/h"
           }
         ],
         "correct_answer": "B",
@@ -1266,992 +377,515 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
         "hints": [
           {
             "level": 1,
-            "hint": "Âm thanh này không do máy móc hay đồ dùng của con người tạo ra."
+            "hint": "Quy tắc đổi từ m/s sang km/h: nhân với 3.6."
           }
         ],
-        "explanation": "Tiếng suối chảy là âm thanh của thiên nhiên hoang dã."
+        "explanation": "$v = 15 \\cdot 3.6 = 54\\,\\text{km/h}$."
       }
     ]
   },
-
   {
-    "grade": 1,
-    "tier": "primary",
-    "topicTitle": "Nước: Các trạng thái và sự kỳ diệu",
-    "slug": "lop-1-nuoc-va-trang-thai",
-    "topicDescription": "Tìm hiểu nước ở trạng thái lỏng, trạng thái rắn (đá) và trạng thái hơi nước.",
-    "icon": "Droplets",
-    "lessonTitle": "Nước biến hình như thế nào?",
-    "lessonSlug": "nuoc-bien-hinh",
-    "contentMarkdown": "# Nước - Nhà ảo thuật kỳ tài\n\nNước là chất lỏng không màu, không mùi, không vị nhưng có thể biến hình rất kỳ diệu:\n- Nước uống hàng ngày ở thể **lỏng**, chảy thành dòng và mang hình dạng của chiếc cốc đựng nó.\n- Khi cho nước vào ngăn đá tủ lạnh, nước đóng băng thành **nước đá** cứng ngắc ở thể rắn.\n- Khi đun sôi nước, nước bốc hơi thành những làn **hơi nước** bay lơ lửng trong không khí.",
-    "summary": "Nước có 3 thể: thể lỏng (nước thường), thể rắn (nước đá) và thể khí (hơi nước).",
-    "durationMinutes": 15,
+    "grade": 8,
+    "tier": "middle",
+    "topicTitle": "Áp suất chất lỏng & Lực đẩy Archimedes",
+    "slug": "lop-8-ap-suat-chat-long-archimedes",
+    "topicDescription": "Định luật Archimedes FA = d.V, áp suất chất lỏng p = d.h và điều kiện chìm nổi của vật thể.",
+    "icon": "Anchor",
+    "lessonTitle": "Định luật Archimedes và Điều kiện chìm - nổi",
+    "lessonSlug": "dinh-luat-archimedes-chim-noi",
+    "contentMarkdown": "# Lực đẩy Archimedes\n\n## 1. Định luật Archimedes\nMột vật nhúng vào chất lỏng bị chất lỏng tác dụng một lực đẩy hướng thẳng đứng từ dưới lên trên, độ lớn của lực này bằng trọng lượng của phần chất lỏng bị vật chiếm chỗ:\n$$F_A = d \\cdot V$$\n\nTrong đó:\n- $F_A$: Lực đẩy Archimedes (đơn vị: $\\text{N}$)\n- $d$: Trọng lượng riêng của chất lỏng (đơn vị: $\\text{N/m}^3$)\n- $V$: Thể tích phần chất lỏng bị vật chiếm chỗ (đơn vị: $\\text{m}^3$)\n\n## 2. Điều kiện chìm - nổi\nSo sánh trọng lực $P$ và lực đẩy Archimedes $F_A$:\n- $F_A < P \\implies$ Vật chìm xuống đáy.\n- $F_A = P \\implies$ Vật lơ lửng trong lòng chất lỏng hoặc nổi thăng bằng trên mặt thoáng.\n- $F_A > P \\implies$ Vật chuyển động nổi lên trên.",
+    "summary": "Lực đẩy Archimedes FA = d.V. Vật chìm khi FA < P, lơ lửng/nổi khi FA = P, nổi lên khi FA > P.",
+    "durationMinutes": 20,
     "parentGuide": {
-      "summary": "Dạy trẻ quan sát 3 trạng thái của nước trong tự nhiên và hiểu tầm quan trọng của nguồn nước sạch.",
+      "summary": "Lực đẩy Archimedes $F_A = d \\cdot V$ phụ thuộc vào trọng lượng riêng của chất lỏng và thể tích phần chất lỏng bị chiếm chỗ, không phụ thuộc vào độ sâu khi đã chìm hoàn toàn.",
       "misconceptions": [
-        "Trẻ nghĩ nước đá và nước uống là hai chất hoàn toàn khác nhau.",
-        "Trẻ nghĩ khi nước bốc hơi là nước đã biến mất vĩnh viễn."
+        "Nghĩ rằng vật càng lặn sâu xuống đáy hồ thì lực đẩy Archimedes tác dụng lên nó càng tăng lên.",
+        "Nhầm thể tích chiếm chỗ $V$ với toàn bộ thể tích của bình chứa nước."
       ],
       "guiding_questions": [
-        "Đố con viên đá trong cốc nước ngọt để một lúc lâu dưới trời nóng sẽ biến thành gì?",
-        "Khi mẹ phơi quần áo ướt ngoài nắng, nước trên áo đã đi đâu mà quần áo lại khô ráo?"
+        "Khi con bước xuống bể bơi ngập tới ngực, tại sao con cảm thấy bước đi nhẹ bẫng hơn trên cạn?",
+        "Tại sao thợ lặn biển phải đeo đai chì nặng quanh thắt lưng mới lặn sâu xuống được?"
       ],
       "home_experiments": [
         {
-          "title": "Sự ngưng tụ hơi nước trên nắp nồi",
+          "title": "Kiểm chứng lực nâng của nước bằng dây thun",
           "materials": [
-            "1 cốc thủy tinh chịu nhiệt đựng nước ấm",
-            "1 chiếc đĩa nhỏ đậy lên miệng cốc",
-            "2 viên đá lạnh"
+            "1 chai nước suối nhỏ đầy nước (330ml)",
+            "1 sợi dây chun cao su dài",
+            "1 xô nước sâu"
           ],
           "steps": [
-            "Rót nước ấm vào cốc thủy tinh rồi đậy chiếc đĩa lên trên.",
-            "Đặt 2 viên đá lạnh lên mặt trên của chiếc đĩa.",
-            "Quan sát mặt dưới của chiếc đĩa sau 2 phút."
+            "Buộc sợi dây chun vào cổ chai nước.",
+            "Cầm đầu dây chun nhấc chai nước lên trong không khí, dùng thước đo độ dài dây chun dãn ra ($L_1$).",
+            "Hạ từ từ chai nước chìm vào trong xô nước, quan sát độ dài dây chun dãn ($L_2$)."
           ],
-          "expected_outcome": "Hơi nước ấm bay lên gặp đĩa lạnh ngưng tụ thành những giọt nước đọng dưới đáy đĩa giống như mưa.",
-          "safety_notes": "Thực hiện với nước ấm an toàn dưới sự giám sát của người lớn."
+          "expected_outcome": "Dây chun co ngắn lại ($L_2 < L_1$) do nước tác dụng lực đẩy $F_A$ từ dưới lên.",
+          "safety_notes": "Tránh làm đổ nước ra sàn nhà."
         }
       ]
     },
     "questions": [
       {
-        "question_type": "mcq",
-        "prompt": "Khi để một viên nước đá ngoài trời nắng, hiện tượng gì sẽ xảy ra?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Viên đá cứng hơn và to ra"
-          },
-          {
-            "id": "B",
-            "text": "Viên đá tan chảy thành nước lỏng"
-          },
-          {
-            "id": "C",
-            "text": "Viên đá bốc cháy ngùn ngụt"
-          },
-          {
-            "id": "D",
-            "text": "Viên đá biến thành cát"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
+        "question_type": "numeric",
+        "prompt": "Một khối kim loại có thể tích $V = 0.002\\,\\text{m}^3$ được nhúng chìm hoàn toàn trong nước có trọng lượng riêng $d = 10000\\,\\text{N/m}^3$. Tính độ lớn lực đẩy Archimedes $F_A$ tác dụng lên khối kim loại theo đơn vị Newton ($\\text{N}$).",
+        "latex_formula": "F_A = d \\cdot V",
+        "correct_answer": "20",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "N",
         "hints": [
           {
             "level": 1,
-            "hint": "Nhiệt độ nóng của ánh nắng làm nước đá chuyển từ thể rắn sang thể gì?"
+            "hint": "Áp dụng định luật Archimedes: $F_A = d \\cdot V$."
+          },
+          {
+            "level": 2,
+            "hint": "Thay số: $F_A = 10000 \\cdot 0.002$."
           }
         ],
-        "explanation": "Nước đá nhận nhiệt từ môi trường nóng và tan chảy thành thể lỏng."
-      }
-    ]
-  },
-
-  {
-    "grade": 2,
-    "tier": "primary",
-    "topicTitle": "Nguồn sáng và cách bảo vệ mắt",
-    "slug": "lop-2-nguon-sang-bao-ve-mat",
-    "topicDescription": "Phân biệt nguồn sáng tự nhiên, nhân tạo và cách giữ gìn thị lực khi học tập.",
-    "icon": "Sun",
-    "lessonTitle": "Ánh sáng và đôi mắt tinh anh",
-    "lessonSlug": "anh-sang-va-doi-mat",
-    "contentMarkdown": "# Ánh sáng giúp ta nhìn thấy mọi vật\n\nMắt chúng ta chỉ có thể nhìn thấy đồ vật khi có **ánh sáng** từ vật đó truyền vào mắt:\n- **Nguồn sáng tự nhiên**: Mặt Trời, các vì sao ban đêm, đom đóm.\n- **Nguồn sáng nhân tạo**: Đèn học, đèn pin, ngọn nến, màn hình tivi.\n\nĐể bảo vệ đôi mắt luôn sáng khỏe:\n- Ngồi học nơi có đầy đủ ánh sáng, không học trong phòng tối.\n- Không nhìn trực tiếp vào ánh nắng Mặt Trời hoặc bóng đèn quá chói.\n- Giữ khoảng cách khi xem tivi và màn hình điện thoại.",
-    "summary": "Ta nhìn thấy vật khi có ánh sáng chiếu từ vật vào mắt. Cần đủ ánh sáng khi đọc sách để bảo vệ mắt.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Giải thích cơ chế nhìn thấy của mắt và rèn luyện thói quen học tập đủ sáng để phòng tránh cận thị học đường.",
-      "misconceptions": [
-        "Nhiều trẻ nghĩ mắt tự phát ra ánh sáng để quét và nhìn thấy đồ vật trong đêm tối giống như siêu nhân.",
-        "Trẻ nghĩ đọc sách dưới bóng tối mờ mờ chỉ cần tập trung là không hại mắt."
-      ],
-      "guiding_questions": [
-        "Nếu con bước vào phòng kín không có cửa sổ và tắt hết đèn, mắt con có nhìn thấy đồ chơi để dưới sàn không?",
-        "Tại sao bố mẹ luôn dặn con phải bật đèn bàn học sáng rõ khi làm bài tập?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Chiếc hộp bí mật trong bóng tối",
-          "materials": [
-            "1 chiếc hộp các tông có nắp kín",
-            "1 đồ chơi nhỏ",
-            "1 cây bút chì nhọn"
-          ],
-          "steps": [
-            "Cho đồ chơi vào hộp, đậy nắp kín, khoét 1 lỗ nhỏ trên nắp để nhìn vào.",
-            "Bảo trẻ nhìn vào lỗ và hỏi có thấy đồ chơi màu gì không (không thấy gì).",
-            "Dùng bút chọc thêm 1 lỗ ở thành hộp để ánh sáng lọt vào và bảo trẻ nhìn lại."
-          ],
-          "expected_outcome": "Khi có ánh sáng lọt vào, đồ chơi phản xạ ánh sáng đến mắt giúp trẻ nhìn thấy rõ đồ vật.",
-          "safety_notes": "Cẩn thận khi dùng vật nhọn đục lỗ trên bìa cứng."
-        }
-      ]
-    },
-    "questions": [
+        "explanation": "$F_A = d \\cdot V = 10000\\,\\text{N/m}^3 \\cdot 0.002\\,\\text{m}^3 = 20\\,\\text{N}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
       {
         "question_type": "mcq",
-        "prompt": "Khi nào mắt chúng ta có thể nhìn thấy một quyển sách đặt trên bàn?",
+        "prompt": "Khi một vật nổi thăng bằng trên mặt chất lỏng, mối quan hệ giữa trọng lượng $P$ của vật và lực đẩy Archimedes $F_A$ là:",
         "options": [
           {
             "id": "A",
-            "text": "Khi căn phòng hoàn toàn tối đen không có chút ánh sáng nào"
+            "text": "$F_A > P$",
+            "latex": "F_A > P"
           },
           {
             "id": "B",
-            "text": "Khi có ánh sáng từ bóng đèn chiếu vào sách rồi truyền đến mắt ta"
+            "text": "$F_A < P$",
+            "latex": "F_A < P"
           },
           {
             "id": "C",
-            "text": "Khi mắt ta tự phát ra tia sáng chiếu vào quyển sách"
+            "text": "$F_A = P$",
+            "latex": "F_A = P"
           },
           {
             "id": "D",
-            "text": "Khi ta nhắm chặt cả hai mắt lại"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Cần có nguồn sáng chiếu vào vật rồi phản xạ tới cơ quan thị giác của ta."
-          }
-        ],
-        "explanation": "Ta chỉ nhìn thấy vật khi có ánh sáng từ vật đó đi tới mắt."
-      }
-    ]
-  },
-
-  {
-    "grade": 2,
-    "tier": "primary",
-    "topicTitle": "Đồ vật quanh ta: Chìm hay nổi?",
-    "slug": "lop-2-chim-hay-noi",
-    "topicDescription": "Khám phá sự chìm - nổi của các chất liệu gỗ, sắt, xốp, nhựa trong nước.",
-    "icon": "Ship",
-    "lessonTitle": "Vì sao chiếc lá nổi còn hòn sỏi chìm?",
-    "lessonSlug": "vi-sao-la-noi-soi-chim",
-    "contentMarkdown": "# Bí ẩn chìm và nổi trong nước\n\nKhi thả đồ vật vào chậu nước:\n- Có vật **nổi bồng bềnh** trên mặt nước: Chiếc lá khô, mẩu gỗ, chiếc thuyền xốp, quả bóng nhựa.\n- Có vật **chìm nghỉm** xuống đáy: Hòn sỏi, chìa khóa kim loại, chiếc thìa sắt, đồng xu.\n\nĐiều này phụ thuộc vào chất liệu làm nên vật và hình dạng của nó. Nước có một sức đẩy vô hình luôn nâng đỡ các vật thể!",
-    "summary": "Các vật nhẹ hơn nước như xốp, gỗ sẽ nổi; các vật nặng bằng sắt, đá sẽ chìm xuống đáy chậu nước.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Giúp trẻ quan sát trực quan tính chất vật liệu và gieo mầm khái niệm khối lượng riêng và lực đẩy chất lỏng.",
-      "misconceptions": [
-        "Trẻ nghĩ vật cứ to là chìm còn vật nhỏ là nổi (ví dụ nghĩ khúc gỗ to chìm hơn chiếc đinh nhỏ).",
-        "Trẻ nghĩ tàu thủy to lớn bằng thép không thể nào nổi trên mặt biển."
-      ],
-      "guiding_questions": [
-        "Con đoán xem quả bóng bay bơm căng to thế này thả vào chậu nước sẽ chìm hay nổi?",
-        "Một chiếc thuyền làm bằng xốp to gấp 10 lần hòn sỏi, tại sao thuyền nổi mà hòn sỏi lại chìm?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Chiếc thuyền đất nặn biến hình",
-          "materials": [
-            "1 cục đất nặn màu",
-            "1 chậu nước nhỏ"
-          ],
-          "steps": [
-            "Vo tròn cục đất nặn thành một viên bi đặc rồi thả vào chậu nước (viên đất chìm xuống đáy).",
-            "Vớt cục đất lên, dùng tay nặn mỏng ra thành hình chiếc thuyền có lòng sâu.",
-            "Nhẹ nhàng thả chiếc thuyền đất nặn lên mặt nước và quan sát."
-          ],
-          "expected_outcome": "Cùng một lượng đất nặn, khi dàn mỏng thành hình thuyền chứa không khí thì thuyền nổi bồng bềnh.",
-          "safety_notes": "Lau khô tay sau khi nghịch nước tránh trơn trượt."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Vật nào sau đây chắc chắn sẽ NỔI khi thả vào chậu nước?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Một chiếc đinh sắt nhọn"
-          },
-          {
-            "id": "B",
-            "text": "Một hòn đá cuội đặc"
-          },
-          {
-            "id": "C",
-            "text": "Một miếng xốp nhẹ"
-          },
-          {
-            "id": "D",
-            "text": "Một chiếc thìa inox nặng"
+            "text": "$F_A = 0$",
+            "latex": "F_A = 0"
           }
         ],
         "correct_answer": "C",
-        "difficulty": "easy",
+        "difficulty": "medium",
         "points": 10,
         "hints": [
           {
             "level": 1,
-            "hint": "Chất liệu này rất nhẹ, thường dùng để bọc bảo vệ tivi, tủ lạnh khi vận chuyển."
+            "hint": "Khi vật đã nổi thăng bằng (đứng yên), hai lực cùng phương ngược chiều tác dụng lên vật phải triệt tiêu nhau."
           }
         ],
-        "explanation": "Miếng xốp có khối lượng riêng rất nhỏ so với nước nên nổi trên mặt nước."
+        "explanation": "Khi vật nổi thăng bằng, trọng lực và lực đẩy Archimedes cân bằng nhau, do đó $F_A = P$."
       }
     ]
   },
-
   {
-    "grade": 2,
-    "tier": "primary",
-    "topicTitle": "Gió, không khí và chuyển động",
-    "slug": "lop-2-gio-khong-khi-chuyen-dong",
-    "topicDescription": "Khám phá sự tồn tại của không khí và gió là sự chuyển động của không khí.",
-    "icon": "Wind",
-    "lessonTitle": "Gió từ đâu tới?",
-    "lessonSlug": "gio-tu-dau-toi",
-    "contentMarkdown": "# Không khí chuyển động tạo thành gió\n\nXung quanh chúng ta luôn tràn ngập **không khí**, dù mắt ta không nhìn thấy được.\n- Khi không khí đứng yên, ta cảm thấy oi ả, êm ả.\n- Khi không khí **chuyển động**, nó tạo thành **gió** làm bay tóc, làm chong chóng quay tít và đẩy cánh buồm lướt sóng.\n- Gió nhẹ làm lá cây rung rinh gọi là gió hiu hiu; gió quá mạnh gọi là giông bão.",
-    "summary": "Không khí có ở khắp nơi quanh ta. Khi không khí chuyển động sẽ tạo thành luồng gió.",
-    "durationMinutes": 15,
+    "grade": 9,
+    "tier": "middle",
+    "topicTitle": "Định luật Ohm & Mạch điện một chiều",
+    "slug": "lop-9-dinh-luat-ohm-dien-hoc",
+    "topicDescription": "Định luật Ohm I = U/R, công thức điện trở tương đương mạch nối tiếp và song song.",
+    "icon": "Activity",
+    "lessonTitle": "Định luật Ohm cho đoạn mạch và Đoạn mạch nối tiếp, song song",
+    "lessonSlug": "dinh-luat-ohm-noi-tiep-song-song",
+    "contentMarkdown": "# Điện học và Định luật Ohm\n\n## 1. Định luật Ohm\nCường độ dòng điện chạy qua dây dẫn tỉ lệ thuận với hiệu điện thế đặt vào hai đầu dây và tỉ lệ nghịch với điện trở của dây:\n$$I = \\frac{U}{R} \\iff U = I \\cdot R$$\n\nTrong đó:\n- $I$: Cường độ dòng điện (Ampe - $\\text{A}$)\n- $U$: Hiệu điện thế (Vôn - $\\text{V}$)\n- $R$: Điện trở (Ôm - $\\Omega$)\n\n## 2. Đoạn mạch mắc nối tiếp\n- $I = I_1 = I_2$\n- $U = U_1 + U_2$\n- $R_{td} = R_1 + R_2$\n\n## 3. Đoạn mạch mắc song song\n- $U = U_1 = U_2$\n- $I = I_1 + I_2$\n- $\\frac{1}{R_{td}} = \\frac{1}{R_1} + \\frac{1}{R_2} \\iff R_{td} = \\frac{R_1 R_2}{R_1 + R_2}$",
+    "summary": "Định luật Ohm: I = U/R. Nối tiếp: Rtd = R1 + R2. Song song: Rtd = (R1*R2)/(R1+R2).",
+    "durationMinutes": 20,
     "parentGuide": {
-      "summary": "Giúp trẻ chứng minh sự tồn tại của không khí vô hình và hiểu năng lượng của gió trong cuộc sống.",
+      "summary": "Định luật Ohm $I = U/R$ mô tả dòng điện tỉ lệ thuận với hiệu điện thế và tỉ lệ nghịch với điện trở. Đèn trong nhà mắc song song để nếu một bóng cháy thì các bóng khác vẫn sáng.",
       "misconceptions": [
-        "Trẻ nghĩ trong căn phòng trống hoặc chiếc cốc rỗng hoàn toàn không có gì bên trong.",
-        "Trẻ nghĩ gió là một vật thể độc lập chứ không phải là không khí di chuyển."
+        "Học sinh nghĩ rằng dòng điện đi qua điện trở sẽ bị tiêu hao bớt electron và I giảm dần theo chiều dòng điện.",
+        "Nhầm lẫn công thức điện trở tương đương giữa mạch nối tiếp và song song."
       ],
       "guiding_questions": [
-        "Khi con thổi mạnh vào chong chóng giấy, cái gì đã làm cho chong chóng quay tít?",
-        "Chiếc quạt máy trong nhà có tạo ra không khí mới không hay chỉ đẩy không khí có sẵn chuyển động?"
+        "Tại sao các thiết bị điện và bóng đèn trong nhà lại được mắc song song mà không phải nối tiếp?",
+        "Tại sao cầm bút thử điện cắm vào ổ điện thì đèn trong bút sáng nhưng người không bị giật?"
       ],
       "home_experiments": [
         {
-          "title": "Bắt quả tang không khí trong cốc nước",
-          "materials": [
-            "1 chiếc cốc thủy tinh trong suốt",
-            "1 mẩu giấy ăn nhỏ vo tròn",
-            "1 chậu nước sâu"
-          ],
-          "steps": [
-            "Nhét mẩu giấy ăn chặt vào đáy cốc thủy tinh (úp ngược cốc xuống giấy không rơi).",
-            "Úp ngược miệng cốc thẳng đứng và ấn chìm sâu hoàn toàn vào trong chậu nước.",
-            "Kéo cốc thẳng đứng lên, lấy mẩu giấy ra kiểm tra xem giấy khô hay ướt."
-          ],
-          "expected_outcome": "Mẩu giấy hoàn toàn khô ráo vì không khí bên trong cốc chiếm chỗ không cho nước tràn vào.",
-          "safety_notes": "Thực hiện nhẹ nhàng không làm đổ nước ra sàn nhà."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Gió tự nhiên thực chất là gì?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Là những đám mây đen rơi xuống đất"
-          },
-          {
-            "id": "B",
-            "text": "Là không khí chuyển động từ nơi này sang nơi khác"
-          },
-          {
-            "id": "C",
-            "text": "Là nước biển bốc hơi lên trời"
-          },
-          {
-            "id": "D",
-            "text": "Là ánh nắng Mặt Trời chiếu thẳng vào mắt"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Không khí bao quanh Trái Đất khi bị nóng lạnh khác nhau sẽ dịch chuyển."
-          }
-        ],
-        "explanation": "Gió là hiện tượng không khí chuyển động trong khí quyển."
-      }
-    ]
-  },
-
-  {
-    "grade": 3,
-    "tier": "primary",
-    "topicTitle": "Nhiệt độ và dụng cụ đo nhiệt độ",
-    "slug": "lop-3-nhiet-do-nhiet-ke",
-    "topicDescription": "Học cách sử dụng nhiệt kế đo nhiệt độ cơ thể và nhiệt độ không khí theo thang độ C.",
-    "icon": "Thermometer",
-    "lessonTitle": "Đo nhiệt độ bằng nhiệt kế",
-    "lessonSlug": "do-nhiet-do-nhiet-ke",
-    "contentMarkdown": "# Nhiệt độ là gì?\n\nNhiệt độ là thước đo độ nóng hay lạnh của một vật thể:\n- Đơn vị đo nhiệt độ thông dụng ở Việt Nam là **độ C** (ký hiệu: $^\\circ\\text{C}$).\n- Nhiệt độ cơ thể người khỏe mạnh bình thường là khoảng $37^\\circ\\text{C}$.\n- Nước đá đang tan ở $0^\\circ\\text{C}$, còn nước sôi sùng sục ở $100^\\circ\\text{C}$.\n\nĐể đo nhiệt độ, ta dùng **nhiệt kế** (như nhiệt kế thủy ngân, nhiệt kế điện tử, nhiệt kế hồng ngoại).",
-    "summary": "Nhiệt độ đo mức độ nóng lạnh của vật bằng đơn vị độ C. Dụng cụ đo là nhiệt kế.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Hướng dẫn trẻ cách đọc số đo nhiệt độ và hiểu ý nghĩa việc đo thân nhiệt khi bị ốm sốt.",
-      "misconceptions": [
-        "Trẻ nghĩ dùng tay sờ trán là có thể biết chính xác cơ thể sốt bao nhiêu độ.",
-        "Trẻ nghĩ nhiệt độ của nước đá có thể tăng lên nếu đắp chăn ấm cho nó."
-      ],
-      "guiding_questions": [
-        "Khi con bị sốt mệt mỏi, mẹ dùng dụng cụ gì để biết chính xác con sốt bao nhiêu độ?",
-        "Nếu dự báo thời tiết báo hôm nay nhiệt độ là $38^\\circ\\text{C}$, con nên mặc trang phục như thế nào khi ra ngoài?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Tay ta có phải là chiếc nhiệt kế chính xác?",
-          "materials": [
-            "3 chiếc bát: Bát 1 nước lạnh (có đá), Bát 2 nước thường, Bát 3 nước ấm khoảng 40 độ"
-          ],
-          "steps": [
-            "Nhúng bàn tay trái vào bát nước lạnh, bàn tay phải vào bát nước ấm trong 30 giây.",
-            "Rút cả 2 tay ra và cùng lúc nhúng ngay vào bát nước thường ở giữa.",
-            "Hỏi cảm giác của 2 bàn tay về nhiệt độ của bát nước thường."
-          ],
-          "expected_outcome": "Tay trái thấy nước ấm lên, tay phải lại thấy nước lạnh đi dù cùng một bát nước thường. Chứng tỏ cảm giác tay không thể thay thế nhiệt kế.",
-          "safety_notes": "Dùng nước ấm an toàn không gây rát bỏng tay trẻ."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Thân nhiệt bình thường của một người khỏe mạnh là khoảng bao nhiêu độ C?",
-        "options": [
-          {
-            "id": "A",
-            "text": "10 độ C"
-          },
-          {
-            "id": "B",
-            "text": "37 độ C"
-          },
-          {
-            "id": "C",
-            "text": "60 độ C"
-          },
-          {
-            "id": "D",
-            "text": "100 độ C"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Nhiệt độ này ấm hơn nhiệt độ phòng bình thường một chút, xấp xỉ 37 độ."
-          }
-        ],
-        "explanation": "Thân nhiệt chuẩn của người bình thường duy trì ổn định quanh mức 37 độ C."
-      }
-    ]
-  },
-
-  {
-    "grade": 3,
-    "tier": "primary",
-    "topicTitle": "Không khí quanh ta: Tính chất và vai trò",
-    "slug": "lop-3-khong-khi-quanh-ta",
-    "topicDescription": "Không khí không màu, không mùi, có thể nén lại hoặc giãn ra và cần cho sự thở.",
-    "icon": "Cloud",
-    "lessonTitle": "Bí mật của lớp khí quyển",
-    "lessonSlug": "bi-mat-khi-quyen",
-    "contentMarkdown": "# Tính chất kỳ thú của không khí\n\nKhông khí bao bọc xung quanh toàn bộ Trái Đất:\n- Không khí **trong suốt, không màu, không mùi, không vị**.\n- Không khí **không có hình dạng nhất định**, nó chiếm đầy mọi không gian bên trong vật chứa.\n- Không khí có thể **bị nén lại** (như khi ta ấn pít-tông bơm xe đạp) hoặc **giãn ra**.\n- Trong không khí có khí oxy vô cùng quý giá cần cho con người, động vật hô hấp và duy trì sự cháy.",
-    "summary": "Không khí không màu, không mùi, chiếm đầy không gian, có thể nén lại và duy trì sự sống.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Giúp trẻ hiểu không khí là vật chất có thực, có thể tích và khối lượng, rèn ý thức bảo vệ bầu không khí trong lành.",
-      "misconceptions": [
-        "Trẻ nghĩ không khí không có trọng lượng vì ta không cảm thấy nó nặng trên vai.",
-        "Trẻ nghĩ cá dưới nước không cần không khí để hô hấp."
-      ],
-      "guiding_questions": [
-        "Nếu con lấy tay bịt chặt mũi và ngậm miệng trong 15 giây, con cảm thấy thế nào? Vì sao?",
-        "Khi con bơm hơi vào quả bóng đá, quả bóng căng phồng lên là nhờ cái gì ở bên trong?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Chiếc xilanh chứng minh không khí có thể nén lại",
-          "materials": [
-            "1 chiếc xilanh nhựa y tế bỏ kim tiêm"
-          ],
-          "steps": [
-            "Kéo pít-tông ra để hút đầy không khí vào trong xilanh.",
-            "Dùng đầu ngón tay cái bịt thật chặt lỗ thoát khí ở đầu xilanh.",
-            "Dùng tay kia ấn mạnh pít-tông vào trong rồi thả tay ra."
-          ],
-          "expected_outcome": "Pít-tông dịch chuyển vào được một đoạn (không khí bị nén), khi buông tay pít-tông tự bật lùi ra như chiếc lò xo.",
-          "safety_notes": "Tháo bỏ hoàn toàn kim tiêm trước khi cho trẻ làm thí nghiệm."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Đặc điểm nào dưới đây ĐÚNG với không khí trong lành quanh ta?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Có màu xanh da trời và mùi thơm ngát"
-          },
-          {
-            "id": "B",
-            "text": "Trong suốt, không màu, không mùi và không có hình dạng cố định"
-          },
-          {
-            "id": "C",
-            "text": "Đặc cứng như một khối đá"
-          },
-          {
-            "id": "D",
-            "text": "Có vị ngọt như nước đường"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Hàng ngày con hít thở không khí vào phổi có nhìn thấy màu sắc hay ngửi thấy mùi gì đặc trưng không?"
-          }
-        ],
-        "explanation": "Không khí nguyên chất là chất khí trong suốt, không màu, không mùi, không vị."
-      }
-    ]
-  },
-
-  {
-    "grade": 3,
-    "tier": "primary",
-    "topicTitle": "Trọng lực và sự rơi của các vật",
-    "slug": "lop-3-trong-luc-su-roi",
-    "topicDescription": "Trái Đất hút mọi vật về phía tâm của nó, làm cho đồ vật luôn rơi xuống đất.",
-    "icon": "ArrowDown",
-    "lessonTitle": "Vì sao quả táo rụng rơi xuống đất?",
-    "lessonSlug": "qua-tao-rung-roi-xuong-dat",
-    "contentMarkdown": "# Lực hút kỳ diệu của Trái Đất\n\nNhà bác học Isaac Newton từng ngồi dưới gốc cây và thấy quả táo rụng rơi xuống đất:\n- Khi ta ném một quả bóng lên trời, quả bóng bay lên cao rồi lại **rơi xuống đất**.\n- Nước trên thác ghềnh luôn chảy từ đỉnh núi cao xuống chân núi thấp.\n- Tất cả là nhờ **Trọng lực** - lực hút của Trái Đất kéo mọi vật về phía tâm của nó!\n\nNhờ có lực hút của Trái Đất, con người và nhà cửa mới đứng vững trên mặt đất mà không bị bay lơ lửng vào vũ trụ.",
-    "summary": "Trái Đất hút mọi vật thể bằng trọng lực, kéo các vật rơi xuống mặt đất.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Giới thiệu khái niệm trọng lực một cách trực quan, giúp trẻ hiểu vì sao đồ vật luôn có xu hướng rơi xuống dưới.",
-      "misconceptions": [
-        "Trẻ nghĩ đồ vật tự nó muốn rơi xuống đất chứ không có lực nào kéo nó.",
-        "Trẻ nghĩ các phi hành gia trên trạm vũ trụ không bị rơi là do không có trọng lực hoàn toàn."
-      ],
-      "guiding_questions": [
-        "Nếu con thả chiếc bút chì trên tay ra, chiếc bút sẽ bay vút lên trần nhà hay rơi xuống sàn?",
-        "Điều gì sẽ xảy ra nếu Trái Đất bỗng nhiên mất đi lực hút đối với con người?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Cuộc đua rơi tự do: Tờ giấy phẳng và viên giấy vo tròn",
-          "materials": [
-            "2 tờ giấy A4 giống hệt nhau"
-          ],
-          "steps": [
-            "Giữ nguyên 1 tờ giấy phẳng, tờ giấy còn lại vo tròn thật chặt thành viên bi giấy.",
-            "Cầm 2 vật ở cùng một độ cao khoảng 1.5 mét rồi cùng lúc buông tay.",
-            "Quan sát vật nào chạm đất trước."
-          ],
-          "expected_outcome": "Viên giấy vo tròn rơi nhanh chạm đất trước, tờ giấy phẳng chao đảo rơi chậm hơn do lực cản của không khí tác dụng lên diện tích lớn.",
-          "safety_notes": "Thả vật ở độ cao an toàn trong phòng khách."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Lực nào kéo quả bóng rơi xuống sân sau khi em sút bóng bay lên không trung?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Lực từ của thanh nam châm"
-          },
-          {
-            "id": "B",
-            "text": "Trọng lực (lực hút của Trái Đất)"
-          },
-          {
-            "id": "C",
-            "text": "Lực đẩy của làn gió"
-          },
-          {
-            "id": "D",
-            "text": "Lực ma sát của cỏ"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Hành tinh của chúng ta luôn hút mọi vật hướng về phía mặt đất."
-          }
-        ],
-        "explanation": "Trọng lực là lực hút của Trái Đất tác dụng lên mọi vật thể quanh nó."
-      }
-    ]
-  },
-
-  {
-    "grade": 4,
-    "tier": "primary",
-    "topicTitle": "Sự truyền âm thanh qua các môi trường",
-    "slug": "lop-4-am-thanh-truyen-qua-moi-truong",
-    "topicDescription": "Âm thanh truyền được qua chất rắn, chất lỏng và chất khí; không truyền được trong chân không.",
-    "icon": "Speaker",
-    "lessonTitle": "Âm thanh đi qua đâu?",
-    "lessonSlug": "am-thanh-di-qua-dau",
-    "contentMarkdown": "# Con đường truyền đi của âm thanh\n\nÂm thanh không tự nhiên nhảy qua không gian mà phải nhờ các hạt vật chất truyền dao động:\n- **Chất rắn**: Truyền âm nhanh và rõ nhất. Khi áp tai xuống mặt bàn gỗ và gõ nhẹ ở đầu kia, ta nghe thấy tiếng gõ rất to!\n- **Chất lỏng**: Cá dưới nước vẫn nghe thấy tiếng động trên bờ để bơi trốn.\n- **Chất khí**: Không khí truyền tiếng nói của thầy cô đến tai học sinh.\n- **Chân không**: Nơi hoàn toàn không có không khí như ngoài vũ trụ sâu thẳm, âm thanh **không thể truyền đi**!",
-    "summary": "Âm thanh truyền qua chất rắn, lỏng, khí nhưng không truyền được trong chân không.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Giúp học sinh hiểu môi trường truyền âm và vì sao trong chân không vũ trụ các phi hành gia phải dùng bộ đàm.",
-      "misconceptions": [
-        "Học sinh nghĩ âm thanh truyền trong không khí nhanh hơn trong thanh thép hoặc mặt bàn gỗ.",
-        "Học sinh xem phim viễn tưởng thấy tàu vũ trụ nổ ầm ầm ngoài không gian và nghĩ chân không cũng có tiếng nổ."
-      ],
-      "guiding_questions": [
-        "Khi con áp tai xuống mặt bàn, tiếng gõ ngón tay nghe to và rõ hơn hay nhỏ hơn so với nghe qua không khí?",
-        "Tại sao các phi hành gia ngoài vũ trụ không thể mở kính mũ ra nói chuyện trực tiếp với nhau?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Chiếc đồng hồ tích tắc qua mặt bàn",
-          "materials": [
-            "1 chiếc đồng hồ cơ có kim giây tích tắc hoặc điện thoại phát nhạc nhỏ",
-            "Mặt bàn gỗ dài"
-          ],
-          "steps": [
-            "Đặt đồng hồ ở một đầu bàn, đứng cách xa 1 mét nghe qua không khí (rất khó nghe thấy tiếng tích tắc).",
-            "Áp một bên tai sát vào mặt bàn gỗ và lắng nghe lại."
-          ],
-          "expected_outcome": "Tiếng tích tắc truyền qua chất rắn của mặt bàn gỗ nghe to, đanh và rõ hơn hẳn qua không khí.",
-          "safety_notes": "Áp tai nhẹ nhàng vào mặt bàn sạch sẽ."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Môi trường nào dưới đây KHÔNG THỂ truyền được âm thanh?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Nước trong bể bơi"
-          },
-          {
-            "id": "B",
-            "text": "Chân không ngoài vũ trụ"
-          },
-          {
-            "id": "C",
-            "text": "Tường bê tông của ngôi nhà"
-          },
-          {
-            "id": "D",
-            "text": "Không khí trong phòng học"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Nơi hoàn toàn không có bất kỳ hạt vật chất nào để truyền dao động sóng âm."
-          }
-        ],
-        "explanation": "Trong chân không không có các phân tử vật chất nên sóng âm không thể lan truyền."
-      }
-    ]
-  },
-
-  {
-    "grade": 4,
-    "tier": "primary",
-    "topicTitle": "Sự dẫn nhiệt và vật liệu cách nhiệt",
-    "slug": "lop-4-su-dan-nhiet-cach-nhiet",
-    "topicDescription": "Phân biệt vật dẫn nhiệt tốt (kim loại) và vật dẫn nhiệt kém/cách nhiệt (gỗ, nhựa, xốp, len).",
-    "icon": "Flame",
-    "lessonTitle": "Vật dẫn nhiệt và vật cách nhiệt",
-    "lessonSlug": "vat-dan-nhiet-cach-nhiet",
-    "contentMarkdown": "# Nhiệt truyền từ vật này sang vật khác\n\nCác vật liệu quanh ta có khả năng dẫn nhiệt rất khác nhau:\n- **Vật dẫn nhiệt tốt**: Nhôm, đồng, sắt, inox. Vì thế nồi niêu xoong chảo làm bằng nhôm để nấu thức ăn nhanh chín.\n- **Vật dẫn nhiệt kém (vật cách nhiệt)**: Gỗ, nhựa, cao su, xốp, bông, len, thủy tinh. Vì thế quai xoong thường bọc nhựa hoặc gỗ để ta cầm vào không bị bỏng tay.\n\nMùa đông ta đắp chăn bông dày vì lớp bông xốp chứa nhiều không khí cách nhiệt giúp giữ nhiệt ấm cho cơ thể!",
-    "summary": "Kim loại dẫn nhiệt tốt. Gỗ, nhựa, len, xốp cách nhiệt tốt giúp giữ nhiệt hoặc tránh bỏng.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Giúp trẻ hiểu tính chất truyền nhiệt của vật liệu và nguyên lý bảo quản nhiệt trong phích nước, bình giữ nhiệt gia đình.",
-      "misconceptions": [
-        "Trẻ nghĩ chiếc chăn bông ấm là chiếc chăn tự sinh ra hơi nóng giống như lò sưởi.",
-        "Trẻ sờ vào thanh sắt thấy lạnh hơn mẩu gỗ và nghĩ nhiệt độ của thanh sắt thấp hơn mẩu gỗ trong cùng phòng."
-      ],
-      "guiding_questions": [
-        "Tại sao lòng xoong nấu canh lại bằng kim loại còn quai cầm lại bọc nhựa chống nóng?",
-        "Vì sao chiếc bình giữ nhiệt có thể giữ cho nước đá lâu tan và nước chè lâu nguội?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Cuộc đua dẫn nhiệt của 3 chiếc thìa",
-          "materials": [
-            "1 chiếc thìa kim loại",
-            "1 chiếc thìa nhựa",
-            "1 chiếc thìa gỗ",
-            "1 cốc nước ấm nóng khoảng 50 độ C"
-          ],
-          "steps": [
-            "Cắm cả 3 chiếc thìa cùng lúc vào cốc nước nóng.",
-            "Chờ khoảng 2 phút, chạm tay lần lượt vào đầu cán của 3 chiếc thìa phía trên."
-          ],
-          "expected_outcome": "Cán thìa kim loại nóng lên nhanh nhất, cán thìa nhựa chỉ hơi ấm, còn cán thìa gỗ hầu như không nóng.",
-          "safety_notes": "Dùng nước ấm nóng vừa phải, có sự giám sát của phụ huynh."
-        }
-      ]
-    },
-    "questions": [
-      {
-        "question_type": "mcq",
-        "prompt": "Vì sao quai nồi nấu canh bằng kim loại thường được bọc một lớp nhựa chịu nhiệt?",
-        "options": [
-          {
-            "id": "A",
-            "text": "Để làm nồi nặng hơn và đứng vững hơn"
-          },
-          {
-            "id": "B",
-            "text": "Vì nhựa cách nhiệt tốt, giúp người nấu không bị bỏng tay khi nhấc nồi"
-          },
-          {
-            "id": "C",
-            "text": "Để thức ăn trong nồi nhanh sôi hơn"
-          },
-          {
-            "id": "D",
-            "text": "Để trang trí cho chiếc nồi đổi màu đẹp mắt"
-          }
-        ],
-        "correct_answer": "B",
-        "difficulty": "easy",
-        "points": 10,
-        "hints": [
-          {
-            "level": 1,
-            "hint": "Nhựa là vật dẫn nhiệt tốt hay dẫn nhiệt kém (cách nhiệt)?"
-          }
-        ],
-        "explanation": "Nhựa dẫn nhiệt kém nên ngăn nhiệt lượng từ thân nồi truyền vào tay người cầm."
-      }
-    ]
-  },
-
-  {
-    "grade": 4,
-    "tier": "primary",
-    "topicTitle": "Năng lượng điện & Mạch điện thắp sáng",
-    "slug": "lop-4-mach-dien-thap-sang",
-    "topicDescription": "Tìm hiểu nguồn điện (pin), dây dẫn, bóng đèn và công tắc tạo thành mạch điện kín.",
-    "icon": "Lightbulb",
-    "lessonTitle": "Làm thế nào để bóng đèn sáng?",
-    "lessonSlug": "lam-the-nao-den-sang",
-    "contentMarkdown": "# Khám phá mạch điện kín\n\nĐiện năng là nguồn năng lượng quan trọng thắp sáng và vận hành các thiết bị:\n- **Nguồn điện**: Pin tiểu, bình ắc quy cung cấp năng lượng điện. Pin có cực dương ($+$) và cực âm ($-$).\n- **Mạch điện kín**: Để bóng đèn sáng, dòng điện phải đi ra từ một cực của pin, qua dây dẫn đến bóng đèn, rồi quay trở về cực kia của pin tạo thành vòng khép kín.\n- **Công tắc**: Khi đóng công tắc thì mạch kín $\\rightarrow$ đèn sáng; khi ngắt công tắc thì mạch hở $\\rightarrow$ đèn tắt.",
-    "summary": "Mạch điện kín gồm nguồn điện (pin), dây dẫn và bóng đèn. Công tắc dùng để đóng ngắt mạch điện.",
-    "durationMinutes": 15,
-    "parentGuide": {
-      "summary": "Dạy trẻ nguyên lý mạch điện một chiều an toàn bằng pin tiểu và giáo dục quy tắc an toàn không nghịch ổ điện 220V.",
-      "misconceptions": [
-        "Trẻ nghĩ chỉ cần nối một dây duy nhất từ cực dương pin vào bóng đèn là đèn sẽ tự sáng.",
-        "Trẻ nghĩ điện từ ổ cắm trên tường cũng yếu và an toàn như pin đồ chơi."
-      ],
-      "guiding_questions": [
-        "Đố con trên chiếc đèn pin bỏ túi, khi con ấn nút bật thì điều gì bên trong đã làm đèn phát sáng?",
-        "Vì sao chúng ta tuyệt đối không bao giờ được dùng que sắt chọc vào ổ cắm điện trong nhà?"
-      ],
-      "home_experiments": [
-        {
-          "title": "Thắp sáng bóng đèn LED bằng quả pin tiểu",
+          "title": "Mô phỏng mạch đèn pin an toàn",
           "materials": [
             "1 viên pin tiểu 1.5V (AA hoặc AAA)",
             "1 bóng đèn LED nhỏ",
-            "2 mẩu dây đồng nhỏ có bọc nhựa"
+            "2 mẩu dây đồng bọc nhựa gọt 2 đầu"
           ],
           "steps": [
-            "Tuốt vỏ nhựa ở 2 đầu mỗi đoạn dây đồng.",
-            "Nối 1 đầu dây vào cực dương của pin, 1 đầu dây vào cực âm của pin.",
-            "Chạm 2 đầu dây còn lại vào 2 chân của bóng đèn LED (nếu không sáng thì đảo chiều 2 chân đèn)."
+            "Nối cực dương pin vào chân dài của LED.",
+            "Nối cực âm pin vào chân ngắn của LED qua dây đồng.",
+            "Mạch kín: LED phát sáng. Tháo rời 1 đầu dây (mạch hở): LED tắt."
           ],
-          "expected_outcome": "Khi cả 2 đầu dây chạm đúng cực tạo thành mạch kín, bóng đèn LED sáng rực rỡ.",
-          "safety_notes": "Chỉ làm thí nghiệm với pin tiểu 1.5V, tuyệt đối không đấu vào nguồn điện gia đình."
+          "expected_outcome": "Trẻ hiểu trực quan khái niệm mạch kín (dòng điện chạy qua) và mạch hở.",
+          "safety_notes": "Chỉ dùng pin 1.5V tiểu học sinh, TUYỆT ĐỐI KHÔNG làm thí nghiệm với điện lưới gia đình 220V."
         }
       ]
     },
     "questions": [
       {
+        "question_type": "numeric",
+        "prompt": "Cho hai điện trở $R_1 = 20\\,\\Omega$ và $R_2 = 30\\,\\Omega$ mắc song song với nhau vào hiệu điện thế $U = 12\\,\\text{V}$. Tính điện trở tương đương $R_{td}$ của đoạn mạch theo đơn vị $\\Omega$.",
+        "latex_formula": "R_{td} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}",
+        "correct_answer": "12",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "Ω",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Với mạch mắc song song hai điện trở: $R_{td} = \\frac{R_1 \\cdot R_2}{R_1 + R_2}$."
+          },
+          {
+            "level": 2,
+            "hint": "Thay số: $R_{td} = \\frac{20 \\cdot 30}{20 + 30} = \\frac{600}{50}$."
+          }
+        ],
+        "explanation": "$R_{td} = \\frac{R_1 R_2}{R_1 + R_2} = \\frac{20 \\cdot 30}{50} = 12\\,\\Omega$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
         "question_type": "mcq",
-        "prompt": "Để bóng đèn pin phát sáng, mạch điện bắt buộc phải ở trạng thái nào?",
+        "prompt": "Đặt một hiệu điện thế $U = 24\\,\\text{V}$ vào hai đầu điện trở $R = 8\\,\\Omega$. Cường độ dòng điện $I$ chạy qua điện trở là:",
         "options": [
           {
             "id": "A",
-            "text": "Mạch hở bị đứt dây"
+            "text": "3 A"
           },
           {
             "id": "B",
-            "text": "Mạch điện kín nối liền từ cực này qua đèn sang cực kia của pin"
+            "text": "192 A"
           },
           {
             "id": "C",
-            "text": "Pin đã bị chảy nước cạn kiệt"
+            "text": "0.33 A"
           },
           {
             "id": "D",
-            "text": "Công tắc đang mở ngắt quãng"
+            "text": "16 A"
           }
         ],
-        "correct_answer": "B",
+        "correct_answer": "A",
         "difficulty": "easy",
         "points": 10,
         "hints": [
           {
             "level": 1,
-            "hint": "Dòng điện cần một con đường khép kín hoàn chỉnh để lưu thông tuần hoàn."
+            "hint": "Áp dụng định luật Ohm: $I = \\frac{U}{R}$."
           }
         ],
-        "explanation": "Dòng điện chỉ chạy được trong mạch điện kín hoàn chỉnh."
+        "explanation": "Theo định luật Ohm: $I = \\frac{U}{R} = \\frac{24}{8} = 3\\,\\text{A}$."
       }
     ]
   },
-
   {
-    "grade": 5,
-    "tier": "primary",
-    "topicTitle": "Năng lượng mặt trời, gió và nước chảy",
-    "slug": "lop-5-nang-luong-tai-tao",
-    "topicDescription": "Các nguồn năng lượng tái tạo sạch từ thiên nhiên: pin mặt trời, cối xay gió và thủy điện.",
-    "icon": "SunMedium",
-    "lessonTitle": "Năng lượng sạch từ thiên nhiên",
-    "lessonSlug": "nang-luong-sach-tu-nhien",
-    "contentMarkdown": "# Nguồn năng lượng vô tận quanh ta\n\nCon người ngày nay đang khai thác năng lượng tái tạo sạch để bảo vệ môi trường Trái Đất:\n- **Năng lượng Mặt Trời**: Cung cấp ánh sáng và nhiệt sưởi ấm, pin mặt trời biến quang năng thành điện năng thắp sáng đường phố.\n- **Năng lượng gió**: Đẩy thuyền buồm, quay các cánh quạt tuabin gió khổng lồ để phát điện sạch.\n- **Năng lượng nước chảy**: Dòng nước lũ đổ từ trên đập cao xuống làm quay tuabin trong các nhà máy thủy điện sinh ra dòng điện.",
-    "summary": "Mặt Trời, gió và nước chảy là các nguồn năng lượng tái tạo sạch, vô tận và thân thiện với môi trường.",
-    "durationMinutes": 15,
+    "grade": 10,
+    "tier": "high",
+    "topicTitle": "Động lực học chất điểm & Các định luật Newton",
+    "slug": "lop-10-dong-luc-hoc-dinh-luat-newton",
+    "topicDescription": "Ba định luật Newton, chuyển động biến đổi đều, lực ma sát trượt và định luật bảo toàn cơ năng.",
+    "icon": "Compass",
+    "lessonTitle": "Ba định luật Newton và Định luật bảo toàn năng lượng",
+    "lessonSlug": "ba-dinh-luat-newton-bao-toan-nang-luong",
+    "contentMarkdown": "# Cơ học cổ điển và Ba định luật Newton\n\n## 1. Định luật I Newton (Quán tính)\nNếu một vật không chịu tác dụng của lực nào hoặc chịu tác dụng của các lực có hợp lực bằng không, thì vật đang đứng yên sẽ tiếp tục đứng yên, đang chuyển động sẽ tiếp tục chuyển động thẳng đều.\n\n## 2. Định luật II Newton\nGia tốc của một vật cùng hướng với lực tác dụng lên vật. Độ lớn của gia tốc tỉ lệ thuận với độ lớn của lực và tỉ lệ nghịch với khối lượng của vật:\n$$\\vec{a} = \\frac{\\vec{F}_{net}}{m} \\iff \\vec{F}_{net} = m \\vec{a}$$\n\nLực ma sát trượt:\n$$F_{mst} = \\mu_t \\cdot N$$\n\n## 3. Định luật III Newton (Tác dụng - Phản tác dụng)\nTrong mọi trường hợp, khi vật $A$ tác dụng lên vật $B$ một lực thì vật $B$ cũng tác dụng lại vật $A$ một lực. Hai lực này là hai lực trực đối:\n$$\\vec{F}_{A \\to B} = -\\vec{F}_{B \\to A}$$",
+    "summary": "Ba định luật Newton: Fnet = ma, Fmst = mu*N, F_AB = -F_BA. Cơ năng W = Wd + Wt được bảo toàn.",
+    "durationMinutes": 25,
     "parentGuide": {
-      "summary": "Giáo dục học sinh ý thức sử dụng năng lượng xanh và bảo vệ tài nguyên thiên nhiên của hành tinh xanh.",
+      "summary": "Ba định luật Newton là nền móng của cơ học cổ điển. Lực không phải là nguyên nhân duy trì chuyển động mà là nguyên nhân làm thay đổi vận tốc (tạo ra gia tốc a = F/m).",
       "misconceptions": [
-        "Học sinh nghĩ than đá và dầu mỏ có thể tự sinh ra mãi mãi và dùng bao nhiêu cũng không hết.",
-        "Học sinh nghĩ pin mặt trời chỉ hoạt động vào mùa hè còn mùa đông thì hoàn toàn vô dụng."
+        "Vật đang chuyển động theo hướng nào thì bắt buộc phải có lực đẩy tác dụng theo hướng đó.",
+        "Nghĩ rằng lực ma sát luôn có hại và cản trở mọi chuyển động."
       ],
       "guiding_questions": [
-        "Tại sao người ta khuyên nên lợp các tấm pin mặt trời trên mái nhà thay vì chạy máy phát điện bằng xăng dầu?",
-        "Nhà máy thủy điện dùng sức mạnh của cái gì để làm quay máy phát điện?"
+        "Tại sao khi ô tô phanh gấp, người ngồi trong xe lại bị xô dúi về phía trước?",
+        "Nếu mặt đất hoàn toàn trơn nhẵn không có ma sát, con người có thể bước đi được không?"
       ],
       "home_experiments": [
         {
-          "title": "Chiếc guồng nước bằng vỏ chai nhựa",
+          "title": "Kiểm chứng quán tính với đồng xu và tấm bìa",
           "materials": [
-            "1 vỏ chai nhựa",
-            "1 chiếc que xiên tre",
-            "Vòi nước bồn rửa bát"
+            "1 cốc thủy tinh",
+            "1 tấm bìa cứng vuông $8\\times 8\\text{cm}$",
+            "1 đồng xu kim loại nặng"
           ],
           "steps": [
-            "Cắt các cánh nhỏ trên thân chai nhựa để tạo thành guồng cánh quạt.",
-            "Xỏ que tre qua tâm chai làm trục quay.",
-            "Mở vòi nước xả trực tiếp vào các cánh quạt và quan sát guồng nước quay tít."
+            "Đặt tấm bìa lên miệng cốc.",
+            "Đặt đồng xu lên trên tấm bìa, ngay trên miệng cốc.",
+            "Dùng ngón tay búng thật nhanh và dứt khoát vào mép tấm bìa."
           ],
-          "expected_outcome": "Dòng nước chảy có động năng đập vào các cánh quạt làm trục quay tít, minh họa nguyên lý nhà máy thủy điện.",
-          "safety_notes": "Cẩn thận khi dùng kéo cắt chai nhựa tránh xước tay."
+          "expected_outcome": "Tấm bìa bay đi theo phương ngang, đồng xu rơi thẳng đứng vào trong cốc do quán tính bảo toàn trạng thái đứng yên.",
+          "safety_notes": "Búng nhẹ tay vừa đủ lực để tấm bìa bay đi."
         }
       ]
     },
     "questions": [
       {
+        "question_type": "numeric",
+        "prompt": "Một vật có khối lượng $m = 5\\,\\text{kg}$ đang đứng yên trên mặt sàn nằm ngang thì chịu tác dụng của một lực kéo nằm ngang $F = 25\\,\\text{N}$. Hệ số ma sát trượt giữa vật và sàn là $\\mu = 0.2$. Lấy $g = 10\\,\\text{m/s}^2$. Tính gia tốc $a$ của vật theo đơn vị $\\text{m/s}^2$.",
+        "latex_formula": "a = \\frac{F - \\mu m g}{m}",
+        "correct_answer": "3",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "m/s^2",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Tính áp lực $N = P = m \\cdot g$ và lực ma sát trượt: $F_{ms} = \\mu \\cdot N$."
+          },
+          {
+            "level": 2,
+            "hint": "Áp dụng định luật II Newton theo phương ngang: $F - F_{ms} = m \\cdot a$."
+          },
+          {
+            "level": 3,
+            "hint": "$F_{ms} = 0.2 \\cdot 5 \\cdot 10 = 10\\,\\text{N} \\implies a = \\frac{25 - 10}{5} = 3.0\\,\\text{m/s}^2$."
+          }
+        ],
+        "explanation": "$N = mg = 5 \\cdot 10 = 50\\,\\text{N} \\implies F_{ms} = 0.2 \\cdot 50 = 10\\,\\text{N} \\implies F_{net} = 25 - 10 = 15\\,\\text{N} \\implies a = \\frac{15}{5} = 3\\,\\text{m/s}^2$.",
+        "difficulty": "hard",
+        "points": 15
+      },
+      {
         "question_type": "mcq",
-        "prompt": "Nguồn năng lượng nào sau đây là nguồn năng lượng tái tạo sạch, không gây ô nhiễm khói bụi?",
+        "prompt": "Theo định luật III Newton, cặp lực và phản lực:",
         "options": [
           {
             "id": "A",
-            "text": "Đốt than đá trong lò luyện gang"
+            "text": "Cùng tác dụng vào một vật nên triệt tiêu lẫn nhau"
           },
           {
             "id": "B",
-            "text": "Năng lượng từ ánh sáng Mặt Trời"
+            "text": "Tác dụng vào hai vật khác nhau, cùng phương, ngược chiều và cùng độ lớn"
           },
           {
             "id": "C",
-            "text": "Chạy động cơ xe máy bằng xăng pha nhớt"
+            "text": "Xuất hiện không đồng thời"
           },
           {
             "id": "D",
-            "text": "Đốt dầu hỏa thắp đèn"
+            "text": "Luôn luôn có độ lớn khác nhau"
           }
         ],
         "correct_answer": "B",
-        "difficulty": "easy",
+        "difficulty": "medium",
         "points": 10,
         "hints": [
           {
             "level": 1,
-            "hint": "Nguồn năng lượng này chiếu sáng tự nhiên ban ngày và không thải ra khí độc hại."
+            "hint": "Lực và phản lực đặt vào hai vật khác nhau hay cùng một vật?"
           }
         ],
-        "explanation": "Ánh sáng Mặt Trời là nguồn năng lượng tái tạo sạch và dồi dào nhất trên Trái Đất."
+        "explanation": "Lực và phản lực là cặp lực tương tác giữa hai vật: đặt vào hai vật khác nhau, cùng phương, ngược chiều, cùng độ lớn và xuất hiện đồng thời."
       }
     ]
   },
-
   {
-    "grade": 5,
-    "tier": "primary",
-    "topicTitle": "An toàn điện và tiết kiệm năng lượng điện",
-    "slug": "lop-5-an-toan-dien",
-    "topicDescription": "Kỹ năng sử dụng điện an toàn, phòng tránh giật điện, chập cháy và cách tiết kiệm điện.",
-    "icon": "ShieldAlert",
-    "lessonTitle": "Bảo vệ mình trước dòng điện",
-    "lessonSlug": "bao-ve-minh-truoc-dong-dien",
-    "contentMarkdown": "# Điện năng hữu ích nhưng cần cẩn trọng\n\nDòng điện gia đình ($220\\text{V}$) có sức mạnh rất lớn và cực kỳ nguy hiểm nếu bất cẩn:\n- Cơ thể người và nước dẫn điện rất tốt, vì vậy **tuyệt đối không chạm tay ướt** vào công tắc hoặc phích cắm điện.\n- Không dùng que kim loại chọc vào ổ cắm, không chơi đùa gần trạm biến áp hay đường dây điện cao thế.\n- **Tiết kiệm điện**: Tắt quạt, tắt đèn khi ra khỏi phòng; tận dụng ánh sáng tự nhiên ban ngày giúp bảo vệ túi tiền gia đình và môi trường.",
-    "summary": "Điện lưới 220V rất nguy hiểm. Cần tuân thủ quy tắc an toàn và có ý thức tiết kiệm điện.",
-    "durationMinutes": 15,
+    "grade": 11,
+    "tier": "high",
+    "topicTitle": "Dao động điều hòa & Sóng cơ học",
+    "slug": "lop-11-dao-dong-dieu-hoa-song-co",
+    "topicDescription": "Phương trình dao động điều hòa x = A cos(wt+phi), con lắc lò xo, con lắc đơn và truyền sóng cơ.",
+    "icon": "Radio",
+    "lessonTitle": "Phương trình dao động điều hòa và Con lắc lò xo",
+    "lessonSlug": "dao-dong-dieu-hoa-con-lac-lo-xo",
+    "contentMarkdown": "# Dao động điều hòa\n\n## 1. Phương trình dao động điều hòa\n$$x = A \\cos(\\omega t + \\varphi)$$\n\nTrong đó:\n- $x$: Li độ của dao động ($\\text{cm}$ hoặc $\\text{m}$)\n- $A$: Biên độ dao động ($A > 0$)\n- $\\omega$: Tần số góc ($\\text{rad/s}$)\n- $(\\omega t + \\varphi)$: Pha dao động tại thời điểm $t$ ($\\text{rad}$)\n- $\\varphi$: Pha ban đầu tại $t = 0$ ($\\text{rad}$)\n\n## 2. Vận tốc và Gia tốc\n$$v = x' = -\\omega A \\sin(\\omega t + \\varphi)$$\n$$a = v' = -\\omega^2 A \\cos(\\omega t + \\varphi) = -\\omega^2 x$$\n\n## 3. Con lắc lò xo\nTần số góc và chu kì của con lắc lò xo treo hoặc nằm ngang:\n$$\\omega = \\sqrt{\\frac{k}{m}} \\implies T = \\frac{2\\pi}{\\omega} = 2\\pi \\sqrt{\\frac{m}{k}}$$",
+    "summary": "Dao động điều hòa: x = A cos(wt+phi). Vận tốc v = -wA sin(wt+phi). Con lắc lò xo: T = 2*pi*sqrt(m/k).",
+    "durationMinutes": 25,
     "parentGuide": {
-      "summary": "Hình thành kỹ năng sống và phản xạ an toàn phòng tránh tai nạn điện giật và hỏa hoạn cho trẻ.",
+      "summary": "Dao động điều hòa là dao động mà li độ là hàm sin hoặc cosin của thời gian. Chu kì con lắc lò xo $T = 2\\pi\\sqrt{m/k}$ chỉ phụ thuộc khối lượng và độ cứng lò xo, không phụ thuộc biên độ.",
       "misconceptions": [
-        "Trẻ nghĩ chỉ khi nào sờ trực tiếp vào lõi đồng mới bị giật, còn tay ướt sờ vào vỏ nhựa nứt thì an toàn.",
-        "Trẻ nghĩ để các thiết bị ở chế độ chờ (standby) cả ngày đêm không tốn điện."
+        "Biên độ dao động càng lớn thì chu kì dao động càng dài.",
+        "Tại vị trí cân bằng thì gia tốc của vật đạt giá trị cực đại (thực tế tại VTCB x=0 nên a=0)."
       ],
       "guiding_questions": [
-        "Vì sao vừa tắm xong tay chân còn ướt sũng, con tuyệt đối không được cắm phích quạt điện?",
-        "Gia đình con có thể làm những hành động nhỏ nào để tiết kiệm hóa đơn tiền điện mỗi tháng?"
+        "Khi con ngồi trên xích đu đung đưa, vị trí nào con thấy mình đạt vận tốc lớn nhất, vị trí nào con tạm dừng?",
+        "Tại sao khi một đoàn quân hành quân bước đều qua cầu treo thì lại bị cấm bước đều (hiện tượng cộng hưởng)?"
       ],
       "home_experiments": [
         {
-          "title": "Khảo sát vật liệu cách điện trong ngôi nhà",
+          "title": "Khảo sát chu kì con lắc đơn tại gia",
           "materials": [
-            "Sổ tay nhỏ",
-            "Bút ghi chép",
-            "Cùng bố mẹ đi một vòng quanh nhà"
+            "1 sợi chỉ dài 1 mét",
+            "1 chùm chìa khóa nhỏ làm vật nặng",
+            "Đồng hồ bấm giờ điện thoại"
           ],
           "steps": [
-            "Quan sát các phích cắm điện, dây điện, vỏ công tắc, kìm sửa điện.",
-            "Ghi chép lại các bộ phận nào làm bằng kim loại dẫn điện và bộ phận nào bọc nhựa/cao su cách điện."
+            "Buộc chùm chìa khóa vào sợi chỉ, cố định đầu kia lên móc treo.",
+            "Kéo lệch góc nhỏ ($\\approx 10^\\circ$), thả nhẹ không vận tốc đầu.",
+            "Bấm giờ 10 dao động toàn phần, chia 10 để tính chu kì $T_1$. Cắt ngắn dây còn 0.25m và đo lại $T_2$."
           ],
-          "expected_outcome": "Trẻ nhận thức rõ mọi vị trí người dùng cầm nắm đều được bọc nhựa hoặc cao su cách điện an toàn.",
-          "safety_notes": "Chỉ quan sát bằng mắt, không tự ý cắm rút phích điện đang hoạt động."
+          "expected_outcome": "Khi chiều dài giảm 4 lần, chu kì giảm 2 lần ($T \\sim \\sqrt{l}$).",
+          "safety_notes": "Treo móc chắc chắn tránh rơi chìa khóa."
         }
       ]
     },
     "questions": [
       {
+        "question_type": "numeric",
+        "prompt": "Một con lắc lò xo có độ cứng $k = 100\\,\\text{N/m}$ gắn với vật nặng có khối lượng $m = 0.25\\,\\text{kg}$. Lấy $\\pi^2 \\approx 10$. Tính chu kì dao động riêng $T$ của con lắc theo đơn vị giây ($\\text{s}$).",
+        "latex_formula": "T = 2\\pi \\sqrt{\\frac{m}{k}}",
+        "correct_answer": "0.314",
+        "numeric_tolerance": 0.05,
+        "numeric_unit": "s",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Tần số góc của con lắc lò xo: $\\omega = \\sqrt{\\frac{k}{m}}$."
+          },
+          {
+            "level": 2,
+            "hint": "Chu kì dao động: $T = \\frac{2\\pi}{\\omega} = 2\\pi \\sqrt{\\frac{m}{k}}$."
+          },
+          {
+            "level": 3,
+            "hint": "$\\omega = \\sqrt{\\frac{100}{0.25}} = \\sqrt{400} = 20\\,\\text{rad/s} \\implies T = \\frac{2\\pi}{20} = \\frac{\\pi}{10} \\approx 0.314\\,\\text{s}$."
+          }
+        ],
+        "explanation": "$\\omega = \\sqrt{100 / 0.25} = 20\\,\\text{rad/s} \\implies T = \\frac{2\\pi}{20} \\approx 0.314\\,\\text{s}$.",
+        "difficulty": "hard",
+        "points": 15
+      },
+      {
         "question_type": "mcq",
-        "prompt": "Hành động nào sau đây là AN TOÀN khi sử dụng điện trong gia đình?",
+        "prompt": "Một chất điểm dao động điều hòa theo phương trình $x = 8 \\cos(5\\pi t - \\frac{\\pi}{6})\\,\\text{cm}$. Biên độ dao động $A$ và pha ban đầu $\\varphi$ của dao động lần lượt là:",
         "options": [
           {
             "id": "A",
-            "text": "Cầm tay ướt cắm phích điện vào ổ cắm trên tường"
+            "text": "$A = 8\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$",
+            "latex": "A = 8\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}"
           },
           {
             "id": "B",
-            "text": "Tắt đèn và rút phích cắm các thiết bị điện khi không sử dụng"
+            "text": "$A = 8\\,\\text{cm},\\; \\varphi = 5\\pi\\,\\text{rad}$",
+            "latex": "A = 8\\,\\text{cm},\\; \\varphi = 5\\pi\\,\\text{rad}"
           },
           {
             "id": "C",
-            "text": "Thả diều gần đường dây điện cao áp ngoài cánh đồng"
+            "text": "$A = 16\\,\\text{cm},\\; \\varphi = \\frac{\\pi}{6}\\,\\text{rad}$",
+            "latex": "A = 16\\,\\text{cm},\\; \\varphi = \\frac{\\pi}{6}\\,\\text{rad}"
           },
           {
             "id": "D",
-            "text": "Dùng dây thép chọc vào lỗ ổ cắm điện"
+            "text": "$A = 5\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$",
+            "latex": "A = 5\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}"
           }
         ],
-        "correct_answer": "B",
+        "correct_answer": "A",
         "difficulty": "easy",
         "points": 10,
         "hints": [
           {
             "level": 1,
-            "hint": "Hành động vừa đảm bảo an toàn vừa giúp tiết kiệm chi phí tiền điện."
+            "hint": "Đối chiếu phương trình dao động với dạng tổng quát: $x = A \\cos(\\omega t + \\varphi)$."
           }
         ],
-        "explanation": "Tắt thiết bị khi không dùng là hành vi sử dụng điện thông minh và an toàn."
+        "explanation": "Đối chiếu dạng chuẩn $x = A \\cos(\\omega t + \\varphi)$, ta có $A = 8\\,\\text{cm}$ và $\\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$."
       }
     ]
   },
-
   {
-    "grade": 5,
-    "tier": "primary",
-    "topicTitle": "Biến đổi trạng thái của chất do nhiệt",
-    "slug": "lop-5-bien-doi-trang-thai-nhiet",
-    "topicDescription": "Hiện tượng nóng chảy, đông đặc, bay hơi và ngưng tụ của các chất dưới tác dụng của nhiệt độ.",
-    "icon": "Sparkles",
-    "lessonTitle": "Vòng biến hóa của vật chất",
-    "lessonSlug": "vong-bien-hoa-vat-chat",
-    "contentMarkdown": "# Sự biến đổi trạng thái kỳ thú\n\nNhiệt độ thay đổi làm các chất biến đổi thể trạng:\n- **Nóng chảy**: Chất rắn nhận nhiệt chuyển thành chất lỏng (nước đá tan thành nước, sáp nến chảy lỏng).\n- **Đông đặc**: Chất lỏng mất nhiệt chuyển thành chất rắn (nước đóng băng thành đá, sáp nguội cứng lại).\n- **Bay hơi**: Chất lỏng chuyển thành hơi (nước hồ bốc hơi, cồn sát khuẩn bay hơi nhanh).\n- **Ngưng tụ**: Hơi gặp lạnh chuyển thành chất lỏng (sương đọng trên lá cây buổi sớm, hơi nước bám trên gương).",
-    "summary": "Nhiệt độ làm các chất chuyển thể qua 4 quá trình: nóng chảy, đông đặc, bay hơi và ngưng tụ.",
-    "durationMinutes": 15,
+    "grade": 12,
+    "tier": "high",
+    "topicTitle": "Thuyết động học phân tử chất khí & Vật lý Hạt nhân",
+    "slug": "lop-12-khi-ly-tuong-vat-ly-hat-nhan",
+    "topicDescription": "Phương trình trạng thái khí lý tưởng pV = nRT, các định luật chất khí và năng lượng liên kết hạt nhân.",
+    "icon": "Atom",
+    "lessonTitle": "Phương trình trạng thái khí lý tưởng và Năng lượng liên kết hạt nhân",
+    "lessonSlug": "khi-ly-tuong-nang-luong-hat-nhan",
+    "contentMarkdown": "# Khí lý tưởng & Vật lý Hạt nhân\n\n## 1. Phương trình Clapeyron - Mendeleev\n$$p V = n R T = \\frac{m}{M} R T$$\n\nTrong đó:\n- $p$: Áp suất chất khí ($\\text{Pa}$ hoặc $\\text{atm}$)\n- $V$: Thể tích khối khí ($\\text{m}^3$)\n- $T$: Nhiệt độ tuyệt đối theo thang Kelvin ($T = t^\\circ\\text{C} + 273$)\n- $R \\approx 8.31\\,\\text{J/(mol}\\cdot\\text{K)}$: Hằng số khí lý tưởng\n\nQuá trình đẳng tích (Định luật Charles):\n$$\\frac{p_1}{T_1} = \\frac{p_2}{T_2}$$\n\n## 2. Năng lượng liên kết hạt nhân\nĐộ hụt khối lượng:\n$$\\Delta m = [Z m_p + (A - Z) m_n] - m_X$$\n\nHệ thức Einstein về năng lượng:\n$$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$",
+    "summary": "Phương trình pV = nRT. Đẳng tích: p1/T1 = p2/T2. Năng lượng liên kết hạt nhân: Elk = Delta_m * c^2.",
+    "durationMinutes": 25,
     "parentGuide": {
-      "summary": "Giúp học sinh tổng hợp và làm chủ 4 quá trình chuyển thể của vật chất, liên hệ với vòng tuần hoàn của nước trong tự nhiên.",
+      "summary": "Áp suất, thể tích và nhiệt độ tuyệt đối của khối khí tuân theo pV/T = const. Năng lượng hạt nhân khổng lồ giải phóng nhờ độ hụt khối lượng chuyển hóa thành năng lượng theo hệ thức E = mc^2 của Einstein.",
       "misconceptions": [
-        "Học sinh nghĩ chỉ có nước mới có thể nóng chảy hoặc đông đặc, còn kim loại như sắt thép thì không bao giờ nóng chảy được.",
-        "Học sinh nghĩ bay hơi chỉ xảy ra khi chất lỏng sôi ở $100^\\circ\\text{C}$."
+        "Nhiệt độ 0 độ C nghĩa là các phân tử khí đã dừng chuyển động nhiệt hoàn toàn (điểm dừng là 0 K = -273.15 độ C).",
+        "Nghĩ rằng khối lượng của hạt nhân bằng đúng tổng khối lượng của các proton và neutron riêng lẻ cấu thành nên nó."
       ],
       "guiding_questions": [
-        "Giọt sương long lanh đọng trên ngọn cỏ buổi sớm mai từ đâu mà xuất hiện?",
-        "Trong lò luyện kim, người ta đốt nóng quặng sắt lên hàng nghìn độ C để làm gì?"
+        "Tại sao săm lốp xe đạp bơm căng để ngoài trời nắng gắt mùa hè lại dễ bị nổ?",
+        "Mặt Trời đã tỏa sáng hàng tỉ năm qua bằng loại phản ứng hạt nhân nào?"
       ],
       "home_experiments": [
         {
-          "title": "Sự đông đặc kỳ diệu của ngọn nến",
+          "title": "Quả bóng bàn phồng lại nhờ nhiệt độ",
           "materials": [
-            "1 cây nến nhỏ",
-            "1 chiếc đĩa sứ",
-            "Bật lửa do bố mẹ giữ"
+            "1 quả bóng bàn bị móp lõm (không bị thủng rách)",
+            "1 cốc nước nóng khoảng $80^\\circ\\text{C}$"
           ],
           "steps": [
-            "Bố mẹ thắp ngọn nến, quan sát sáp nến gần bấc nến nóng chảy thành chất lỏng trong suốt.",
-            "Nghiêng nhẹ cây nến để vài giọt sáp lỏng nhỏ xuống đĩa sứ.",
-            "Quan sát giọt sáp trên đĩa nguội đi sau 10 giây."
+            "Thả quả bóng bàn móp vào cốc nước nóng.",
+            "Quan sát trong 30-60 giây."
           ],
-          "expected_outcome": "Sáp lỏng mất nhiệt truyền vào đĩa sứ nhanh chóng đông đặc lại thành chất rắn màu trắng đục.",
-          "safety_notes": "Phụ huynh trực tiếp châm lửa và theo dõi ngọn nến tránh hỏa hoạn."
+          "expected_outcome": "Không khí bên trong quả bóng nhận nhiệt, nhiệt độ T tăng làm áp suất p tăng, đẩy vỏ bóng phồng căng trở lại hình dạng cầu ban đầu.",
+          "safety_notes": "Thao tác với nước nóng cẩn thận tránh bỏng."
         }
       ]
     },
     "questions": [
       {
+        "question_type": "numeric",
+        "prompt": "Một bình kín có dung tích không đổi $V$ chứa lượng khí ở nhiệt độ $t_1 = 27^\\circ\\text{C}$ và áp suất $p_1 = 1.5\\,\\text{atm}$. Đun nóng bình khí đến nhiệt độ $t_2 = 127^\\circ\\text{C}$. Tính áp suất $p_2$ của lượng khí trong bình theo đơn vị $\\text{atm}$.",
+        "latex_formula": "p_2 = p_1 \\cdot \\frac{T_2}{T_1}",
+        "correct_answer": "2.0",
+        "numeric_tolerance": 0.05,
+        "numeric_unit": "atm",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Đổi nhiệt độ Celsius sang thang Kelvin: $T = t + 273$."
+          },
+          {
+            "level": 2,
+            "hint": "$T_1 = 27 + 273 = 300\\,\\text{K}$; $T_2 = 127 + 273 = 400\\,\\text{K}$."
+          },
+          {
+            "level": 3,
+            "hint": "Áp dụng định luật Charles (đẳng tích): $\\frac{p_1}{T_1} = \\frac{p_2}{T_2} \\implies p_2 = 1.5 \\cdot \\frac{400}{300} = 2.0\\,\\text{atm}$."
+          }
+        ],
+        "explanation": "$T_1 = 300\\,\\text{K}, T_2 = 400\\,\\text{K} \\implies p_2 = p_1 \\frac{T_2}{T_1} = 1.5 \\cdot \\frac{400}{300} = 2.0\\,\\text{atm}$.",
+        "difficulty": "hard",
+        "points": 15
+      },
+      {
         "question_type": "mcq",
-        "prompt": "Hiện tượng nước lỏng trong khay để vào ngăn đá tủ lạnh biến thành các khối đá cứng gọi là gì?",
+        "prompt": "Hệ thức nổi tiếng của Einstein về mối liên hệ giữa năng lượng $E$ và khối lượng $m$ là:",
         "options": [
           {
             "id": "A",
-            "text": "Sự nóng chảy"
+            "text": "$E = m c^2$",
+            "latex": "E = m c^2"
           },
           {
             "id": "B",
-            "text": "Sự đông đặc"
+            "text": "$E = \\frac{1}{2} m c^2$",
+            "latex": "E = \\frac{1}{2} m c^2"
           },
           {
             "id": "C",
-            "text": "Sự bay hơi"
+            "text": "$E = m c$",
+            "latex": "E = m c"
           },
           {
             "id": "D",
-            "text": "Sự ngưng tụ"
+            "text": "$E = \\frac{m}{c^2}$",
+            "latex": "E = \\frac{m}{c^2}"
           }
         ],
-        "correct_answer": "B",
+        "correct_answer": "A",
         "difficulty": "easy",
         "points": 10,
         "hints": [
           {
             "level": 1,
-            "hint": "Quá trình chuyển từ thể lỏng sang thể rắn khi giảm nhiệt độ."
+            "hint": "Công thức tương đối tính hẹp của Albert Einstein!"
           }
         ],
-        "explanation": "Sự đông đặc là quá trình chất chuyển từ thể lỏng sang thể rắn."
+        "explanation": "Hệ thức Einstein: $E = m c^2$, trong đó $c \\approx 3 \\cdot 10^8\\,\\text{m/s}$ là tốc độ ánh sáng trong chân không."
       }
     ]
   },
-
   {
     "grade": 6,
     "tier": "middle",
@@ -2471,7 +1105,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 6,
     "tier": "middle",
@@ -2676,7 +1309,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 6,
     "tier": "middle",
@@ -2879,7 +1511,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 6,
     "tier": "middle",
@@ -3083,7 +1714,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 7,
     "tier": "middle",
@@ -3144,7 +1774,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 7,
     "tier": "middle",
@@ -3219,7 +1848,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 7,
     "tier": "middle",
@@ -3294,7 +1922,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 7,
     "tier": "middle",
@@ -3353,7 +1980,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 8,
     "tier": "middle",
@@ -3412,7 +2038,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 8,
     "tier": "middle",
@@ -3485,7 +2110,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 8,
     "tier": "middle",
@@ -3547,7 +2171,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 8,
     "tier": "middle",
@@ -3623,7 +2246,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 9,
     "tier": "middle",
@@ -3683,7 +2305,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 9,
     "tier": "middle",
@@ -3743,7 +2364,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 9,
     "tier": "middle",
@@ -3821,7 +2441,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 9,
     "tier": "middle",
@@ -3880,7 +2499,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 9,
     "tier": "middle",
@@ -3955,7 +2573,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 10,
     "tier": "high",
@@ -4015,7 +2632,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 10,
     "tier": "high",
@@ -4075,7 +2691,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 10,
     "tier": "high",
@@ -4138,7 +2753,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 10,
     "tier": "high",
@@ -4197,7 +2811,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 10,
     "tier": "high",
@@ -4260,7 +2873,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 11,
     "tier": "high",
@@ -4321,7 +2933,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 11,
     "tier": "high",
@@ -4396,7 +3007,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 11,
     "tier": "high",
@@ -4456,7 +3066,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 11,
     "tier": "high",
@@ -4517,7 +3126,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 11,
     "tier": "high",
@@ -4577,7 +3185,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 12,
     "tier": "high",
@@ -4637,7 +3244,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 12,
     "tier": "high",
@@ -4695,7 +3301,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 12,
     "tier": "high",
@@ -4755,7 +3360,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 12,
     "tier": "high",
@@ -4830,7 +3434,6 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
       }
     ]
   },
-
   {
     "grade": 12,
     "tier": "high",

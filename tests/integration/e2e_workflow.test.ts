@@ -221,14 +221,14 @@ describe('Milestone 6: Comprehensive E2E Workflow & Cross-Tier Integration Suite
   // TIER 4: REAL-WORLD 3-TIER APPLICATION SCENARIOS
   // ==========================================================================
   describe('Tier 4: 3-Tier Multi-Grade Student Application Scenarios', () => {
-    it('handles Grade 2 (Primary Tier) topic queries with visual phenomena content', async () => {
-      const req = new NextRequest('http://localhost:3000/api/student/topics?grade=2');
+    it('handles Grade 6 (Middle Tier) topic queries with physics measurement content', async () => {
+      const req = new NextRequest('http://localhost:3000/api/student/topics?grade=6');
       const res = await getStudentTopics(req);
       const data = await res.json();
 
       expect(res.status).toBe(200);
       expect(data.topics.length).toBeGreaterThan(0);
-      expect(data.topics[0].tier).toBe('primary');
+      expect(data.topics[0].tier).toBe('middle');
     });
 
     it('handles Grade 8 (Middle Tier) topic queries with structured logic physics', async () => {

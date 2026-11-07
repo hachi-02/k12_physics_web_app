@@ -62,12 +62,12 @@ describe('Curriculum Seed Data & Pedagogical Quality (M1)', () => {
     });
   });
 
-  describe('12-Grade Curriculum & Tier Representation', () => {
-    it('should contain topics for all 12 grades without gaps', () => {
+  describe('Secondary Physics Curriculum (Grades 6-12) & Tier Representation', () => {
+    it('should contain topics for all grades 6 to 12 without gaps', () => {
       const topics = db.query<{ grade: number }>('SELECT DISTINCT grade FROM physics_topics ORDER BY grade ASC');
       const presentGrades = topics.map((t) => t.grade);
 
-      for (let grade = 1; grade <= 12; grade++) {
+      for (let grade = 6; grade <= 12; grade++) {
         expect(presentGrades).toContain(grade);
       }
     });
@@ -76,9 +76,7 @@ describe('Curriculum Seed Data & Pedagogical Quality (M1)', () => {
       const topics = db.query<{ grade: number; tier: string }>('SELECT grade, tier FROM physics_topics');
 
       for (const topic of topics) {
-        if (topic.grade >= 1 && topic.grade <= 5) {
-          expect(['primary']).toContain(topic.tier);
-        } else if (topic.grade >= 6 && topic.grade <= 9) {
+        if (topic.grade >= 6 && topic.grade <= 9) {
           expect(['middle', 'lower_secondary']).toContain(topic.tier);
         } else if (topic.grade >= 10 && topic.grade <= 12) {
           expect(['high', 'upper_secondary']).toContain(topic.tier);

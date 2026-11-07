@@ -134,11 +134,11 @@ describe('Milestone 2: Parent Dashboard & Knowledge Gap Engine', () => {
       expect(sample.lastStudiedAt).toBeNull();
     });
 
-    it('should preserve curriculum coverage of all 12 grades in knowledge gap map', () => {
+    it('should preserve curriculum coverage of grades 6 to 12 in knowledge gap map', () => {
       const data = getParentDashboardData(parentId, studentId);
       const gradesPresent = new Set(data.knowledgeGaps.map((t) => t.grade));
 
-      for (let g = 1; g <= 12; g++) {
+      for (let g = 6; g <= 12; g++) {
         expect(gradesPresent.has(g)).toBe(true);
       }
     });

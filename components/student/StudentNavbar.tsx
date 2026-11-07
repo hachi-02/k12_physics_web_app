@@ -71,7 +71,7 @@ export function StudentNavbar({
                   Không Gian Học Sinh
                 </span>
                 <span className="text-[11px] text-slate-500 hidden sm:block">
-                  Vật lý & Khoa học thường thức K-12
+                  Vật lý & Khoa học tự nhiên (Lớp 6 - 12)
                 </span>
               </div>
             </Link>
@@ -86,9 +86,9 @@ export function StudentNavbar({
               onChange={handleGradeChange}
               className="text-xs font-bold bg-white text-slate-900 rounded-lg px-2.5 py-1 border border-slate-200 focus:outline-hidden focus:ring-2 focus:ring-teal-500 cursor-pointer"
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((g) => (
+              {[6, 7, 8, 9, 10, 11, 12].map((g) => (
                 <option key={g} value={g}>
-                  Lớp {g} {g <= 5 ? '(Tiểu học)' : g <= 9 ? '(THCS)' : '(THPT)'}
+                  Lớp {g} {g <= 9 ? '(THCS)' : '(THPT)'}
                 </option>
               ))}
             </select>

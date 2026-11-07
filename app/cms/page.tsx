@@ -224,9 +224,9 @@ export default function CMSDashboardPage() {
                 : 'text-slate-600 hover:bg-slate-100'
             }`}
           >
-            Tất cả (1-12)
+            Tất cả (6-12)
           </button>
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((g) => (
+          {[6, 7, 8, 9, 10, 11, 12].map((g) => (
             <button
               key={g}
               onClick={() => setSelectedGrade(g)}
@@ -378,10 +378,10 @@ export default function CMSDashboardPage() {
                   onChange={(e) => setFormData({ ...formData, grade: parseInt(e.target.value, 10) })}
                   className="w-full px-3.5 py-2 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
-                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((g) => (
+                  {[6, 7, 8, 9, 10, 11, 12].map((g) => (
                     <option key={g} value={g}>
                       Lớp {g} (
-                      {g <= 5 ? 'Tiểu học - Trực quan' : g <= 9 ? 'THCS - Tư duy logic' : 'THPT - Định lượng'}
+                      {g <= 9 ? 'THCS - Tư duy logic' : 'THPT - Định lượng'}
                       )
                     </option>
                   ))}

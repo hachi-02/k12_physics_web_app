@@ -56,8 +56,8 @@ describe('Milestone 3: Student Workspace, Theory & Questions Engine', () => {
   });
 
   describe('Curriculum Topics per Grade', () => {
-    it('should return curriculum topics for any grade between 1 and 12', () => {
-      for (let g = 1; g <= 12; g++) {
+    it('should return curriculum topics for any grade between 6 and 12', () => {
+      for (let g = 6; g <= 12; g++) {
         const topics = getTopicsForGrade(g, studentId);
         expect(topics.length).toBeGreaterThanOrEqual(1);
         expect(topics[0].grade).toBe(g);
@@ -68,11 +68,11 @@ describe('Milestone 3: Student Workspace, Theory & Questions Engine', () => {
     });
 
     it('should include user best score and quiz count if student attempted topic', () => {
-      const grade1Topics = getTopicsForGrade(1, studentId);
-      expect(grade1Topics.length).toBeGreaterThanOrEqual(1);
-      // Seed had a 90% score on Grade 1 topic
-      expect(grade1Topics[0].userBestScore).toBe(90);
-      expect(grade1Topics[0].userQuizCount).toBe(1);
+      const grade6Topics = getTopicsForGrade(6, studentId);
+      expect(grade6Topics.length).toBeGreaterThanOrEqual(1);
+      // Seed had a 90% score on Grade 6 topic
+      expect(grade6Topics[0].userBestScore).toBe(90);
+      expect(grade6Topics[0].userQuizCount).toBe(1);
     });
   });
 

@@ -131,7 +131,7 @@ export function ParentGuideClientView({
             Tất cả
           </button>
 
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((grade) => (
+          {[6, 7, 8, 9, 10, 11, 12].map((grade) => (
             <button
               key={grade}
               onClick={() => {

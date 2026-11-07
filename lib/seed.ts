@@ -195,8 +195,9 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
 
     // 5. Seed Sample Assignments for Parent Workspace
     const dueTomorrow = new Date(Date.now() + 86400000).toISOString();
-    const g1 = topicByGrade.get(1) || { topicId: firstTopicId, lessonId: firstLessonId };
+    const g6 = topicByGrade.get(6) || { topicId: firstTopicId, lessonId: firstLessonId };
     const g7 = topicByGrade.get(7) || { topicId: firstTopicId, lessonId: firstLessonId };
+    const g8 = topicByGrade.get(8) || g7;
 
     // Assignment 1: Active assigned
     db.run(
@@ -206,11 +207,11 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       [
         parentId,
         studentId,
-        g1.topicId,
-        g1.lessonId,
-        'Thực hành thí nghiệm Ánh sáng & Làm bài tập',
-        'Con đọc kỹ bài học và làm 2 câu hỏi trắc nghiệm nhé!',
-        'Con đọc kỹ bài học và làm 2 câu hỏi trắc nghiệm nhé!',
+        g6.topicId,
+        g6.lessonId,
+        'Khảo sát Lực, Khối lượng riêng & Trọng lượng',
+        'Con đọc kỹ bài học và làm các câu hỏi tự luyện nhé!',
+        'Con đọc kỹ bài học và làm các câu hỏi tự luyện nhé!',
         dueTomorrow,
         'assigned',
         'Đi ăn kem Tràng Tiền cuối tuần',
@@ -245,7 +246,7 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
     db.run(
       `INSERT INTO study_sessions (student_id, topic_id, lesson_id, session_type, duration_seconds, session_date)
        VALUES (?, ?, ?, ?, ?, ?)`,
-      [studentId, g1.topicId, g1.lessonId, 'learn', 1200, todayStr]
+      [studentId, g6.topicId, g6.lessonId, 'learn', 1200, todayStr]
     );
     db.run(
       `INSERT INTO study_sessions (student_id, topic_id, lesson_id, session_type, duration_seconds, session_date)
@@ -255,13 +256,11 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
     db.run(
       `INSERT INTO study_sessions (student_id, topic_id, lesson_id, session_type, duration_seconds, session_date)
        VALUES (?, ?, ?, ?, ?, ?)`,
-      [studentId, (topicByGrade.get(2) || g1).topicId, (topicByGrade.get(2) || g1).lessonId, 'simulation', 900, todayStr]
+      [studentId, g8.topicId, g8.lessonId, 'simulation', 900, todayStr]
     );
 
     // 7. Seed Sample Quiz Submissions (Mastered, Developing, Critical)
-    const g2 = topicByGrade.get(2) || g1;
-
-    // Submission 1: Grade 1 Topic -> 90% (Mastered)
+    // Submission 1: Grade 6 Topic -> 90% (Mastered)
     db.run(
       `INSERT INTO quiz_submissions (
         user_id, quiz_type, topic_id, lesson_id, score, total_questions, correct_count, time_spent_seconds, stars_earned, answers_json, submitted_at
@@ -269,8 +268,8 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       [
         studentId,
         'practice',
-        g1.topicId,
-        g1.lessonId,
+        g6.topicId,
+        g6.lessonId,
         90.0,
         10,
         9,
@@ -281,7 +280,7 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       ]
     );
 
-    // Submission 2: Grade 2 Topic -> 70% (Developing)
+    // Submission 2: Grade 8 Topic -> 70% (Developing)
     db.run(
       `INSERT INTO quiz_submissions (
         user_id, quiz_type, topic_id, lesson_id, score, total_questions, correct_count, time_spent_seconds, stars_earned, answers_json, submitted_at
@@ -289,8 +288,8 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       [
         studentId,
         'practice',
-        g2.topicId,
-        g2.lessonId,
+        g8.topicId,
+        g8.lessonId,
         70.0,
         10,
         7,

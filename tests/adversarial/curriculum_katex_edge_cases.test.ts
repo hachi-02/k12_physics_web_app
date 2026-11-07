@@ -216,7 +216,7 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
   // AREA 2: Parent Guide JSON Completeness & Structural Parseability
   // ==========================================================================
   describe('Area 2: Parent Guide Pedagogical Completeness & Schema Validation', () => {
-    it('should have 100% complete, parseable, and non-trivial parent guides for all 12 grades', () => {
+    it('should have 100% complete, parseable, and non-trivial parent guides for all curriculum grades (Grades 6-12)', () => {
       for (const topic of CURRICULUM_DATA) {
         const guide = topic.parentGuide;
         expect(guide, `Grade ${topic.grade} missing parentGuide`).toBeDefined();

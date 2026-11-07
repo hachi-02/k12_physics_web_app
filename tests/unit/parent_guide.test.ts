@@ -11,18 +11,18 @@ describe('Milestone 2: Parent Guide ("Sư phạm tại gia") Pedagogical Engine'
   });
 
   describe('Lesson Query & Filter Capabilities', () => {
-    it('should retrieve all lessons with valid parent guides across 12 grades', () => {
+    it('should retrieve all lessons with valid parent guides across grades 6 to 12', () => {
       const allLessons = getLessonsWithParentGuide({});
-      expect(allLessons.length).toBeGreaterThanOrEqual(12);
+      expect(allLessons.length).toBeGreaterThanOrEqual(7);
 
       const grades = new Set(allLessons.map((l) => l.grade));
-      for (let g = 1; g <= 12; g++) {
+      for (let g = 6; g <= 12; g++) {
         expect(grades.has(g)).toBe(true);
       }
     });
 
     it('should filter lessons by specific grade', () => {
-      for (let g = 1; g <= 12; g++) {
+      for (let g = 6; g <= 12; g++) {
         const gradeLessons = getLessonsWithParentGuide({ grade: g });
         expect(gradeLessons.length).toBeGreaterThanOrEqual(1);
         expect(gradeLessons.every((l) => l.grade === g)).toBe(true);
