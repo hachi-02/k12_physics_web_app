@@ -468,6 +468,101 @@ $$d = \\frac{P}{V} = 10 \\cdot D$$ (đơn vị: $\\text{N/m}^3$)`,
         explanation: '$m = D \\cdot V = 2700 \\cdot 0.04 = 108\\,\\text{kg}$.',
         difficulty: 'medium',
         points: 10
+      },
+      {
+        question_type: 'mcq',
+        prompt: 'Một khối gỗ hình hộp chữ nhật có kích thước dài $20\\,\\text{cm}$, rộng $10\\,\\text{cm}$, cao $5\\,\\text{cm}$. Thể tích $V$ của khối gỗ đó bằng bao nhiêu lít?',
+        options: [
+          { id: 'A', text: '1 lít' },
+          { id: 'B', text: '10 lít' },
+          { id: 'C', text: '0.1 lít' },
+          { id: 'D', text: '1000 lít' }
+        ],
+        correct_answer: 'A',
+        difficulty: 'medium',
+        points: 10,
+        hints: [
+          { level: 1, hint: 'Tính thể tích theo cm khối: $V = 20 \\times 10 \\times 5 = 1000\\,\\text{cm}^3$.' },
+          { level: 2, hint: 'Quy đổi: $1\\,\\text{lít} = 1\\,\\text{dm}^3 = 1000\\,\\text{cm}^3$.' }
+        ],
+        explanation: '$V = 20 \\times 10 \\times 5 = 1000\\,\\text{cm}^3 = 1\\,\\text{dm}^3 = 1\\,\\text{lít}$.'
+      },
+      {
+        question_type: 'numeric',
+        prompt: 'Khối lượng riêng của nước là $D = 1000\\,\\text{kg/m}^3$. Tính khối lượng $m$ của $1.5\\,\\text{m}^3$ nước theo đơn vị $\\text{kg}$.',
+        latex_formula: 'm = D \\cdot V',
+        correct_answer: '1500',
+        numeric_tolerance: 0.02,
+        numeric_unit: 'kg',
+        hints: [
+          { level: 1, hint: 'Khối lượng được tính theo công thức $m = D \\cdot V$.' },
+          { level: 2, hint: 'Tính: $m = 1000 \\cdot 1.5$.' }
+        ],
+        explanation: '$m = 1000 \\cdot 1.5 = 1500\\,\\text{kg}$.',
+        difficulty: 'easy',
+        points: 10
+      },
+      {
+        question_type: 'mcq',
+        prompt: 'Thả một quả cầu kim loại chìm hoàn toàn vào bình chia độ chứa sẵn $120\\,\\text{cm}^3$ nước thì mực nước dâng lên mức $175\\,\\text{cm}^3$. Thể tích của quả cầu là bao nhiêu?',
+        options: [
+          { id: 'A', text: '55 cm3' },
+          { id: 'B', text: '295 cm3' },
+          { id: 'C', text: '120 cm3' },
+          { id: 'D', text: '175 cm3' }
+        ],
+        correct_answer: 'A',
+        difficulty: 'easy',
+        points: 10,
+        hints: [
+          { level: 1, hint: 'Thể tích vật rắn bằng độ tăng thể tích của nước trong bình: $V = V_2 - V_1$.' }
+        ],
+        explanation: '$V = 175 - 120 = 55\\,\\text{cm}^3$.'
+      },
+      {
+        question_type: 'numeric',
+        prompt: 'Một phi hành gia có trọng lượng trên mặt đất là $P = 600\\,\\text{N}$. Trọng lực trên Mặt Trăng xấp xỉ bằng $1/6$ trên Trái Đất. Tính trọng lượng của phi hành gia đó khi đứng trên Mặt Trăng theo đơn vị $\\text{N}$.',
+        correct_answer: '100',
+        numeric_tolerance: 0.02,
+        numeric_unit: 'N',
+        hints: [
+          { level: 1, hint: 'Trọng lượng trên Mặt Trăng bằng trọng lượng trên Trái Đất chia cho 6.' }
+        ],
+        explanation: '$P_{\\text{MT}} = 600 / 6 = 100\\,\\text{N}$. Khối lượng không đổi nhưng trọng lượng giảm 6 lần.',
+        difficulty: 'medium',
+        points: 10
+      },
+      {
+        question_type: 'mcq',
+        prompt: 'Đơn vị đo chuẩn của trọng lượng riêng trong hệ thống đo lường quốc tế (SI) là gì?',
+        options: [
+          { id: 'A', text: 'N/m3' },
+          { id: 'B', text: 'kg/m3' },
+          { id: 'C', text: 'N/m2' },
+          { id: 'D', text: 'J/m3' }
+        ],
+        correct_answer: 'A',
+        difficulty: 'easy',
+        points: 10,
+        hints: [
+          { level: 1, hint: 'Trọng lượng riêng $d = P / V$, trong đó $P$ đo bằng Newton (N), $V$ đo bằng mét khối (m3).' }
+        ],
+        explanation: 'Trọng lượng riêng $d = \\frac{P}{V}$ có đơn vị là $\\text{N/m}^3$.'
+      },
+      {
+        question_type: 'numeric',
+        prompt: 'Một khối sắt có thể tích $V = 0.02\\,\\text{m}^3$ và khối lượng riêng $D = 7800\\,\\text{kg/m}^3$. Lấy $P = 10 \\cdot m$, tính trọng lượng $P$ của khối sắt theo đơn vị $\\text{N}$.',
+        latex_formula: 'P = 10 \\cdot D \\cdot V',
+        correct_answer: '1560',
+        numeric_tolerance: 0.02,
+        numeric_unit: 'N',
+        hints: [
+          { level: 1, hint: 'Tìm khối lượng: $m = D \\cdot V = 7800 \\cdot 0.02 = 156\\,\\text{kg}$.' },
+          { level: 2, hint: 'Tính trọng lượng: $P = 10 \\cdot m = 10 \\cdot 156$.' }
+        ],
+        explanation: '$m = 7800 \\cdot 0.02 = 156\\,\\text{kg} \\implies P = 10 \\cdot 156 = 1560\\,\\text{N}$.',
+        difficulty: 'hard',
+        points: 15
       }
     ]
   },
@@ -2229,6 +2324,150 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
           }
         ],
         "explanation": "Kilôgam (kg) là đơn vị đo khối lượng cơ bản trong hệ đo lường quốc tế SI."
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Giới hạn đo (GHĐ) của một dụng cụ đo là gì?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Độ dài giữa hai vạch chia liên tiếp trên thang đo"
+          },
+          {
+            "id": "B",
+            "text": "Giá trị lớn nhất ghi trên thang đo của dụng cụ"
+          },
+          {
+            "id": "C",
+            "text": "Khoảng cách nhỏ nhất mà dụng cụ có thể phân biệt được"
+          },
+          {
+            "id": "D",
+            "text": "Sai số cho phép khi sử dụng dụng cụ đo"
+          }
+        ],
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Giới hạn đo là số đo cực đại mà dụng cụ có thể đo được một lần."
+          }
+        ],
+        "explanation": "Giới hạn đo (GHĐ) của một dụng cụ là giá trị lớn nhất ghi trên thang đo của dụng cụ đó."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Để đo độ dày của một tờ giấy A4, bạn Minh xếp chồng 200 tờ giấy khít lên nhau rồi dùng thước đo được tổng độ dày là $24\\,\\text{mm}$. Tính độ dày của một tờ giấy theo đơn vị $\\text{mm}$.",
+        "correct_answer": "0.12",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "mm",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Lấy tổng độ dày của cả tệp giấy chia cho số lượng tờ giấy: $24 / 200$."
+          }
+        ],
+        "explanation": "Độ dày một tờ giấy: $d = 24 / 200 = 0.12\\,\\text{mm}$. Phương pháp chia đều giúp đo chính xác các kích thước siêu nhỏ.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Khi đọc thể tích chất lỏng trong bình chia độ hình trụ, vị trí đặt mắt đúng nhất là:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Nhìn chéo từ trên xuống dưới mặt thoáng chất lỏng"
+          },
+          {
+            "id": "B",
+            "text": "Nhìn chéo từ dưới đáy bình hướng lên"
+          },
+          {
+            "id": "C",
+            "text": "Đặt mắt ngang bằng với đáy mặt khum của chất lỏng"
+          },
+          {
+            "id": "D",
+            "text": "Nhìn nghiêng 45 độ so với thành bình"
+          }
+        ],
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Mắt phải nằm ngang bằng mặt khum thấp nhất của chất lỏng để tránh sai số góc nhìn."
+          }
+        ],
+        "explanation": "Cần đặt mắt nhìn ngang bằng với đáy mặt khum của chất lỏng để đọc vạch chia chính xác."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một bể cá gia đình chứa được $3.5\\,\\text{m}^3$ nước. Đổi thể tích này sang đơn vị lít ($\\text{L}$), biết $1\\,\\text{m}^3 = 1000\\,\\text{L}$.",
+        "correct_answer": "3500",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "L",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Nhân thể tích với 1000: $3.5 \\times 1000$."
+          }
+        ],
+        "explanation": "$V = 3.5 \\times 1000 = 3500\\,\\text{L}$.",
+        "difficulty": "easy",
+        "points": 10
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một bao gạo lớn ghi khối lượng $2.5\\,\\text{tạ}$. Quy đổi khối lượng bao gạo sang đơn vị kilôgam ($\\text{kg}$), biết $1\\,\\text{tạ} = 100\\,\\text{kg}$.",
+        "correct_answer": "250",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "kg",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Lấy $2.5 \\times 100$."
+          }
+        ],
+        "explanation": "$m = 2.5 \\times 100 = 250\\,\\text{kg}$.",
+        "difficulty": "easy",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Thước đo có độ chia nhỏ nhất (ĐCNN) là $0.5\\,\\text{cm}$. Cách ghi kết quả đo nào sau đây là ĐÚNG quy tắc?",
+        "options": [
+          {
+            "id": "A",
+            "text": "12.3 cm"
+          },
+          {
+            "id": "B",
+            "text": "12.5 cm"
+          },
+          {
+            "id": "C",
+            "text": "12.35 cm"
+          },
+          {
+            "id": "D",
+            "text": "12.4 cm"
+          }
+        ],
+        "correct_answer": "B",
+        "difficulty": "medium",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Kết quả đo phải là bội số của độ chia nhỏ nhất (ở đây tận cùng là .0 hoặc .5)."
+          }
+        ],
+        "explanation": "Vì ĐCNN là 0.5 cm nên kết quả ghi phải chia hết cho 0.5 cm, chỉ có 12.5 cm là hợp lệ."
       }
     ]
   },
@@ -2306,6 +2545,134 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
           }
         ],
         "explanation": "Lực từ tác dụng qua từ trường trong không gian mà không cần tiếp xúc cơ học."
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Một lò xo có chiều dài ban đầu $l_0 = 12\\,\\text{cm}$. Khi treo một quả nặng, lò xo dãn ra đến chiều dài $l = 15\\,\\text{cm}$. Độ dãn $\\Delta l$ của lò xo là:",
+        "options": [
+          {
+            "id": "A",
+            "text": "3 cm"
+          },
+          {
+            "id": "B",
+            "text": "27 cm"
+          },
+          {
+            "id": "C",
+            "text": "15 cm"
+          },
+          {
+            "id": "D",
+            "text": "1.25 cm"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Độ dãn bằng chiều dài lúc sau trừ chiều dài ban đầu: $\\Delta l = l - l_0$."
+          }
+        ],
+        "explanation": "$\\Delta l = 15 - 12 = 3\\,\\text{cm}$."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Treo một quả cân $50\\,\\text{g}$ thì lò xo dãn thêm $2\\,\\text{cm}$. Trong giới hạn đàn hồi, nếu treo tổng cộng 2 quả cân giống hệt nhau như thế ($100\\,\\text{g}$) thì lò xo dãn thêm bao nhiêu cm?",
+        "correct_answer": "4",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "cm",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Độ dãn của lò xo tỉ lệ thuận với khối lượng quả cân treo vào: $2 \\times 2 = 4\\,\\text{cm}$."
+          }
+        ],
+        "explanation": "Khối lượng tăng gấp đôi thì độ dãn của lò xo cũng tăng gấp đôi: $\\Delta l = 2 \\times 2 = 4\\,\\text{cm}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Khi biểu diễn một lực bằng một mũi tên (vectơ lực), điểm gốc của mũi tên được đặt tại đâu?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Tại điểm đặt của lực trên vật chịu tác dụng"
+          },
+          {
+            "id": "B",
+            "text": "Tại trọng tâm của Trái Đất"
+          },
+          {
+            "id": "C",
+            "text": "Tại mũi tên chỉ chiều chuyển động"
+          },
+          {
+            "id": "D",
+            "text": "Tại bất kỳ vị trí nào trên trang giấy"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Gốc mũi tên là nơi lực tác dụng trực tiếp lên vật."
+          }
+        ],
+        "explanation": "Gốc của mũi tên biểu diễn lực được đặt tại điểm đặt của lực trên vật chịu tác dụng."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một lực kế lò xo có giới hạn đo là $5\\,\\text{N}$. Thang đo từ vạch 0 đến vạch 5 N được chia thành 50 khoảng bằng nhau. Tính độ chia nhỏ nhất (ĐCNN) của lực kế theo đơn vị Newton ($\\text{N}$).",
+        "correct_answer": "0.1",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "N",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Lấy giá trị lớn nhất chia cho số khoảng chia: $5 / 50$."
+          }
+        ],
+        "explanation": "$\\text{ĐCNN} = 5 / 50 = 0.1\\,\\text{N}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Lực hút của Trái Đất tác dụng lên một vật rơi tự do có phương và chiều như thế nào?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Phương nằm ngang, chiều từ trái sang phải"
+          },
+          {
+            "id": "B",
+            "text": "Phương thẳng đứng, chiều từ trên xuống dưới"
+          },
+          {
+            "id": "C",
+            "text": "Phương thẳng đứng, chiều từ dưới lên trên"
+          },
+          {
+            "id": "D",
+            "text": "Phương xiên một góc 45 độ"
+          }
+        ],
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Trọng lực hướng về tâm Trái Đất, tức là phương thẳng đứng, chiều hướng xuống."
+          }
+        ],
+        "explanation": "Trọng lực luôn có phương thẳng đứng và chiều hướng về phía tâm Trái Đất (từ trên xuống)."
       }
     ]
   },
@@ -2381,6 +2748,134 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
           }
         ],
         "explanation": "Ma sát làm mòn chi tiết cơ khí và sinh nhiệt hao phí là ma sát có hại cần tra dầu mỡ."
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Biện pháp nào sau đây có tác dụng LÀM GIẢM ma sát trong kỹ thuật?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Khía thêm các rãnh gai sâu trên lốp xe ô tô"
+          },
+          {
+            "id": "B",
+            "text": "Tra dầu bôi trơn vào xích xe đạp và ổ bi trục quay"
+          },
+          {
+            "id": "C",
+            "text": "Rải cát lên đường đóng băng trơn trượt"
+          },
+          {
+            "id": "D",
+            "text": "Tăng lực bóp phanh của người lái xe"
+          }
+        ],
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Chất bôi trơn tạo một lớp màng ngăn hai bề mặt kim loại tiếp xúc cọ xát trực tiếp."
+          }
+        ],
+        "explanation": "Tra dầu bôi trơn và sử dụng ổ bi là các phương pháp phổ biến nhất để giảm ma sát trượt."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một chiếc tủ gỗ chuyển động trượt thẳng đều trên sàn nhà nằm ngang dưới tác dụng của lực kéo $F = 18\\,\\text{N}$. Do tủ chuyển động thẳng đều nên lực ma sát trượt cân bằng với lực kéo. Tính độ lớn lực ma sát trượt theo đơn vị Newton ($\\text{N}$).",
+        "correct_answer": "18",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "N",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Khi vật trượt thẳng đều, lực kéo cân bằng với lực ma sát: $F_{mst} = F_{k} = 18\\,\\text{N}$."
+          }
+        ],
+        "explanation": "Vật chuyển động thẳng đều chịu tác dụng của hai lực cân bằng nên $F_{mst} = 18\\,\\text{N}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Hình dạng cơ thể cá heo, chim hải âu và mũi tàu cao tốc có đặc điểm thon gọn (khí động học) nhằm mục đích chính là:",
+        "options": [
+          {
+            "id": "A",
+            "text": "Giảm tối đa lực cản của không khí hoặc của nước"
+          },
+          {
+            "id": "B",
+            "text": "Tăng khối lượng riêng của cơ thể"
+          },
+          {
+            "id": "C",
+            "text": "Tăng diện tích tiếp xúc để hấp thụ ánh sáng"
+          },
+          {
+            "id": "D",
+            "text": "Làm tăng lực đẩy Acsimet"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Dáng thuôn mượt giúp các dòng chất lưu lướt qua dễ dàng hơn."
+          }
+        ],
+        "explanation": "Hình dạng thuôn nhọn khí động học giúp giảm thiểu sự va đập của các phân tử môi trường, giảm tối đa lực cản."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Để kéo một khối gỗ trượt trên sàn cần lực kéo $25\\,\\text{N}$. Khi đặt các con lăn tròn bên dưới, lực ma sát lăn chỉ bằng $1/5$ lực ma sát trượt. Tính độ lớn lực kéo cần thiết lúc này theo đơn vị Newton ($\\text{N}$).",
+        "correct_answer": "5",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "N",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Lấy $25 / 5 = 5\\,\\text{N}$."
+          }
+        ],
+        "explanation": "Lực ma sát lăn nhỏ hơn ma sát trượt rất nhiều lần: $F_{msl} = 25 / 5 = 5\\,\\text{N}$.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Vì sao khi người nhảy dù mở bung vòm dù trên không trung, tốc độ rơi lại giảm nhanh chóng?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Vì Trái Đất ngừng tác dụng trọng lực lên người nhảy dù"
+          },
+          {
+            "id": "B",
+            "text": "Vì diện tích tiếp xúc lớn của vòm dù tạo ra lực cản không khí rất lớn hướng lên trên"
+          },
+          {
+            "id": "C",
+            "text": "Vì khối lượng của chiếc dù bị triệt tiêu"
+          },
+          {
+            "id": "D",
+            "text": "Vì nhiệt độ của không khí tăng đột ngột"
+          }
+        ],
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Diện tích mặt cản càng lớn thì lực cản của không khí càng mạnh."
+          }
+        ],
+        "explanation": "Vòm dù có diện tích rất rộng tạo ra lực cản không khí lớn cản trở chuyển động rơi, giúp hạ cánh an toàn."
       }
     ]
   },
@@ -2457,6 +2952,134 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
           }
         ],
         "explanation": "Quạt điện biến đổi điện năng thành cơ năng làm quay cánh quạt."
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Nguồn năng lượng nào dưới đây là nguồn NĂNG LƯỢNG TÁI TẠO thân thiện với môi trường?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Than đá khai thác từ mỏ"
+          },
+          {
+            "id": "B",
+            "text": "Dầu mỏ và khí đốt tự nhiên"
+          },
+          {
+            "id": "C",
+            "text": "Năng lượng gió và năng lượng ánh sáng Mặt Trời"
+          },
+          {
+            "id": "D",
+            "text": "Nhiên liệu khí hóa lỏng LPG"
+          }
+        ],
+        "correct_answer": "C",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Năng lượng tái tạo là nguồn năng lượng thiên nhiên tự hồi phục liên tục và không bị cạn kiệt."
+          }
+        ],
+        "explanation": "Năng lượng Mặt Trời và năng lượng gió là các nguồn năng lượng tái tạo sạch, vô tận."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một bóng đèn sợi đốt nhận $100\\,\\text{J}$ điện năng trong 1 giây. Trong đó chỉ có $15\\,\\text{J}$ được chuyển hóa thành quang năng có ích, phần còn lại tỏa nhiệt vô ích ra môi trường. Tính nhiệt lượng hao phí tỏa ra trong 1 giây theo đơn vị Joule ($\\text{J}$).",
+        "correct_answer": "85",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "J",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Nhiệt lượng hao phí bằng năng lượng toàn phần trừ đi năng lượng có ích: $100 - 15$."
+          }
+        ],
+        "explanation": "$E_{\\text{hao phí}} = 100 - 15 = 85\\,\\text{J}$. Hiệu suất phát sáng của đèn sợi đốt rất thấp nên cần thay bằng đèn LED.",
+        "difficulty": "medium",
+        "points": 10
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Trong nhà máy thủy điện, sự chuyển hóa năng lượng diễn ra theo chu trình chính nào để tạo ra dòng điện?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Thế năng của nước trên đập cao -> Động năng dòng nước -> Điện năng"
+          },
+          {
+            "id": "B",
+            "text": "Hóa năng -> Nhiệt năng -> Điện năng"
+          },
+          {
+            "id": "C",
+            "text": "Quang năng -> Nhiệt năng -> Cơ năng"
+          },
+          {
+            "id": "D",
+            "text": "Nhiệt năng -> Động năng -> Hóa năng"
+          }
+        ],
+        "correct_answer": "A",
+        "difficulty": "medium",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Nước ở trên cao có thế năng hấp dẫn, khi chảy xuống làm quay tuabin phát điện."
+          }
+        ],
+        "explanation": "Nước tích trữ ở hồ chứa trên cao có thế năng, chảy xuống biến thành động năng làm quay máy phát điện tạo ra điện năng."
+      },
+      {
+        "question_type": "numeric",
+        "prompt": "Một chiếc ấm đun nước điện tiêu thụ $2000\\,\\text{J}$ điện năng. Biết hiệu suất làm nóng của ấm là $85\\%$ (tức là $85\\%$ điện năng được chuyển hóa thành nhiệt năng có ích truyền vào nước). Tính nhiệt lượng có ích truyền vào nước theo đơn vị Joule ($\\text{J}$).",
+        "correct_answer": "1700",
+        "numeric_tolerance": 0.02,
+        "numeric_unit": "J",
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Tính $85\\%$ của $2000\\,\\text{J}$: $2000 \\times 0.85$."
+          }
+        ],
+        "explanation": "$Q_{\\text{có ích}} = 2000 \\times 0.85 = 1700\\,\\text{J}$.",
+        "difficulty": "hard",
+        "points": 15
+      },
+      {
+        "question_type": "mcq",
+        "prompt": "Phát biểu nào sau đây phản ánh ĐÚNG định luật bảo toàn năng lượng?",
+        "options": [
+          {
+            "id": "A",
+            "text": "Năng lượng có thể tự nhiên sinh ra khi cần thiết"
+          },
+          {
+            "id": "B",
+            "text": "Năng lượng không tự sinh ra và cũng không tự mất đi, chỉ chuyển hóa từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác"
+          },
+          {
+            "id": "C",
+            "text": "Sau một thời gian sử dụng thì năng lượng sẽ tự động biến mất hoàn toàn"
+          },
+          {
+            "id": "D",
+            "text": "Tổng năng lượng của một hệ kín luôn luôn giảm dần theo thời gian"
+          }
+        ],
+        "correct_answer": "B",
+        "difficulty": "easy",
+        "points": 10,
+        "hints": [
+          {
+            "level": 1,
+            "hint": "Định luật bảo toàn năng lượng khẳng định năng lượng là đại lượng được bảo toàn tuyệt đối."
+          }
+        ],
+        "explanation": "Định luật bảo toàn năng lượng: Năng lượng không tự nhiên sinh ra và cũng không tự nhiên mất đi, chỉ biến đổi từ dạng này sang dạng khác."
       }
     ]
   },

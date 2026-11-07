@@ -74,6 +74,30 @@ export const CHAPTER_1: TextbookChapterSeed = {
           unit: 'mm',
           hints: ['Tổng chiều dài 5 vòng là 60 mm. Hãy chia cho 5.'],
           explanation: 'Chu vi 1 vòng thân bút chì là: 60 / 5 = 12 mm.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Trong các đơn vị đo chiều dài sau đây, đơn vị nào có độ dài NHỎ NHẤT?',
+          options: [
+            { id: 'A', text: 'Milimét (mm)' },
+            { id: 'B', text: 'Xentimét (cm)' },
+            { id: 'C', text: 'Đềximét (dm)' },
+            { id: 'D', text: 'Mét (m)' }
+          ],
+          answer: 'A',
+          hints: ['1 mm = 0.1 cm = 0.01 dm = 0.001 m.'],
+          explanation: 'Milimét (mm) là ước số nhỏ nhất trong 4 đơn vị trên (1 mm = 0.001 m).'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Một cung đường chạy marathon dài 4.8 km. Hãy quy đổi quãng đường này ra đơn vị mét (m).',
+          answer: '4800',
+          tolerance: 0.02,
+          unit: 'm',
+          hints: ['1 km = 1000 m. Hãy nhân 4.8 với 1000.'],
+          explanation: '4.8 km = 4.8 * 1000 = 4800 m.'
         }
       ]
     },
@@ -144,6 +168,30 @@ export const CHAPTER_1: TextbookChapterSeed = {
           unit: 'kg',
           hints: ['Đổi 2.5 tấn = 2500 kg; 5 tạ = 500 kg. Sau đó cộng lại.'],
           explanation: '2.5 tấn = 2500 kg; 5 tạ = 500 kg. Tổng khối lượng = 2500 + 500 = 3000 kg.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Trước khi đặt vật lên đĩa của cân đồng hồ để đo khối lượng, thao tác chuẩn bị quan trọng nhất là gì?',
+          options: [
+            { id: 'A', text: 'Hiệu chỉnh kim chỉ thị của cân về đúng vạch số 0' },
+            { id: 'B', text: 'Nghiêng cân một góc 45 độ' },
+            { id: 'C', text: 'Rửa sạch đĩa cân bằng nước nóng' },
+            { id: 'D', text: 'Đặt cân trên mặt phẳng nghiêng dốc' }
+          ],
+          answer: 'A',
+          hints: ['Kim chỉ thị phải ở điểm mốc bắt đầu trước khi cân.'],
+          explanation: 'Phải hiệu chỉnh núm xoay đưa kim chỉ thị về đúng vạch số 0 để tránh sai số ban đầu.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Một gói đường có khối lượng 750 g. Hãy quy đổi khối lượng gói đường này sang đơn vị kilôgam (kg).',
+          answer: '0.75',
+          tolerance: 0.02,
+          unit: 'kg',
+          hints: ['1 kg = 1000 g. Hãy lấy 750 chia cho 1000.'],
+          explanation: '750 g = 750 / 1000 = 0.75 kg.'
         }
       ]
     },
@@ -213,6 +261,30 @@ export const CHAPTER_1: TextbookChapterSeed = {
           unit: 's',
           hints: ['1 phút có 60 giây. Hãy nhân 45 với 60.'],
           explanation: '45 phút = 45 * 60 = 2700 giây.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: '1 giờ đồng hồ bằng bao nhiêu giây?',
+          options: [
+            { id: 'A', text: '60 giây' },
+            { id: 'B', text: '3600 giây' },
+            { id: 'C', text: '600 giây' },
+            { id: 'D', text: '86400 giây' }
+          ],
+          answer: 'B',
+          hints: ['1 giờ = 60 phút, mỗi phút = 60 giây. Lấy 60 * 60.'],
+          explanation: '1 h = 60 min * 60 s = 3600 s.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Bạn Nam bắt đầu chạy bộ từ lúc 6 giờ 15 phút và kết thúc lúc 6 giờ 50 phút cùng ngày. Thời gian bạn Nam chạy bộ là bao nhiêu phút?',
+          answer: '35',
+          tolerance: 0.02,
+          unit: 'phút',
+          hints: ['Lấy 50 phút trừ đi 15 phút: 50 - 15.'],
+          explanation: 'Thời gian chạy bộ = 50 - 15 = 35 phút.'
         }
       ]
     },
@@ -281,6 +353,30 @@ export const CHAPTER_1: TextbookChapterSeed = {
           unit: '°C',
           hints: ['Lấy nhiệt độ buổi chiều trừ đi nhiệt độ buổi sáng: 37.3 - 36.8.'],
           explanation: 'Độ tăng nhiệt độ = 37.3 - 36.8 = 0.5°C.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Thân nhiệt bình thường của một người khỏe mạnh đo ở nách thường dao động trong khoảng nào?',
+          options: [
+            { id: 'A', text: '36.5°C đến 37°C' },
+            { id: 'B', text: '34°C đến 35°C' },
+            { id: 'C', text: '38.5°C đến 39°C' },
+            { id: 'D', text: '40°C đến 42°C' }
+          ],
+          answer: 'A',
+          hints: ['Nhiệt độ này ấm áp dễ chịu, trên 37.5°C là bắt đầu sốt nhẹ.'],
+          explanation: 'Thân nhiệt bình thường của con người nằm trong khoảng 36.5°C - 37°C.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Nhiệt độ ban đêm ngoài trời là 18.5°C. Đến buổi trưa, nhiệt độ tăng thêm 4.2°C so với ban đêm. Nhiệt độ ngoài trời vào buổi trưa là bao nhiêu °C?',
+          answer: '22.7',
+          tolerance: 0.02,
+          unit: '°C',
+          hints: ['Cộng nhiệt độ ban đêm với phần tăng thêm: 18.5 + 4.2.'],
+          explanation: 'Nhiệt độ buổi trưa = 18.5 + 4.2 = 22.7°C.'
         }
       ]
     }

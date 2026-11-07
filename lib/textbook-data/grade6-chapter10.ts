@@ -65,6 +65,30 @@ export const CHAPTER_10: TextbookChapterSeed = {
           unit: 'phút',
           hints: ['1 giờ có 60 phút. Hãy nhân 24 với 60.'],
           explanation: '24 giờ = 24 * 60 = 1440 phút.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Từ mặt đất, hàng ngày ta quan sát thấy Mặt Trời mọc ở hướng nào và lặn ở hướng nào?',
+          options: [
+            { id: 'A', text: 'Mọc ở hướng Tây, lặn ở hướng Đông' },
+            { id: 'B', text: 'Mọc ở hướng Đông, lặn ở hướng Tây' },
+            { id: 'C', text: 'Mọc ở hướng Bắc, lặn ở hướng Nam' },
+            { id: 'D', text: 'Mọc ở hướng Nam, lặn ở hướng Bắc' }
+          ],
+          answer: 'B',
+          hints: ['Mặt Trời buổi sáng nhô lên ở đằng Đông, chiều tà khuất dần ở đằng Tây.'],
+          explanation: 'Do Trái Đất quay từ Tây sang Đông nên ta nhìn thấy Mặt Trời mọc ở hướng Đông và lặn ở hướng Tây.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Trong 1 năm (365 ngày), Trái Đất quay quanh Mặt Trời một vòng. Trong khoảng thời gian đó, Trái Đất đã tự quay quanh trục của chính nó bao nhiêu vòng?',
+          answer: '365',
+          tolerance: 0.02,
+          unit: 'vòng',
+          hints: ['Mỗi ngày Trái Đất tự quay 1 vòng quanh trục, 365 ngày là 365 vòng.'],
+          explanation: 'Trong 365 ngày, Trái Đất tự quay quanh trục của nó khoảng 365 vòng.'
         }
       ]
     },
@@ -132,6 +156,34 @@ export const CHAPTER_10: TextbookChapterSeed = {
           answer: 'B',
           hints: ['Độ dài của một tháng theo lịch âm của Việt Nam.'],
           explanation: 'Một chu kỳ tuần trăng kéo dài xấp xỉ 29.5 ngày, là cơ sở để lập ra lịch Âm.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Vào ngày đầu tháng âm lịch (ngày mùng 1 âm lịch, pha Trăng non), người quan sát trên Trái Đất sẽ thấy Mặt Trăng như thế nào?',
+          options: [
+            { id: 'A', text: 'Tròn vành vạnh chiếu sáng rực rỡ' },
+            { id: 'B', text: 'Hầu như hoàn toàn không nhìn thấy Mặt Trăng trên bầu trời' },
+            { id: 'C', text: 'Nhìn thấy nửa vầng trăng' },
+            { id: 'D', text: 'Nhìn thấy trăng hình lưỡi liềm khổng lồ' }
+          ],
+          answer: 'B',
+          hints: ['Nửa được chiếu sáng của Mặt Trăng lúc này quay về phía Mặt Trời, quay lưng lại với Trái Đất.'],
+          explanation: 'Vào ngày mùng 1 âm lịch (Trăng non), phần sáng quay lưng lại với Trái Đất nên ta không nhìn thấy trăng.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Hiện tượng Nguyệt thực xảy ra khi vị trí của ba thiên thể nằm trên một đường thẳng theo thứ tự nào?',
+          options: [
+            { id: 'A', text: 'Mặt Trời -> Trái Đất -> Mặt Trăng' },
+            { id: 'B', text: 'Trái Đất -> Mặt Trời -> Mặt Trăng' },
+            { id: 'C', text: 'Mặt Trời -> Mặt Trăng -> Trái Đất' },
+            { id: 'D', text: 'Mặt Trăng -> Trái Đất -> Mặt Trời' }
+          ],
+          answer: 'A',
+          hints: ['Trái Đất đứng ở giữa chắn ánh sáng Mặt Trời chiếu vào Mặt Trăng.'],
+          explanation: 'Nguyệt thực xảy ra khi Trái Đất nằm ở giữa Mặt Trời và Mặt Trăng, bóng của Trái Đất che khuất Mặt Trăng.'
         }
       ]
     },
@@ -200,6 +252,34 @@ export const CHAPTER_10: TextbookChapterSeed = {
           unit: 's',
           hints: ['Lấy quãng đường 150 000 000 chia cho tốc độ 300 000 (khoảng 8 phút 20 giây).'],
           explanation: 'Thời gian = 150 000 000 / 300 000 = 500 giây.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Hành tinh nào nằm ở vị trí GẦN MẶT TRỜI NHẤT trong 8 hành tinh của Hệ Mặt Trời?',
+          options: [
+            { id: 'A', text: 'Kim tinh (Sao Kim)' },
+            { id: 'B', text: 'Thủy tinh (Sao Thủy)' },
+            { id: 'C', text: 'Trái Đất' },
+            { id: 'D', text: 'Hỏa tinh (Sao Hỏa)' }
+          ],
+          answer: 'B',
+          hints: ['Hành tinh số 1 trong thứ tự từ trong ra ngoài.'],
+          explanation: 'Thủy tinh (Mercury) là hành tinh nằm gần Mặt Trời nhất.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Tính theo thứ tự khoảng cách xa dần Mặt Trời, Trái Đất của chúng ta xếp ở vị trí thứ mấy?',
+          options: [
+            { id: 'A', text: 'Vị trí thứ nhất' },
+            { id: 'B', text: 'Vị trí thứ hai' },
+            { id: 'C', text: 'Vị trí thứ ba' },
+            { id: 'D', text: 'Vị trí thứ năm' }
+          ],
+          answer: 'C',
+          hints: ['Thủy tinh (1), Kim tinh (2), Trái Đất (3).'],
+          explanation: 'Trái Đất là hành tinh thứ 3 từ Mặt Trời, nằm trong vùng có thể sống được (Goldilocks zone).'
         }
       ]
     },
@@ -265,6 +345,30 @@ export const CHAPTER_10: TextbookChapterSeed = {
           answer: 'B',
           hints: ['Giống như một chiếc chong chóng quay tròn có các cánh tay xoắn ốc.'],
           explanation: 'Ngân Hà là thiên hà xoắn ốc có thanh chắn (Barred spiral galaxy) với các nhánh xoắn tuyệt đẹp.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Thiên hà Ngân Hà (Milky Way) chứa ước tính khoảng bao nhiêu ngôi sao?',
+          options: [
+            { id: 'A', text: 'Khoảng 8 ngôi sao' },
+            { id: 'B', text: 'Khoảng vài nghìn ngôi sao' },
+            { id: 'C', text: 'Hơn 200 tỉ ngôi sao' },
+            { id: 'D', text: 'Chỉ có duy nhất một ngôi sao là Mặt Trời' }
+          ],
+          answer: 'C',
+          hints: ['Một con số khổng lồ hàng trăm tỉ ngôi sao trải rộng 100 000 năm ánh sáng.'],
+          explanation: 'Ngân Hà là một thiên hà khổng lồ chứa từ 200 đến 400 tỉ ngôi sao, trong đó Mặt Trời chỉ là một ngôi sao nhỏ.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Tốc độ quay của Hệ Mặt Trời quanh tâm Ngân Hà là khoảng 220 km/s. Trong thời gian 10 giây, Hệ Mặt Trời đã di chuyển được quãng đường bao nhiêu kilômét (km)?',
+          answer: '2200',
+          tolerance: 0.02,
+          unit: 'km',
+          hints: ['Quãng đường = Tốc độ * Thời gian (220 * 10).'],
+          explanation: 'Quãng đường s = v * t = 220 * 10 = 2200 km.'
         }
       ]
     }

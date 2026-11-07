@@ -72,6 +72,30 @@ export const CHAPTER_9: TextbookChapterSeed = {
           unit: 'kJ',
           hints: ['Lấy 250 nhân với 4184 rồi chia cho 1000 để đổi ra kJ.'],
           explanation: 'Năng lượng = (250 * 4184) / 1000 = 1046 kJ.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Năng lượng có thể truyền từ vật này sang vật khác thông qua những hình thức chủ yếu nào?',
+          options: [
+            { id: 'A', text: 'Chỉ qua sự chiếu sáng' },
+            { id: 'B', text: 'Qua truyền nhiệt hoặc qua tác dụng lực' },
+            { id: 'C', text: 'Chỉ qua phản ứng hóa học' },
+            { id: 'D', text: 'Chỉ qua dây dẫn điện' }
+          ],
+          answer: 'B',
+          hints: ['Năng lượng truyền qua tác dụng lực (sinh công) hoặc truyền nhiệt.'],
+          explanation: 'Hai con đường cơ bản để truyền năng lượng là truyền nhiệt và tác dụng lực.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'numeric',
+          prompt: 'Một quả bóng lăn có động năng 3.6 kJ. Quy đổi động năng của quả bóng sang đơn vị Jun (J).',
+          answer: '3600',
+          tolerance: 0.02,
+          unit: 'J',
+          hints: ['1 kJ = 1000 J. Hãy nhân 3.6 với 1000.'],
+          explanation: '3.6 kJ = 3.6 * 1000 = 3600 J.'
         }
       ]
     },
@@ -139,6 +163,34 @@ export const CHAPTER_9: TextbookChapterSeed = {
           answer: 'A',
           hints: ['Năng lượng hóa học nằm trong các chất hóa giải bên trong pin.'],
           explanation: 'Pin dự trữ hóa năng, khi nối mạch kín thì hóa năng biến thành điện năng.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Năng lượng dự trữ trong thức ăn (tinh bột, chất đạm, chất béo) mà cơ thể người hấp thụ hàng ngày thuộc dạng nào?',
+          options: [
+            { id: 'A', text: 'Hóa năng' },
+            { id: 'B', text: 'Điện năng' },
+            { id: 'C', text: 'Quang năng' },
+            { id: 'D', text: 'Cơ năng' }
+          ],
+          answer: 'A',
+          hints: ['Năng lượng tích trữ trong các liên kết hóa học của chất hữu cơ.'],
+          explanation: 'Thức ăn dự trữ hóa năng, qua quá trình tiêu hóa biến đổi thành nhiệt năng và động năng nuôi sống cơ thể.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Một chiếc ô tô đang tăng tốc chạy nhanh dần trên đường cao tốc bằng phẳng. Dạng năng lượng nào của chiếc ô tô đang TĂNG LÊN?',
+          options: [
+            { id: 'A', text: 'Động năng của ô tô' },
+            { id: 'B', text: 'Thế năng trọng trường' },
+            { id: 'C', text: 'Thế năng đàn hồi' },
+            { id: 'D', text: 'Hóa năng' }
+          ],
+          answer: 'A',
+          hints: ['Động năng gắn liền với vận tốc chuyển động. Vận tốc càng lớn thì động năng càng lớn.'],
+          explanation: 'Xe chuyển động càng nhanh thì động năng của xe càng tăng.'
         }
       ]
     },
@@ -205,6 +257,34 @@ Năng lượng có thể biến đổi liên tục từ dạng này sang dạng 
           answer: 'A',
           hints: ['Xe lên cao có thế năng, phanh xe bị nóng lên do ma sát (nhiệt năng).'],
           explanation: 'Động năng chuyển hóa thành thế năng trọng trường (tích lũy độ cao) và nhiệt năng hao phí ở má phanh.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Trong bàn là điện gia đình, điện năng được chuyển hóa chủ yếu thành dạng năng lượng nào để ủi phẳng quần áo?',
+          options: [
+            { id: 'A', text: 'Cơ năng' },
+            { id: 'B', text: 'Nhiệt năng làm nóng đế bàn là' },
+            { id: 'C', text: 'Quang năng' },
+            { id: 'D', text: 'Hóa năng' }
+          ],
+          answer: 'B',
+          hints: ['Bàn là nóng rực lên nhờ dây dẫn nhiệt.'],
+          explanation: 'Bàn là điện biến đổi điện năng thành nhiệt năng có ích để làm phẳng sợi vải.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Khi một em bé chơi cầu trượt, trượt từ đỉnh máng trượt xuống đất, có sự chuyển hóa năng lượng như thế nào?',
+          options: [
+            { id: 'A', text: 'Thế năng trọng trường ở đỉnh máng chuyển hóa dần thành động năng trượt xuống' },
+            { id: 'B', text: 'Điện năng biến thành quang năng' },
+            { id: 'C', text: 'Hóa năng biến thành thế năng đàn hồi' },
+            { id: 'D', text: 'Năng lượng tự nhiên biến mất' }
+          ],
+          answer: 'A',
+          hints: ['Độ cao giảm dần thì thế năng giảm, vận tốc tăng dần thì động năng tăng.'],
+          explanation: 'Thế năng trọng trường ở trên cao biến thành động năng chuyển động trượt xuống.'
         }
       ]
     },
@@ -269,6 +349,30 @@ Trong mọi quá trình chuyển hóa năng lượng:
           unit: 'J',
           hints: ['Năng lượng hao phí = Tổng năng lượng - Năng lượng có ích. Lấy 100 - 85.'],
           explanation: 'Năng lượng hao phí = 100 - 85 = 15 J.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Dạng năng lượng hao phí thường xuyên xuất hiện nhất trong quá trình vận hành của các máy móc cơ khí là:',
+          options: [
+            { id: 'A', text: 'Nhiệt năng sinh ra do lực ma sát' },
+            { id: 'B', text: 'Năng lượng hạt nhân' },
+            { id: 'C', text: 'Hóa năng giải phóng' },
+            { id: 'D', text: 'Quang năng chói sáng' }
+          ],
+          answer: 'A',
+          hints: ['Ma sát giữa các chi tiết chuyển động làm máy móc bị nóng lên.'],
+          explanation: 'Nhiệt năng do ma sát giữa các bộ phận chuyển động là nguồn năng lượng hao phí phổ biến nhất.'
+        },
+        {
+          level: 'van_dung',
+          type: 'numeric',
+          prompt: 'Một máy bơm nước tiêu thụ 500 J điện năng, sinh ra 420 J cơ năng có ích để bơm nước lên bồn chứa. Phần nhiệt năng hao phí tỏa ra làm nóng máy bơm là bao nhiêu Jun (J)?',
+          answer: '80',
+          tolerance: 0.02,
+          unit: 'J',
+          hints: ['Lấy tổng điện năng trừ đi cơ năng có ích: 500 - 420.'],
+          explanation: 'Nhiệt năng hao phí = 500 - 420 = 80 J.'
         }
       ]
     },
@@ -336,6 +440,34 @@ Trong mọi quá trình chuyển hóa năng lượng:
           answer: 'B',
           hints: ['Tận dụng tiềm năng tự nhiên sẵn có của hải đảo (nắng và gió biển).'],
           explanation: 'Hệ thống điện gió kết hợp điện mặt trời tận dụng tối đa tài nguyên thiên nhiên của hải đảo.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Nhóm nhiên liệu hóa thạch không thể tái tạo bao gồm:',
+          options: [
+            { id: 'A', text: 'Than đá, dầu mỏ và khí đốt tự nhiên' },
+            { id: 'B', text: 'Nước mưa, gió và ánh sáng mặt trời' },
+            { id: 'C', text: 'Cây cỏ, củi khô và rơm rạ' },
+            { id: 'D', text: 'Sóng biển và thủy triều' }
+          ],
+          answer: 'A',
+          hints: ['Nhiên liệu hóa thạch hình thành từ xác sinh vật chôn vùi hàng triệu năm trong lòng đất.'],
+          explanation: 'Than đá, dầu mỏ và khí đốt là các nhiên liệu hóa thạch truyền thống không thể tái tạo.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Vì sao Việt Nam được đánh giá là quốc gia có tiềm năng to lớn để phát triển năng lượng điện mặt trời và điện gió?',
+          options: [
+            { id: 'A', text: 'Vì Việt Nam có đường bờ biển dài trên 3260 km nhiều gió và nằm trong vùng nhiệt đới nắng quanh năm' },
+            { id: 'B', text: 'Vì Việt Nam có nhiều mỏ than đá nhất thế giới' },
+            { id: 'C', text: 'Vì mùa đông Việt Nam rất lạnh' },
+            { id: 'D', text: 'Vì nước ta không có đồi núi' }
+          ],
+          answer: 'A',
+          hints: ['Vị trí địa lý ven biển nhiệt đới gió mùa có số giờ nắng cao và tốc độ gió biển lý tưởng.'],
+          explanation: 'Bờ biển dài và lượng bức xạ mặt trời dồi dào là lợi thế thiên nhiên vượt trội của Việt Nam.'
         }
       ]
     },
@@ -405,6 +537,30 @@ Trong mọi quá trình chuyển hóa năng lượng:
           unit: 'Wh',
           hints: ['Tổng công suất = 6 * 40 = 240 W. Điện năng = Công suất * Thời gian (240 * 2).'],
           explanation: 'Tổng công suất 6 bóng = 240 W. Điện năng tiết kiệm = 240 W * 2 h = 480 Wh.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Nhãn năng lượng dán trên các thiết bị gia dụng (tủ lạnh, máy giặt, điều hòa) có bao nhiêu ngôi sao là mức tiết kiệm điện năng cao nhất?',
+          options: [
+            { id: 'A', text: '1 sao' },
+            { id: 'B', text: '3 sao' },
+            { id: 'C', text: '5 sao' },
+            { id: 'D', text: '10 sao' }
+          ],
+          answer: 'C',
+          hints: ['Mức cao nhất của nhãn chứng nhận Bộ Công thương là 5 sao đỏ.'],
+          explanation: 'Nhãn năng lượng 5 sao là mức đánh giá thiết bị đạt hiệu suất năng lượng cao nhất, tiết kiệm điện nhất.'
+        },
+        {
+          level: 'van_dung',
+          type: 'numeric',
+          prompt: 'Gia đình bạn An duy trì thói quen tắt tivi khi không xem giúp tiết kiệm 0.5 kWh điện mỗi ngày. Trong 30 ngày của một tháng, gia đình An đã tiết kiệm được bao nhiêu kWh điện năng?',
+          answer: '15',
+          tolerance: 0.02,
+          unit: 'kWh',
+          hints: ['Lấy 0.5 nhân với 30 ngày: 0.5 * 30.'],
+          explanation: 'Điện năng tiết kiệm trong 30 ngày = 0.5 * 30 = 15 kWh.'
         }
       ]
     }

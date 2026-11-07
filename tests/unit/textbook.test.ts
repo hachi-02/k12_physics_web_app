@@ -19,11 +19,11 @@ describe('Textbook Curriculum (KHTN 6 - GDPT 2018 - Kết nối tri thức)', ()
   });
 
   describe('Database Structure & Seeding', () => {
-    it('should seed Grade 6 with 4 chapters, 20 lessons and 60 exercises', () => {
+    it('should seed Grade 6 with 4 chapters, 20 lessons and 100 exercises', () => {
       const counts = seedTextbook({ force: true });
       expect(counts.chapters).toBe(4);
       expect(counts.lessons).toBe(20);
-      expect(counts.exercises).toBe(60);
+      expect(counts.exercises).toBe(100);
     });
 
     it('should return null TOC for unsupported grades (e.g. Grade 13)', () => {
@@ -59,9 +59,9 @@ describe('Textbook Curriculum (KHTN 6 - GDPT 2018 - Kết nối tri thức)', ()
         52, 53, 54, 55, // Chương X
       ]);
 
-      // Every lesson must have at least 3 exercises
+      // Every lesson must have 5 exercises
       allLessons.forEach((l) => {
-        expect(l.exerciseCount).toBe(3);
+        expect(l.exerciseCount).toBe(5);
       });
     });
   });
@@ -79,11 +79,13 @@ describe('Textbook Curriculum (KHTN 6 - GDPT 2018 - Kết nối tri thức)', ()
       expect(lesson!.content).toContain('## I.');
       expect(lesson!.content).toContain('## II.');
       expect(lesson!.keyPoints.length).toBeGreaterThanOrEqual(2);
-      expect(lesson!.exercises.length).toBe(3);
+      expect(lesson!.exercises.length).toBe(5);
 
-      // Verify the 3 difficulty levels
+      // Verify difficulty levels contain all 3 tiers
       const levels = lesson!.exercises.map((e) => e.level);
-      expect(levels).toEqual(['nhan_biet', 'thong_hieu', 'van_dung']);
+      expect(levels).toContain('nhan_biet');
+      expect(levels).toContain('thong_hieu');
+      expect(levels).toContain('van_dung');
     });
 
     it('should correctly link sibling prevLesson and nextLesson', () => {
@@ -110,7 +112,7 @@ describe('Textbook Curriculum (KHTN 6 - GDPT 2018 - Kết nối tri thức)', ()
       expect(review).not.toBeNull();
       expect(review!.roman).toBe('I');
       expect(review!.lessons.length).toBe(4);
-      expect(review!.exercises.length).toBe(12); // 4 lessons * 3 exercises
+      expect(review!.exercises.length).toBe(20); // 4 lessons * 5 exercises
 
       // Each lesson in review should have key points
       review!.lessons.forEach((l) => {

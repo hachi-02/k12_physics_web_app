@@ -71,6 +71,34 @@ Lực tác dụng lên một vật có thể gây ra hai kết quả:
           unit: 'N',
           hints: ['Lấy giới hạn đo 10 N chia cho 50 khoảng chia nhỏ.'],
           explanation: 'ĐCNN = 10 / 50 = 0.2 N.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Đơn vị chuẩn đo lực trong hệ đo lường quốc tế SI là gì?',
+          options: [
+            { id: 'A', text: 'Kilôgam (kg)' },
+            { id: 'B', text: 'Niutơn (N)' },
+            { id: 'C', text: 'Jun (J)' },
+            { id: 'D', text: 'Mét trên giây (m/s)' }
+          ],
+          answer: 'B',
+          hints: ['Đặt theo tên nhà bác học Isaac Newton, kí hiệu là N.'],
+          explanation: 'Đơn vị đo lực chuẩn theo hệ SI là Niutơn (kí hiệu N).'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Khi thả một quả táo từ trên cành cây xuống, quả táo rơi ngày càng nhanh dần về phía mặt đất. Lực nào đã gây ra chuyển động nhanh dần đó?',
+          options: [
+            { id: 'A', text: 'Lực hút của Trái Đất (trọng lực)' },
+            { id: 'B', text: 'Lực đàn hồi của cành cây' },
+            { id: 'C', text: 'Lực đẩy của gió' },
+            { id: 'D', text: 'Lực từ trường của nam châm' }
+          ],
+          answer: 'A',
+          hints: ['Trọng lực kéo mọi vật về phía mặt đất làm biến đổi tốc độ rơi.'],
+          explanation: 'Trọng lực hút quả táo về phía Trái Đất, làm cho chuyển động rơi nhanh dần.'
         }
       ]
     },
@@ -135,6 +163,30 @@ Một lực được biểu diễn bằng một mũi tên có:
           unit: 'N',
           hints: ['Nhân độ dài 4.5 cm với 20 N/cm.'],
           explanation: 'Độ lớn của lực = 4.5 * 20 = 90 N.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Một lực được xác định đầy đủ bởi bao nhiêu yếu tố?',
+          options: [
+            { id: 'A', text: '2 yếu tố: điểm đặt và độ lớn' },
+            { id: 'B', text: '3 yếu tố: điểm đặt, phương và chiều' },
+            { id: 'C', text: '4 yếu tố: điểm đặt, phương, chiều và độ lớn' },
+            { id: 'D', text: '1 yếu tố duy nhất là độ lớn' }
+          ],
+          answer: 'C',
+          hints: ['Lực là đại lượng vectơ có 4 yếu tố đặc trưng.'],
+          explanation: 'Lực được đặc trưng bởi 4 yếu tố: điểm đặt, phương, chiều và độ lớn.'
+        },
+        {
+          level: 'van_dung',
+          type: 'numeric',
+          prompt: 'Một học sinh dùng thước kẻ vẽ mũi tên dài 2 cm để biểu diễn một lực kéo có độ lớn 40 N. Hỏi tỉ xích quy ước được chọn là 1 cm ứng với bao nhiêu Niutơn (N)?',
+          answer: '20',
+          tolerance: 0.02,
+          unit: 'N',
+          hints: ['Lấy 40 N chia cho 2 cm.'],
+          explanation: 'Tỉ xích = 40 N / 2 cm = 20 N (1 cm ứng với 20 N).'
         }
       ]
     },
@@ -203,6 +255,30 @@ Trong đó:
           unit: 'cm',
           hints: ['Khối lượng 150 g gấp 3 lần khối lượng 50 g, nên độ dãn cũng tăng gấp 3 lần.'],
           explanation: 'Khối lượng tăng gấp 3 (150/50 = 3), do độ dãn tỉ lệ thuận với khối lượng nên độ dãn mới = 1.5 * 3 = 4.5 cm.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Lực kế lò xo là dụng cụ dùng để đo đại lượng vật lý nào?',
+          options: [
+            { id: 'A', text: 'Khối lượng của vật thể' },
+            { id: 'B', text: 'Độ lớn của lực' },
+            { id: 'C', text: 'Chiều dài của lò xo' },
+            { id: 'D', text: 'Thể tích của vật rắn' }
+          ],
+          answer: 'B',
+          hints: ['Lực kế dùng để đo lực, đơn vị là Newton (N).'],
+          explanation: 'Lực kế là dụng cụ chuyên dùng để đo độ lớn của lực.'
+        },
+        {
+          level: 'van_dung',
+          type: 'numeric',
+          prompt: 'Một lò xo có chiều dài tự nhiên l0 = 15 cm. Khi kéo dãn bằng một lực, lò xo dãn thêm 1.2 cm. Chiều dài lúc này của lò xo là bao nhiêu cm?',
+          answer: '16.2',
+          tolerance: 0.02,
+          unit: 'cm',
+          hints: ['Chiều dài lúc sau bằng chiều dài ban đầu cộng thêm độ dãn: 15 + 1.2.'],
+          explanation: 'Chiều dài l = l0 + Delta_l = 15 + 1.2 = 16.2 cm.'
         }
       ]
     },
@@ -267,6 +343,30 @@ Trong đó:
           unit: 'kg',
           hints: ['Từ công thức P = 10 * m, suy ra m = P / 10. Lấy 180 chia cho 10.'],
           explanation: 'Khối lượng m = P / 10 = 180 / 10 = 18 kg.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Lực giữ cho Mặt Trăng chuyển động quay xung quanh Trái Đất là loại lực nào?',
+          options: [
+            { id: 'A', text: 'Lực ma sát của khí quyển' },
+            { id: 'B', text: 'Lực hấp dẫn giữa Trái Đất và Mặt Trăng' },
+            { id: 'C', text: 'Lực đẩy của từ trường' },
+            { id: 'D', text: 'Lực đàn hồi của không gian' }
+          ],
+          answer: 'B',
+          hints: ['Mọi thiên thể có khối lượng trong vũ trụ đều hút nhau bằng lực hấp dẫn.'],
+          explanation: 'Lực hấp dẫn của Trái Đất đóng vai trò giữ Mặt Trăng chuyển động trên quỹ đạo quanh Trái Đất.'
+        },
+        {
+          level: 'van_dung',
+          type: 'numeric',
+          prompt: 'Một thùng hàng hóa có khối lượng m = 45 kg. Lấy P = 10 * m, tính trọng lượng P của thùng hàng theo đơn vị Niutơn (N).',
+          answer: '450',
+          tolerance: 0.02,
+          unit: 'N',
+          hints: ['Nhân khối lượng 45 kg với 10.'],
+          explanation: 'Trọng lượng P = 10 * 45 = 450 N.'
         }
       ]
     },
@@ -340,6 +440,34 @@ Trong đó:
           answer: 'B',
           hints: ['Vòng bi biến ma sát trượt thành ma sát lăn, dầu mỡ giảm tiếp xúc khô.'],
           explanation: 'Vòng bi và dầu mỡ bôi trơn là giải pháp chuẩn mực để giảm ma sát trong cơ khí.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Khi con người bước đi trên đường, lực nào đóng vai trò giữ cho bàn chân không bị trượt lùi về phía sau?',
+          options: [
+            { id: 'A', text: 'Lực ma sát nghỉ giữa đế giày và mặt đất' },
+            { id: 'B', text: 'Lực ma sát lăn' },
+            { id: 'C', text: 'Trọng lực hút bàn chân' },
+            { id: 'D', text: 'Lực cản của không khí' }
+          ],
+          answer: 'A',
+          hints: ['Ma sát nghỉ giữ cho bề mặt tiếp xúc bám dính khi có xu hướng trượt.'],
+          explanation: 'Lực ma sát nghỉ đóng vai trò là lực phát động giúp ta bước đi vững vàng mà không bị trượt ngã.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Khi xe ô tô đi vào đoạn đường cát lún sâu, bánh xe quay tít tại chỗ mà xe không tiến lên được. Nguyên nhân chính là do:',
+          options: [
+            { id: 'A', text: 'Lực ma sát giữa lốp xe và cát quá nhỏ không đủ lực đẩy xe đi' },
+            { id: 'B', text: 'Trọng lượng xe biến mất' },
+            { id: 'C', text: 'Lực cản không khí quá lớn' },
+            { id: 'D', text: 'Động cơ xe bị mất điện' }
+          ],
+          answer: 'A',
+          hints: ['Cát trôi trượt làm ma sát bám đường bị giảm sút nghiêm trọng.'],
+          explanation: 'Cát hạt nhỏ làm lực ma sát bám đường quá bé, lốp bị trượt quay tròn tại chỗ.'
         }
       ]
     },
@@ -406,6 +534,34 @@ Trong đó:
           answer: 'B',
           hints: ['Diện tích cản và bề mặt trơn làm giảm ma sát nhớt trong nước.'],
           explanation: 'Đồ bơi ôm sát làm giảm diện tích cản và ma sát với nước, giúp người A bơi nhanh hơn.'
+        },
+        {
+          level: 'nhan_biet',
+          type: 'mcq',
+          prompt: 'Lực cản của nước hoặc không khí tác dụng lên vật chuyển động luôn có hướng như thế nào?',
+          options: [
+            { id: 'A', text: 'Cùng chiều với chiều chuyển động của vật' },
+            { id: 'B', text: 'Ngược chiều với chiều chuyển động của vật' },
+            { id: 'C', text: 'Vuông góc với chiều chuyển động của vật' },
+            { id: 'D', text: 'Luôn hướng thẳng đứng lên trời' }
+          ],
+          answer: 'B',
+          hints: ['Lực cản luôn chống lại và kìm hãm chuyển động.'],
+          explanation: 'Lực cản của môi trường luôn ngược chiều chuyển động của vật thể.'
+        },
+        {
+          level: 'thong_hieu',
+          type: 'mcq',
+          prompt: 'Các tay đua xe đạp chuyên nghiệp khi chạy nước rút thường cúi rạp người xuống ghi-đông nhằm mục đích chính là gì?',
+          options: [
+            { id: 'A', text: 'Để nghỉ ngơi thư giãn lưng' },
+            { id: 'B', text: 'Để giảm diện tích cản gió, từ đó giảm lực cản không khí' },
+            { id: 'C', text: 'Để tăng trọng lượng của xe đạp' },
+            { id: 'D', text: 'Để bánh xe quay nhanh hơn' }
+          ],
+          answer: 'B',
+          hints: ['Tư thế khom người làm giảm diện tích đón gió.'],
+          explanation: 'Cúi thấp người làm giảm diện tích tiếp xúc trực diện với luồng gió, giảm lực cản của không khí.'
         }
       ]
     }
