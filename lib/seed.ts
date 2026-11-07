@@ -157,7 +157,9 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       if (firstLessonId === 0) firstLessonId = lessonId;
       seededLessonsCount++;
 
-      topicByGrade.set(curriculumItem.grade, { topicId, lessonId });
+      if (!topicByGrade.has(curriculumItem.grade)) {
+        topicByGrade.set(curriculumItem.grade, { topicId, lessonId });
+      }
 
       // Seed Questions
       for (const q of curriculumItem.questions) {
