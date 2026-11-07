@@ -14,10 +14,12 @@ import {
   ArrowLeft, 
   Send,
   Flame,
-  Award
+  Award,
+  PenTool
 } from 'lucide-react';
 import type { ClientQuestionItem, QuizSubmissionResult } from '@/lib/student';
 import KaTeXRenderer from '@/components/KaTeXRenderer';
+import Scratchpad from '@/components/Scratchpad';
 
 interface ExamRoomRunnerProps {
   topicId: number;
@@ -65,6 +67,7 @@ export function ExamRoomRunner({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionResult, setSubmissionResult] = useState<QuizSubmissionResult | null>(null);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [showScratchpad, setShowScratchpad] = useState(false);
 
   const startTimeRef = useRef<number>(Date.now());
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -487,6 +490,22 @@ export function ExamRoomRunner({
           </div>
         </div>
       )}
+      {/* Floating Scratchpad Overlay Toggle */}
+      <button
+        type="button"
+        onClick={() => setShowScratchpad(!showScratchpad)}
+        className="fixed bottom-6 right-6 z-30 inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-800 hover:bg-slate-900 text-white font-bold text-xs shadow-xl transition"
+        title="Bảng nháp tính toán"
+      >
+        <PenTool className="w-4 h-4" />
+        {showScratchpad ? 'Thu gọn nháp' : 'Mở bảng nháp'}
+      </button>
+
+      <Scratchpad
+        isOpen={showScratchpad}
+        onClose={() => setShowScratchpad(false)}
+        isFloating={true}
+      />
     </div>
   );
 }

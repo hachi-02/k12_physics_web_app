@@ -20,6 +20,8 @@ import type { ClientQuestionItem } from '@/lib/student';
 import { evaluateQuestionAnswer, GradingResult } from '@/lib/grading';
 import KaTeXRenderer from '@/components/KaTeXRenderer';
 import HintAccordion from './HintAccordion';
+import Scratchpad from '@/components/Scratchpad';
+import { PenTool } from 'lucide-react';
 
 interface PracticeRunnerProps {
   topicId: number;
@@ -64,6 +66,7 @@ export function PracticeRunner({
   const [hintsUsedRecord, setHintsUsedRecord] = useState<Record<number, number>>({});
   const [isCompleted, setIsCompleted] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [showScratchpad, setShowScratchpad] = useState(false);
 
   if (!questions || questions.length === 0) {
     return (
@@ -422,6 +425,23 @@ export function PracticeRunner({
           )}
         </div>
       </div>
+
+      {/* Floating Scratchpad Overlay Toggle */}
+      <button
+        type="button"
+        onClick={() => setShowScratchpad(!showScratchpad)}
+        className="fixed bottom-6 right-6 z-30 inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-teal-700 hover:bg-teal-800 text-white font-bold text-xs shadow-lg transition"
+        title="Bảng nháp tính toán và vẽ hình"
+      >
+        <PenTool className="w-4 h-4" />
+        {showScratchpad ? 'Thu gọn nháp' : 'Mở bảng nháp'}
+      </button>
+
+      <Scratchpad
+        isOpen={showScratchpad}
+        onClose={() => setShowScratchpad(false)}
+        isFloating={true}
+      />
     </div>
   );
 }
