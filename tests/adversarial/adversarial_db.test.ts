@@ -562,12 +562,9 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
   // SECTION 4: CONCURRENCY & WAL MODE STRESS TESTING
   // ==========================================================================
   describe('4. Concurrency & WAL Mode Stress Testing', () => {
-    const testDiskDbPath = path.resolve(process.cwd(), 'test_adversarial_concurrency.db');
-
-    afterEach(() => {
-      // Clean up test disk database files
+    function cleanupDbFiles(basePath: string) {
       for (const ext of ['', '-wal', '-shm']) {
-        const p = `${testDiskDbPath}${ext}`;
+        const p = `${basePath}${ext}`;
         if (fs.existsSync(p)) {
           try {
             fs.unlinkSync(p);
@@ -576,11 +573,14 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
           }
         }
       }
-    });
+    }
 
     it('should verify WAL mode and busy_timeout PRAGMAs on a disk-backed database', () => {
+      const dbPath = path.resolve(process.cwd(), 'test_wal_pragma.db');
+      cleanupDbFiles(dbPath);
+
       // Create disk database via Database directly mimicking lib/db.ts
-      const diskDb = new Database(testDiskDbPath);
+      const diskDb = new Database(dbPath);
       diskDb.exec('PRAGMA foreign_keys = ON;');
       diskDb.exec('PRAGMA journal_mode = WAL;');
       diskDb.exec('PRAGMA busy_timeout = 5000;');
@@ -595,10 +595,14 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
       expect(foreignKeys.foreign_keys).toBe(1);
 
       diskDb.close();
+      cleanupDbFiles(dbPath);
     });
 
     it('should sustain rapid interleaved queries without deadlock or corruption', () => {
-      const diskDb = new Database(testDiskDbPath);
+      const dbPath = path.resolve(process.cwd(), 'test_wal_interleaved.db');
+      cleanupDbFiles(dbPath);
+
+      const diskDb = new Database(dbPath);
       const schemaSql = fs.readFileSync(SCHEMA_PATH, 'utf-8');
       diskDb.exec(schemaSql);
       diskDb.exec('PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 5000;');
@@ -621,21 +625,25 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
       expect(total.count).toBe(150);
 
       diskDb.close();
+      cleanupDbFiles(dbPath);
     });
 
     it('should allow concurrent readers while a writer connection performs long transactions (WAL isolation)', () => {
+      const dbPath = path.resolve(process.cwd(), 'test_wal_isolation.db');
+      cleanupDbFiles(dbPath);
+
       const schemaSql = fs.readFileSync(SCHEMA_PATH, 'utf-8');
 
       // Initialize Disk Database with WAL mode
-      const initDb = new Database(testDiskDbPath);
+      const initDb = new Database(dbPath);
       initDb.exec(schemaSql);
       initDb.exec('PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 5000;');
       initDb.prepare('INSERT INTO users (username, password_hash, role, name) VALUES (?, ?, ?, ?)').run('initial_user', 'hash', 'student', 'Initial');
       initDb.close();
 
       // Open Connection A (Writer) and Connection B (Reader)
-      const writerDb = new Database(testDiskDbPath);
-      const readerDb = new Database(testDiskDbPath);
+      const writerDb = new Database(dbPath);
+      const readerDb = new Database(dbPath);
 
       writerDb.exec('PRAGMA busy_timeout = 5000;');
       readerDb.exec('PRAGMA busy_timeout = 5000;');
@@ -661,21 +669,25 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
 
       writerDb.close();
       readerDb.close();
+      cleanupDbFiles(dbPath);
     });
 
     it('should serialize concurrent writers with busy_timeout without SQLITE_BUSY crash', () => {
+      const dbPath = path.resolve(process.cwd(), 'test_wal_multiconn.db');
+      cleanupDbFiles(dbPath);
+
       const schemaSql = fs.readFileSync(SCHEMA_PATH, 'utf-8');
 
-      const initDb = new Database(testDiskDbPath);
+      const initDb = new Database(dbPath);
       initDb.exec(schemaSql);
       initDb.exec('PRAGMA journal_mode = WAL; PRAGMA busy_timeout = 5000;');
       initDb.close();
 
       // Create 3 independent connection handles
       const conns = [
-        new Database(testDiskDbPath),
-        new Database(testDiskDbPath),
-        new Database(testDiskDbPath),
+        new Database(dbPath),
+        new Database(dbPath),
+        new Database(dbPath),
       ];
 
       for (const c of conns) {
@@ -695,7 +707,7 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
         }
       }
 
-      const verifyDb = new Database(testDiskDbPath);
+      const verifyDb = new Database(dbPath);
       const total = verifyDb.prepare('SELECT count(*) as count FROM users;').get() as { count: number };
       expect(total.count).toBe(30);
 
@@ -703,6 +715,7 @@ describe('Milestone 1 Adversarial Stress Test Suite', () => {
         c.close();
       }
       verifyDb.close();
+      cleanupDbFiles(dbPath);
     });
   });
 });
