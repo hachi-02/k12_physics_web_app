@@ -30,14 +30,19 @@ export default function HomePage() {
           </div>
 
           {/* Parent Tier Card */}
-          <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition text-left space-y-3">
-            <div className="w-12 h-12 bg-tier-middle-light text-tier-middle-dark rounded-xl flex items-center justify-center font-bold">
+          <Link
+            href="/parents"
+            className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-teal-300 transition text-left space-y-3 block group"
+          >
+            <div className="w-12 h-12 bg-teal-100 text-teal-800 rounded-xl flex items-center justify-center font-bold group-hover:scale-105 transition">
               <Users className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900">Không gian Phụ huynh</h3>
+            <h3 className="text-xl font-bold text-slate-900 group-hover:text-teal-700 transition">Không gian Phụ huynh</h3>
             <p className="text-sm text-slate-600">Cẩm nang "Sư phạm tại gia", phát hiện lỗ hổng kiến thức, giao bài tập và đồng hành nhận thưởng.</p>
-            <div className="pt-2 text-sm font-semibold text-cyan-600">Xem tiến độ &rarr;</div>
-          </div>
+            <div className="pt-2 text-sm font-semibold text-teal-600 flex items-center gap-1 group-hover:translate-x-1 transition">
+              Vào không gian Phụ huynh &rarr;
+            </div>
+          </Link>
 
           {/* CMS Admin Card */}
           <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition text-left space-y-3">

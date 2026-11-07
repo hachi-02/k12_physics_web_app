@@ -113,6 +113,7 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
     let seededQuestionsCount = 0;
     let firstTopicId = 0;
     let firstLessonId = 0;
+    const topicByGrade = new Map<number, { topicId: number; lessonId: number }>();
 
     for (let i = 0; i < CURRICULUM_DATA.length; i++) {
       const curriculumItem = CURRICULUM_DATA[i];
@@ -156,6 +157,8 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       if (firstLessonId === 0) firstLessonId = lessonId;
       seededLessonsCount++;
 
+      topicByGrade.set(curriculumItem.grade, { topicId, lessonId });
+
       // Seed Questions
       for (const q of curriculumItem.questions) {
         db.run(
@@ -188,17 +191,21 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       }
     }
 
-    // 5. Seed Sample Assignment for Parent Workspace Testing
+    // 5. Seed Sample Assignments for Parent Workspace
     const dueTomorrow = new Date(Date.now() + 86400000).toISOString();
-    const assignmentResult = db.run(
+    const g1 = topicByGrade.get(1) || { topicId: firstTopicId, lessonId: firstLessonId };
+    const g7 = topicByGrade.get(7) || { topicId: firstTopicId, lessonId: firstLessonId };
+
+    // Assignment 1: Active assigned
+    db.run(
       `INSERT INTO parent_assignments (
         parent_id, student_id, topic_id, lesson_id, title, description, instructions, due_date, status, reward_description, reward_text, reward_stars
       ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         parentId,
         studentId,
-        firstTopicId,
-        firstLessonId,
+        g1.topicId,
+        g1.lessonId,
         'Thực hành thí nghiệm Ánh sáng & Làm bài tập',
         'Con đọc kỹ bài học và làm 2 câu hỏi trắc nghiệm nhé!',
         'Con đọc kỹ bài học và làm 2 câu hỏi trắc nghiệm nhé!',
@@ -210,11 +217,106 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       ]
     );
 
-    // 6. Seed Sample Study Session for Dashboard Testing
+    // Assignment 2: Completed, ready for parent reward approval
+    db.run(
+      `INSERT INTO parent_assignments (
+        parent_id, student_id, topic_id, lesson_id, title, description, instructions, due_date, status, reward_description, reward_text, reward_stars, completed_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        parentId,
+        studentId,
+        g7.topicId,
+        g7.lessonId,
+        'Khảo sát Tốc độ chuyển động & Đồ thị quãng đường',
+        'Hoàn thành bài luyện tập để củng cố kiến thức đo tốc độ.',
+        'Hoàn thành bài luyện tập để củng cố kiến thức đo tốc độ.',
+        dueTomorrow,
+        'completed',
+        'Xem phim hoạt hình rạp cuối tuần',
+        'Xem phim hoạt hình rạp cuối tuần',
+        30,
+        new Date().toISOString(),
+      ]
+    );
+
+    // 6. Seed Sample Study Sessions for Dashboard Metrics
     db.run(
       `INSERT INTO study_sessions (student_id, topic_id, lesson_id, session_type, duration_seconds, session_date)
        VALUES (?, ?, ?, ?, ?, ?)`,
-      [studentId, firstTopicId, firstLessonId, 'learn', 900, todayStr]
+      [studentId, g1.topicId, g1.lessonId, 'learn', 1200, todayStr]
+    );
+    db.run(
+      `INSERT INTO study_sessions (student_id, topic_id, lesson_id, session_type, duration_seconds, session_date)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [studentId, g7.topicId, g7.lessonId, 'practice', 1800, todayStr]
+    );
+    db.run(
+      `INSERT INTO study_sessions (student_id, topic_id, lesson_id, session_type, duration_seconds, session_date)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [studentId, (topicByGrade.get(2) || g1).topicId, (topicByGrade.get(2) || g1).lessonId, 'simulation', 900, todayStr]
+    );
+
+    // 7. Seed Sample Quiz Submissions (Mastered, Developing, Critical)
+    const g2 = topicByGrade.get(2) || g1;
+
+    // Submission 1: Grade 1 Topic -> 90% (Mastered)
+    db.run(
+      `INSERT INTO quiz_submissions (
+        user_id, quiz_type, topic_id, lesson_id, score, total_questions, correct_count, time_spent_seconds, stars_earned, answers_json, submitted_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        studentId,
+        'practice',
+        g1.topicId,
+        g1.lessonId,
+        90.0,
+        10,
+        9,
+        340,
+        25,
+        JSON.stringify([{ qId: 1, isCorrect: true }, { qId: 2, isCorrect: true }]),
+        new Date(Date.now() - 3600000 * 5).toISOString(),
+      ]
+    );
+
+    // Submission 2: Grade 2 Topic -> 70% (Developing)
+    db.run(
+      `INSERT INTO quiz_submissions (
+        user_id, quiz_type, topic_id, lesson_id, score, total_questions, correct_count, time_spent_seconds, stars_earned, answers_json, submitted_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        studentId,
+        'practice',
+        g2.topicId,
+        g2.lessonId,
+        70.0,
+        10,
+        7,
+        480,
+        15,
+        JSON.stringify([{ qId: 3, isCorrect: true }, { qId: 4, isCorrect: false }]),
+        new Date(Date.now() - 3600000 * 2).toISOString(),
+      ]
+    );
+
+    // Submission 3: Grade 7 Topic -> 50% (Critical Knowledge Gap)
+    db.run(
+      `INSERT INTO quiz_submissions (
+        user_id, quiz_type, topic_id, lesson_id, score, total_questions, correct_count, time_spent_seconds, stars_earned, answers_json, submitted_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        studentId,
+        'exam',
+        g7.topicId,
+        g7.lessonId,
+        50.0,
+        10,
+        5,
+        620,
+        10,
+        JSON.stringify([{ qId: 5, isCorrect: false }, { qId: 6, isCorrect: true }]),
+        new Date(Date.now() - 3600000 * 1).toISOString(),
+      ]
     );
 
     db.exec('COMMIT;');
@@ -224,7 +326,7 @@ export async function seedDatabase(options: { force?: boolean } = {}): Promise<S
       topicsCount: seededTopicsCount,
       lessonsCount: seededLessonsCount,
       questionsCount: seededQuestionsCount,
-      assignmentsCount: 1,
+      assignmentsCount: 2,
       gamificationCount: 1,
     };
   } catch (error) {

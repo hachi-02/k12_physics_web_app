@@ -181,7 +181,13 @@ function initDatabaseInstance(dbPath: string): DatabaseClient {
       conn.exec(sql);
     },
     close() {
-      conn.close();
+      try {
+        conn.close();
+      } finally {
+        if (globalThis._k12_sqlite_db_instance === client) {
+          globalThis._k12_sqlite_db_instance = undefined;
+        }
+      }
     },
   };
 
