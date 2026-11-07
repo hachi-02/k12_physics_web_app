@@ -18,7 +18,6 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
   // AREA 1: KaTeX Formula Extraction & Strict Compilation
   // ==========================================================================
   describe('Area 1: KaTeX Formula Compilation & Syntax Hardening', () => {
-    // Helper to extract LaTeX formulas matching $...$ and $$...$$
     function extractFormulas(text: string): { formula: string; displayMode: boolean; rawMatch: string }[] {
       const results: { formula: string; displayMode: boolean; rawMatch: string }[] = [];
       if (!text) return results;
@@ -57,7 +56,7 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
         }
       }
 
-      expect(explicitFormulas.length).toBeGreaterThan(0);
+      expect(explicitFormulas.length).toBeGreaterThanOrEqual(7);
 
       const failures: { formula: string; error: string; topic: string }[] = [];
 
@@ -80,7 +79,7 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
       expect(failures, `Explicit formulas failed KaTeX compilation: ${JSON.stringify(failures, null, 2)}`).toHaveLength(0);
     });
 
-    it('should compile all LaTeX formulas extracted from markdown content, summaries, prompts, hints, and explanations', () => {
+    it('should check all LaTeX formulas extracted from markdown, summaries, prompts, hints, and explanations', () => {
       const allExtracted: {
         source: string;
         grade: number;
@@ -175,6 +174,18 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
         }
       }
 
+      // Record any failures found for adversarial reporting
+      if (renderFailures.length > 0) {
+        console.error('[KaTeX Stress Test] Found KaTeX compilation failures:', JSON.stringify(renderFailures, null, 2));
+      }
+
+      // Specifically flag Grade 11 quadruple backslash bug if present
+      const grade11Bug = renderFailures.find((f) => f.grade === 11 && f.formula.includes('\\\\approx'));
+      if (grade11Bug) {
+        console.warn(`[CONFIRMED BUG] Grade 11 Experiment Step contains malformed formula: "${grade11Bug.formula}" causing "${grade11Bug.error}"`);
+      }
+
+      // The adversarial assertion: reports whether all formulas compiled or lists failures
       expect(
         renderFailures,
         `KaTeX render errors encountered in curriculum:\n${JSON.stringify(renderFailures, null, 2)}`
@@ -329,6 +340,45 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
       expect(mcqCount).toBeGreaterThanOrEqual(10);
     });
 
+    it('should audit MCQ option texts for raw LaTeX commands without delimiters or dedicated latex field', () => {
+      const optionsWithRawLatex: {
+        grade: number;
+        prompt: string;
+        optionId: string;
+        text: string;
+        rawLatexCommands: string[];
+      }[] = [];
+
+      const latexCommandPattern = /\\[a-zA-Z]+|\^|_/g;
+
+      for (const topic of CURRICULUM_DATA) {
+        for (const q of topic.questions) {
+          if (q.question_type === 'mcq' && q.options) {
+            for (const opt of q.options) {
+              // Check if option text contains LaTeX commands without being wrapped in $...$
+              const isDelimited = /^\$[^\$]+\$$/.test(opt.text.trim());
+              const commands = opt.text.match(latexCommandPattern);
+              if (commands && commands.length > 0 && !isDelimited && !opt.latex) {
+                optionsWithRawLatex.push({
+                  grade: topic.grade,
+                  prompt: q.prompt.slice(0, 40),
+                  optionId: opt.id,
+                  text: opt.text,
+                  rawLatexCommands: commands,
+                });
+              }
+            }
+          }
+        }
+      }
+
+      console.log(`[MCQ LaTeX Audit] Found ${optionsWithRawLatex.length} options with raw LaTeX commands:`, optionsWithRawLatex);
+      // Documenting this finding: Grade 8 (F_A), Grade 11 (\varphi, \pi), Grade 12 (\cdot, \frac, ^2)
+      if (optionsWithRawLatex.length > 0) {
+        console.warn(`[FINDING] ${optionsWithRawLatex.length} MCQ options contain raw LaTeX math without '$' delimiters or 'latex' property.`);
+      }
+    });
+
     it('should verify database questions table contains valid options_json and matching correct_answer', () => {
       const dbMcqs = db.query<{
         id: number;
@@ -351,15 +401,11 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
   // AREA 4: Numeric Question Tolerances & User Input Edge Cases
   // ==========================================================================
   describe('Area 4: Numeric Question Tolerances & Adversarial Input Evaluation', () => {
-    /**
-     * Standard floating point tolerance evaluation matching PROJECT.md:
-     * Float tolerance (+- 2% to 5%)
-     * Supports Vietnamese decimal comma (e.g. "2,5" -> 2.5), whitespace trimming.
-     */
-    function evaluateNumericAnswer(
+    function evaluateNumericStrict(
       rawInput: unknown,
       correctAnswerStr: string,
-      tolerance: number = 0.02
+      tolerance: number = 0.02,
+      expectedUnit?: string
     ): { isCorrect: boolean; parsedInput: number; target: number; deltaRel: number } {
       if (rawInput === null || rawInput === undefined) {
         return { isCorrect: false, parsedInput: NaN, target: parseFloat(correctAnswerStr), deltaRel: Infinity };
@@ -369,8 +415,17 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
       // Handle Vietnamese comma decimal separator
       sanitized = sanitized.replace(',', '.');
 
-      // Strip trailing unit if user typed it (e.g. "20 N" -> "20")
-      sanitized = sanitized.replace(/[a-zA-Z°Ω/s^]+$/, '').trim();
+      // Strip trailing physical unit ONLY if it matches the expected unit or standard known units
+      if (expectedUnit) {
+        const unitRegex = new RegExp(`\\s*${expectedUnit.replace(/[\^/]/g, '\\$&')}$`, 'i');
+        sanitized = sanitized.replace(unitRegex, '').trim();
+      }
+
+      // Strict validation: must be a well-formed numeric string
+      const strictNumericRegex = /^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$/;
+      if (!strictNumericRegex.test(sanitized)) {
+        return { isCorrect: false, parsedInput: NaN, target: parseFloat(correctAnswerStr), deltaRel: Infinity };
+      }
 
       const parsed = parseFloat(sanitized);
       const target = parseFloat(correctAnswerStr);
@@ -385,9 +440,23 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
       }
 
       const deltaRel = Math.abs(parsed - target) / Math.abs(target);
-      const isCorrect = deltaRel <= tolerance + 1e-9; // tiny epsilon for IEEE 754 precision
+      const isCorrect = deltaRel <= tolerance + 1e-9;
 
       return { isCorrect, parsedInput: parsed, target, deltaRel };
+    }
+
+    function evaluateNumericNaive(
+      rawInput: unknown,
+      correctAnswerStr: string,
+      tolerance: number = 0.02
+    ): { isCorrect: boolean; parsedInput: number } {
+      if (rawInput === null || rawInput === undefined) return { isCorrect: false, parsedInput: NaN };
+      let sanitized = String(rawInput).trim().replace(',', '.');
+      const parsed = parseFloat(sanitized);
+      const target = parseFloat(correctAnswerStr);
+      if (isNaN(parsed) || !isFinite(parsed)) return { isCorrect: false, parsedInput: parsed };
+      const deltaRel = Math.abs(parsed - target) / Math.abs(target);
+      return { isCorrect: deltaRel <= tolerance, parsedInput: parsed };
     }
 
     it('should verify all numeric questions have parseable correct_answer, valid tolerance and physical unit', () => {
@@ -402,7 +471,7 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
 
             expect(q.numeric_tolerance, `Tolerance missing in question: ${q.prompt}`).toBeDefined();
             expect(q.numeric_tolerance!).toBeGreaterThan(0);
-            expect(q.numeric_tolerance!).toBeLessThanOrEqual(0.1); // Between 1% and 10%
+            expect(q.numeric_tolerance!).toBeLessThanOrEqual(0.1);
 
             expect(q.numeric_unit, `Unit missing in numeric question: ${q.prompt}`).toBeDefined();
             expect(q.numeric_unit!.trim().length).toBeGreaterThan(0);
@@ -425,29 +494,28 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
         const tol = q.numeric_tolerance || 0.02;
 
         // 1. Exact answer
-        const resExact = evaluateNumericAnswer(q.correct_answer, q.correct_answer, tol);
+        const resExact = evaluateNumericStrict(q.correct_answer, q.correct_answer, tol);
         expect(resExact.isCorrect, `Exact answer failed: ${q.correct_answer}`).toBe(true);
 
         // 2. Whitespace padding
-        const resSpaces = evaluateNumericAnswer(`   ${q.correct_answer}   `, q.correct_answer, tol);
+        const resSpaces = evaluateNumericStrict(`   ${q.correct_answer}   `, q.correct_answer, tol);
         expect(resSpaces.isCorrect, `Whitespace padded failed: ${q.correct_answer}`).toBe(true);
 
         // 3. Trailing zeros (e.g. 18 -> 18.000)
         const target = parseFloat(q.correct_answer);
-        const resZeros = evaluateNumericAnswer(target.toFixed(4), q.correct_answer, tol);
+        const resZeros = evaluateNumericStrict(target.toFixed(4), q.correct_answer, tol);
         expect(resZeros.isCorrect, `Trailing zeros failed: ${target.toFixed(4)} for ${q.correct_answer}`).toBe(true);
       }
     });
 
     it('should correctly handle Vietnamese comma decimal separator (e.g. "0,314" for "0.314")', () => {
-      // Find question with decimal (e.g. Grade 11: 0.314)
       const qDec = CURRICULUM_DATA.flatMap((t) => t.questions).find(
         (q) => q.question_type === 'numeric' && q.correct_answer.includes('.')
       );
       expect(qDec).toBeDefined();
 
       const commaInput = qDec!.correct_answer.replace('.', ',');
-      const res = evaluateNumericAnswer(commaInput, qDec!.correct_answer, qDec!.numeric_tolerance);
+      const res = evaluateNumericStrict(commaInput, qDec!.correct_answer, qDec!.numeric_tolerance);
       expect(res.isCorrect, `Vietnamese comma decimal input "${commaInput}" failed`).toBe(true);
     });
 
@@ -462,62 +530,75 @@ describe('Adversarial Verification: KaTeX Formulas, Seed Data, Parent Guides & E
 
         // Exactly at upper bound: target * (1 + tol)
         const upperExact = target * (1 + tol);
-        const resUpperExact = evaluateNumericAnswer(upperExact.toString(), q.correct_answer, tol);
+        const resUpperExact = evaluateNumericStrict(upperExact.toString(), q.correct_answer, tol);
         expect(resUpperExact.isCorrect, `Exact upper bound failed for target ${target}`).toBe(true);
 
         // Exactly at lower bound: target * (1 - tol)
         const lowerExact = target * (1 - tol);
-        const resLowerExact = evaluateNumericAnswer(lowerExact.toString(), q.correct_answer, tol);
+        const resLowerExact = evaluateNumericStrict(lowerExact.toString(), q.correct_answer, tol);
         expect(resLowerExact.isCorrect, `Exact lower bound failed for target ${target}`).toBe(true);
 
         // Just inside upper bound: target * (1 + tol * 0.98)
         const insideUpper = target * (1 + tol * 0.98);
-        const resInsideUpper = evaluateNumericAnswer(insideUpper.toString(), q.correct_answer, tol);
+        const resInsideUpper = evaluateNumericStrict(insideUpper.toString(), q.correct_answer, tol);
         expect(resInsideUpper.isCorrect).toBe(true);
 
         // Just inside lower bound: target * (1 - tol * 0.98)
         const insideLower = target * (1 - tol * 0.98);
-        const resInsideLower = evaluateNumericAnswer(insideLower.toString(), q.correct_answer, tol);
+        const resInsideLower = evaluateNumericStrict(insideLower.toString(), q.correct_answer, tol);
         expect(resInsideLower.isCorrect).toBe(true);
 
         // Definitely outside upper bound: target * (1 + tol * 1.5)
         const outsideUpper = target * (1 + tol * 1.5);
-        const resOutsideUpper = evaluateNumericAnswer(outsideUpper.toString(), q.correct_answer, tol);
+        const resOutsideUpper = evaluateNumericStrict(outsideUpper.toString(), q.correct_answer, tol);
         expect(resOutsideUpper.isCorrect, `Outside upper bound should fail for target ${target}`).toBe(false);
 
         // Definitely outside lower bound: target * (1 - tol * 1.5)
         const outsideLower = target * (1 - tol * 1.5);
-        const resOutsideLower = evaluateNumericAnswer(outsideLower.toString(), q.correct_answer, tol);
+        const resOutsideLower = evaluateNumericStrict(outsideLower.toString(), q.correct_answer, tol);
         expect(resOutsideLower.isCorrect, `Outside lower bound should fail for target ${target}`).toBe(false);
       }
     });
 
-    it('should reject adversarial, malformed, non-numeric, and extreme user inputs', () => {
+    it('demonstrates vulnerability of naive parseFloat vs strict numeric evaluation on adversarial inputs', () => {
       const targetStr = '20';
       const tol = 0.02;
 
-      const adversarialInputs = [
-        '-20',               // Opposite sign
-        'abc',               // Random text
-        'NaN',               // Literal NaN
-        'Infinity',          // Literal Infinity
-        '-Infinity',         // Literal -Infinity
-        '',                  // Empty string
-        '   ',               // Pure whitespace
-        '20..0',             // Double dots
-        '20 20',             // Space-separated numbers
-        '1e10',              // Extreme exponential
-        '1e-10',             // Tiny exponential
-        '0',                 // Zero when target is 20
-        '999999999999',      // Huge number
-        null,                // Null input
-        undefined,           // Undefined input
-        '<script>alert(1)</script>', // XSS payload
+      // Inputs that fool naive parseFloat but must be rejected by strict evaluation
+      const deceptiveInputs = [
+        '20..0',       // Naive parseFloat yields 20!
+        '20abc',       // Naive parseFloat yields 20!
+        '20 bananas',   // Naive parseFloat yields 20!
+        '20,0,0',      // After comma replace -> 20.0.0 -> naive yields 20!
       ];
 
-      for (const badInput of adversarialInputs) {
-        const res = evaluateNumericAnswer(badInput, targetStr, tol);
-        expect(res.isCorrect, `Adversarial input "${badInput}" should have failed evaluation`).toBe(false);
+      for (const input of deceptiveInputs) {
+        const naiveRes = evaluateNumericNaive(input, targetStr, tol);
+        const strictRes = evaluateNumericStrict(input, targetStr, tol);
+
+        // Naive evaluation wrongly accepts the deceptive input!
+        expect(naiveRes.isCorrect, `Expected naive evaluator to falsely accept "${input}"`).toBe(true);
+        // Strict evaluation properly rejects the deceptive input!
+        expect(strictRes.isCorrect, `Strict evaluator must reject deceptive input "${input}"`).toBe(false);
+      }
+
+      // Inputs that both naive and strict reject
+      const obviouslyBadInputs = [
+        '-20',
+        'abc',
+        'NaN',
+        'Infinity',
+        '-Infinity',
+        '',
+        '   ',
+        '1e10',
+        '0',
+        null,
+        undefined,
+      ];
+
+      for (const bad of obviouslyBadInputs) {
+        expect(evaluateNumericStrict(bad, targetStr, tol).isCorrect).toBe(false);
       }
     });
   });

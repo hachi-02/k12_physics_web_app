@@ -637,10 +637,10 @@ So sánh trọng lực $P$ và lực đẩy Archimedes $F_A$:
         question_type: 'mcq',
         prompt: 'Khi một vật nổi thăng bằng trên mặt chất lỏng, mối quan hệ giữa trọng lượng $P$ của vật và lực đẩy Archimedes $F_A$ là:',
         options: [
-          { id: 'A', text: 'F_A > P' },
-          { id: 'B', text: 'F_A < P' },
-          { id: 'C', text: 'F_A = P' },
-          { id: 'D', text: 'F_A = 0' }
+          { id: 'A', text: '$F_A > P$', latex: 'F_A > P' },
+          { id: 'B', text: '$F_A < P$', latex: 'F_A < P' },
+          { id: 'C', text: '$F_A = P$', latex: 'F_A = P' },
+          { id: 'D', text: '$F_A = 0$', latex: 'F_A = 0' }
         ],
         correct_answer: 'C',
         difficulty: 'medium',
@@ -886,10 +886,10 @@ $$\\omega = \\sqrt{\\frac{k}{m}} \\implies T = \\frac{2\\pi}{\\omega} = 2\\pi \\
           materials: ['1 sợi chỉ dài 1 mét', '1 chùm chìa khóa nhỏ làm vật nặng', 'Đồng hồ bấm giờ điện thoại'],
           steps: [
             'Buộc chùm chìa khóa vào sợi chỉ, cố định đầu kia lên móc treo.',
-            'Kéo lệch góc nhỏ ($\\\\approx 10^\\\\circ$), thả nhẹ không vận tốc đầu.',
+            'Kéo lệch góc nhỏ ($\\approx 10^\\circ$), thả nhẹ không vận tốc đầu.',
             'Bấm giờ 10 dao động toàn phần, chia 10 để tính chu kì $T_1$. Cắt ngắn dây còn 0.25m và đo lại $T_2$.'
           ],
-          expected_outcome: 'Khi chiều dài giảm 4 lần, chu kì giảm 2 lần ($T \\\\sim \\\\sqrt{l}$).',
+          expected_outcome: 'Khi chiều dài giảm 4 lần, chu kì giảm 2 lần ($T \\sim \\sqrt{l}$).',
           safety_notes: 'Treo móc chắc chắn tránh rơi chìa khóa.'
         }
       ]
@@ -915,10 +915,10 @@ $$\\omega = \\sqrt{\\frac{k}{m}} \\implies T = \\frac{2\\pi}{\\omega} = 2\\pi \\
         question_type: 'mcq',
         prompt: 'Một chất điểm dao động điều hòa theo phương trình $x = 8 \\cos(5\\pi t - \\frac{\\pi}{6})\\,\\text{cm}$. Biên độ dao động $A$ và pha ban đầu $\\varphi$ của dao động lần lượt là:',
         options: [
-          { id: 'A', text: 'A = 8 cm, \\varphi = -\\pi/6 rad' },
-          { id: 'B', text: 'A = 8 cm, \\varphi = 5\\pi rad' },
-          { id: 'C', text: 'A = 16 cm, \\varphi = \\pi/6 rad' },
-          { id: 'D', text: 'A = 5 cm, \\varphi = -\\pi/6 rad' }
+          { id: 'A', text: '$A = 8\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$', latex: 'A = 8\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}' },
+          { id: 'B', text: '$A = 8\\,\\text{cm},\\; \\varphi = 5\\pi\\,\\text{rad}$', latex: 'A = 8\\,\\text{cm},\\; \\varphi = 5\\pi\\,\\text{rad}' },
+          { id: 'C', text: '$A = 16\\,\\text{cm},\\; \\varphi = \\frac{\\pi}{6}\\,\\text{rad}$', latex: 'A = 16\\,\\text{cm},\\; \\varphi = \\frac{\\pi}{6}\\,\\text{rad}' },
+          { id: 'D', text: '$A = 5\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}$', latex: 'A = 5\\,\\text{cm},\\; \\varphi = -\\frac{\\pi}{6}\\,\\text{rad}' }
         ],
         correct_answer: 'A',
         difficulty: 'easy',
@@ -1009,10 +1009,10 @@ $$E = m \\cdot c^2 \\implies E_{lk} = \\Delta m \\cdot c^2$$`,
         question_type: 'mcq',
         prompt: 'Hệ thức nổi tiếng của Einstein về mối liên hệ giữa năng lượng $E$ và khối lượng $m$ là:',
         options: [
-          { id: 'A', text: 'E = m \\cdot c^2' },
-          { id: 'B', text: 'E = \\frac{1}{2} m c^2' },
-          { id: 'C', text: 'E = m \\cdot c' },
-          { id: 'D', text: 'E = \\frac{m}{c^2}' }
+          { id: 'A', text: '$E = m c^2$', latex: 'E = m c^2' },
+          { id: 'B', text: '$E = \\frac{1}{2} m c^2$', latex: 'E = \\frac{1}{2} m c^2' },
+          { id: 'C', text: '$E = m c$', latex: 'E = m c' },
+          { id: 'D', text: '$E = \\frac{m}{c^2}$', latex: 'E = \\frac{m}{c^2}' }
         ],
         correct_answer: 'A',
         difficulty: 'easy',
