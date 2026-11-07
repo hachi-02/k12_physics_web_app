@@ -20,14 +20,19 @@ export default function HomePage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8">
           {/* Student Tier Card */}
-          <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition text-left space-y-3">
-            <div className="w-12 h-12 bg-tier-primary-light text-tier-primary-dark rounded-xl flex items-center justify-center font-bold">
+          <Link
+            href="/student"
+            className="p-6 bg-white rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-300 transition text-left space-y-3 block group"
+          >
+            <div className="w-12 h-12 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center font-bold group-hover:scale-105 transition">
               <BookOpen className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900">Không gian Học sinh</h3>
+            <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition">Không gian Học sinh</h3>
             <p className="text-sm text-slate-600">3 phân tầng trải nghiệm: Khám phá trực quan (1-5), Tư duy logic (6-9), và Luyện đề chuyên sâu (10-12).</p>
-            <div className="pt-2 text-sm font-semibold text-blue-600">Sẵn sàng học tập &rarr;</div>
-          </div>
+            <div className="pt-2 text-sm font-semibold text-blue-600 flex items-center gap-1 group-hover:translate-x-1 transition">
+              Sẵn sàng học tập &rarr;
+            </div>
+          </Link>
 
           {/* Parent Tier Card */}
           <Link
