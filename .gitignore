@@ -1,0 +1,46 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Next.js Build Output
+/.next/
+/out/
+/build
+
+# Production & Runtime Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# SQLite Database Files (WAL, SHM, and DB files generated at runtime)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+k12_physics.db
+test.db
+test_k12_physics.db
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing Artifacts & Coverage
+/coverage
+/.nyc_output
+
+# Editor & OS Artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# TypeScript build info
+*.tsbuildinfo
