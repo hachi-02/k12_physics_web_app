@@ -29,6 +29,13 @@ interface PracticeRunnerProps {
   grade: number;
   questions: ClientQuestionItem[];
   studentId?: number;
+  /** Optional custom submit handler (e.g. textbook lessons). Replaces the default /api/quizzes/submit call. */
+  onSubmitAnswers?: (
+    answers: { questionId: number; userAnswer: string; hintsUsed: number }[],
+    correctCount: number
+  ) => Promise<void>;
+  /** Optional replacement for the "Vào phòng thi thử" button on the completion screen. */
+  completionLink?: { href: string; label: string };
 }
 
 /**
@@ -59,6 +66,8 @@ export function PracticeRunner({
   grade,
   questions,
   studentId,
+  onSubmitAnswers,
+  completionLink,
 }: PracticeRunnerProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({});
@@ -136,6 +145,12 @@ export function PracticeRunner({
         hintsUsed: hintsUsedRecord[q.id] || 0,
       }));
 
+      if (onSubmitAnswers) {
+        const correctCount = questions.filter((q) => gradedResults[q.id]?.isCorrect).length;
+        await onSubmitAnswers(answersPayload, correctCount);
+        return;
+      }
+
       await fetch('/api/quizzes/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -204,10 +219,10 @@ export function PracticeRunner({
           </button>
 
           <Link
-            href={`/student/exam/${topicId}`}
+            href={completionLink?.href ?? `/student/exam/${topicId}`}
             className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-teal-600 hover:bg-teal-700 text-white transition shadow-sm"
           >
-            <Timer className="w-4 h-4" /> Vào phòng thi thử
+            <Timer className="w-4 h-4" /> {completionLink?.label ?? 'Vào phòng thi thử'}
           </Link>
         </div>
       </div>
